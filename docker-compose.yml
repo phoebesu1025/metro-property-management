@@ -9,7 +9,7 @@ services:
   backend:
     build: ./backend
     ports:
-      - 3001:3001
+      - 5000:5000
     environment:
       DB-URL: mongodb://db/vidly
 
@@ -18,8 +18,7 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - vidly:/data/db
+      - M5:/data/db
 volumes:
-  vidly:
-
+  M5:
 
