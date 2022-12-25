@@ -5,13 +5,17 @@ services:
     build: ./frontend
     ports:
       - 3000:3000
+    image: phoebesu1025/mission5-frontend
 
   backend:
     build: ./backend
     ports:
       - 5000:5000
+    image: phoebesu1025/mission5-backend
+
     environment:
-      DB-URL: mongodb://db/vidly
+      DB-URL: mongodb://db/geeksOnMission
+      
 
   db:
     image: mongo:4.0-xenial
