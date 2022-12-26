@@ -3,6 +3,7 @@ import MetroLogo from '../images/logo.png'
 import Arrow from '../images/redArrow.png'
 import Rentals from '../MegaMenu/Rentals'
 import About from '../MegaMenu/About'
+import InvestmentSubMenu from '../MegaMenu/InvestementSubMenu'
 
 
 const MainMenu = () => {
@@ -38,7 +39,8 @@ const MainMenu = () => {
             </div >
 
             {/* <Rentals /> */}
-            <About />
+            {/* <About /> */}
+            <InvestmentSubMenu />
         </>
     )
 }
