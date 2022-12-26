@@ -1,14 +1,7 @@
-import React from 'react'
-import JustTest from './Components/JustTest'
-import MainMenu from './Components/Header/MainMenu'
+import Header from "./Components/Header/Header";
+
 const App = () => {
-  return (
-    <>
-      {/* <JustTest /> */}
-      <MainMenu />
+  return <Header />;
+};
 
-    </>
-  )
-}
-
-export default App
+export default App;
