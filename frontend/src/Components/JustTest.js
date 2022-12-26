@@ -22,12 +22,12 @@ const JustTest = () => {
 
     return (
         <>
-            <div className='text-center text-green-300 text-7xl'>TEST TAILWIND</div>
-            <div className='text-center text-pink-300 text-7xl'>TEST TAILWIND</div>
+            <div className='text-center text-green-300 text-heading1 font-roboto'>TEST TAILWIND</div>
+            <div className='text-center text-pink-300 text-heading2'>TEST TAILWIND</div>
             <div className='text-center text-blue-300 text-7xl'>TEST TAILWIND</div>
-            <div className='text-center text-purple-300 text-7xl'>TEST TAILWIND</div>
+            <div className='text-center text-purple-300 text-paragraph'>TEST TAILWIND</div>
             <div className='text-center text-yellow-300 text-7xl'>TEST TAILWIND</div>
-            <div className='text-center text-green-300 top mt-10'>
+            <div className='text-center text-green-300 top mt-10 font-roboto'>
                 <div> Below info is fetched from MongoDB 🎉🎉🎉</div>
                 <div>{showDB.result}</div>
 
