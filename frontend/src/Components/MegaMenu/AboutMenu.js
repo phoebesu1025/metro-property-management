@@ -1,32 +1,32 @@
 import React from 'react'
-import LookingIcon from '../images/looking.png'
+import Property from '../images/property.png'
 import MetroIcon from '../images/service.png'
 import PeopleIcon from '../images/people.png'
 import RecordIcon from '../images/record.png'
 import Arrow from '../images/redArrow.png'
-const BuildingManagement = () => {
+const About = () => {
     return (
         <>
 
-            <div className='bg-red2 h-96 flex justify-around text-white py-14 text-paragraph leading-10 px-16'>
+            <div className='bg-red2 h-128 flex justify-around text-white py-14 text-paragraph leading-10 px-16'>
 
                 <div >
-                    <img src={LookingIcon} />
-                    <h1 className='font-bold mt-4 w-44 leading-7 mb-2'>Looking for Building Management</h1>
-                    <p> Rental Listings</p>
-                    <p> Rental Process</p>
+                    <img src={Property} />
+                    <h1 className='font-bold mt-4'>About Us</h1>
+                    <p> Our team</p>
+                    <p> Dispute Process</p>
                 </div>
                 <div>
                     <img src={MetroIcon} />
-                    <h1 className='font-bold mt-4' >Metro Rental Services</h1>
-                    <p> Tenant Services</p>
-                    <p>Own a home while renting</p>
-                    <p>Healthy home standards</p>
+                    <h1 className='font-bold mt-4' >Metro News</h1>
+                    <p> Metro News</p>
+                    <p> Gallery</p>
+
                 </div>
                 <div>
                     <img src={PeopleIcon} />
-                    <h1 className='font-bold mt-4'>Meet a property manager</h1>
-                    <p>Book an online meet</p>
+                    <h1 className='font-bold mt-4'>Join Us</h1>
+                    <p>We are hiring</p>
                 </div>
                 <div>
                     <img src={RecordIcon} />
@@ -41,4 +41,4 @@ const BuildingManagement = () => {
     )
 }
 
-export default BuildingManagement
+export default About

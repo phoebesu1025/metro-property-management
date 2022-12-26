@@ -1,11 +1,11 @@
 import React from 'react'
 import MetroLogo from '../images/logo.png'
 import Arrow from '../images/redArrow.png'
-import Rentals from '../MegaMenu/Rentals'
-import About from '../MegaMenu/About'
+import RentalsMenu from '../MegaMenu/RentalsMenu'
+import AboutMenu from '../MegaMenu/AboutMenu'
 import InvestmentSubMenu from '../MegaMenu/InvestementSubMenu'
-import Contact from '../MegaMenu/Contact'
-import BuildingManagement from '../MegaMenu/BuildingManagement'
+import ContactMenu from '../MegaMenu/ContactMenu'
+import PropertyManagementMenu from '../MegaMenu/PropertyManagementMenu'
 
 
 const MainMenu = () => {
@@ -40,11 +40,11 @@ const MainMenu = () => {
                 </div>
             </div >
 
-            {/* <Rentals /> */}
-            {/* <About /> */}
+            {/* <RentalsMenu /> */}
+            {/* <AboutMenu /> */}
             {/* <InvestmentSubMenu /> */}
-            <Contact />
-            {/* <BuildingManagement /> */}
+            {/* <ContactMenu /> */}
+            <PropertyManagementMenu />
         </>
     )
 }

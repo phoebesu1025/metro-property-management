@@ -7,6 +7,11 @@ module.exports = {
       tablet: '960px',
       desktop: '1248px'
     },
+    extend: {
+      height: {
+        '128': '485px'
+      }
+    },
     colors: {
       red1: '#E4353C',
       white: '#FFFFFF',
