@@ -4,6 +4,8 @@ import Arrow from '../images/redArrow.png'
 import Rentals from '../MegaMenu/Rentals'
 import About from '../MegaMenu/About'
 import InvestmentSubMenu from '../MegaMenu/InvestementSubMenu'
+import Contact from '../MegaMenu/Contact'
+import BuildingManagement from '../MegaMenu/BuildingManagement'
 
 
 const MainMenu = () => {
@@ -40,7 +42,9 @@ const MainMenu = () => {
 
             {/* <Rentals /> */}
             {/* <About /> */}
-            <InvestmentSubMenu />
+            {/* <InvestmentSubMenu /> */}
+            <Contact />
+            {/* <BuildingManagement /> */}
         </>
     )
 }
