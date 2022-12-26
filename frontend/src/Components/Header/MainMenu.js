@@ -18,27 +18,33 @@ const MainMenu = () => {
             <div className='flex h-fit bg-white justify-between text-paragraph'>
                 <div><img src={MetroLogo} className='h-39px my-3 ml-12 mr-5' /></div>
                 <div className='flex h-fit   my-auto gap-8 mr-40 '>
-                    <div className=' hover:text-red2 group  pt-2 pb-3 w-16'>Rentals
-                        <img src={Arrow} className='mx-auto mt-3 absolute hidden group-hover:block  ' />
+                    <div className=' hover:text-red2 group  pt-2 pb-3 w-16'>
+                        <p className='text-center'> Rentals </p>
+                        <img src={Arrow} className='mx-auto mt-3 absolute hidden group-hover:block ' />
                         <div className='hidden group-hover:block absolute  left-0 top-16 mt-2 w-full '><RentalsMenu /></div>
                     </div>
 
-                    <div className=' hover:text-red2 hover:font-bold group pt-2 pb-3 w-16 bg-pink'>Investments
+                    <div className=' hover:text-red2 group pt-2 pb-3   w-28'>
+                        <p className='text-center'> Investments </p>
                         <img src={Arrow} className='ml-5 mt-2 absolute hidden group-hover:block' />
                         <div className='hidden group-hover:block absolute  left-0 top-16 mt-2 w-full'><InvestmentSubMenu /></div>
                     </div>
 
-                    <div className=' hover:text-red2 hover:font-bold group pt-2 pb-3 w-44'>Property Management
+                    <div className=' hover:text-red2 group pt-2 pb-3 w-44'>
+                        <p className='text-center'> Property Management </p>
                         <img src={Arrow} className='ml-12 mt-2 absolute hidden group-hover:block' />
                         <div className='hidden group-hover:block absolute  left-0 top-16 mt-2 w-full'><PropertyManagementMenu /></div>
                     </div>
 
-                    <div className=' hover:text-red2 hover:font-bold group pt-2 pb-3 w-16'>About
+                    <div className=' hover:text-red2 group pt-2 pb-3 w-16'>
+                        <p className='text-center'> About </p>
                         <img src={Arrow} className='mx-auto mt-2 absolute hidden group-hover:block' />
+
                         <div className='hidden group-hover:block absolute  left-0 top-16 mt-2 w-full'><AboutMenu /></div>
                     </div>
 
-                    <div className=' hover:text-red2 hover:font-bold group pt-2 pb-3 w-16'>Contact
+                    <div className=' hover:text-red2 group pt-2 pb-3 w-16'>
+                        <p className='text-center'> Contact </p>
                         <img src={Arrow} className='mx-auto mt-2 absolute hidden group-hover:block' />
                         <div className='hidden group-hover:block absolute  left-0 top-16 mt-2 w-full'><ContactMenu /></div>
                     </div>
