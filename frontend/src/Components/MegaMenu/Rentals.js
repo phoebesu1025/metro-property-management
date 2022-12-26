@@ -3,10 +3,11 @@ import LookingIcon from '../images/looking.png'
 import MetroIcon from '../images/service.png'
 import PeopleIcon from '../images/people.png'
 import RecordIcon from '../images/record.png'
-
+import Arrow from '../images/redArrow.png'
 const Rentals = () => {
     return (
         <>
+
             <div className='bg-red2 h-96 flex justify-around text-white py-14 text-paragraph leading-10 px-16'>
 
                 <div >
@@ -35,18 +36,8 @@ const Rentals = () => {
                     <p className='leading-none'>Already a Metro customer?</p>
                     <p>Sign into Tenant Portal</p>
                 </div>
-
-
-
-
-
-
-
-
-
             </div>
         </>
-
     )
 }
 
