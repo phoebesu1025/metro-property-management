@@ -8,7 +8,7 @@ const Rentals = () => {
     return (
         <>
 
-            <div className='bg-red2 h-128 flex justify-around text-white py-14 text-paragraph leading-10 px-16'>
+            <div className='bg-red2 h-128 flex justify-around text-white py-14 text-paragraph leading-10 px-16 '>
 
                 <div >
                     <img src={LookingIcon} />
