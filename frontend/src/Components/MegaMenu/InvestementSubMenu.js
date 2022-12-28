@@ -7,7 +7,7 @@ const InvestmentSubMenu = () => {
             <div className='bg-red2 h-128 flex justify-around text-white py-14 text-paragraph leading-10 px-16'>
 
                 <div >
-                    <img src="./images/looking.png" />
+                    <img src="./images/looking.png" alt="looking" />
                     <h1 className='font-bold mt-4'>Looking to invest</h1>
                     <p> Investment Properties Listing</p>
                     <p> Open Homes</p>
