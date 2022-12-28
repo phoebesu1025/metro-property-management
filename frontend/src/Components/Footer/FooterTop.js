@@ -3,7 +3,7 @@ import React from 'react'
 const FooterTop = () => {
     return (
 
-        <div className='bg-footerWhitebBg h-32 w-screen flex justify-around'>
+        <div className='bg-footerWhitebBg h-32  flex justify-around'>
             <div className='my-auto '><p className='inline-block mr-2 font-bold text-footerSubBlack'>Subscribe to our news letter!</p>
                 <p className='inline-block text-footerSubGrey'> Get the latest Metro news straight to your inbox!</p>
             </div>
