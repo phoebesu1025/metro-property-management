@@ -13,9 +13,7 @@ const Nav = () => {
       <Items itemComponent={<About />} itemName="About" />
       <Items itemComponent={<InvestmentSubMenu />} itemName="Investment" />
       <Items itemComponent={<Contact />} itemName="Contact" />
-      <Items
-        itemComponent={<PropertyManagementMenu />}
-        itemName="Property Management"
+      <Items itemComponent={<PropertyManagementMenu />} itemName="Property Management"
       />
     </ul>
   );

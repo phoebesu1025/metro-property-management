@@ -1,11 +1,11 @@
 import React from 'react'
 import MetroLogo from '../images/logo.png'
 import Arrow from '../images/redArrow.png'
-import RentalsMenu from '../MegaMenu/RentalsMenu'
-import AboutMenu from '../MegaMenu/AboutMenu'
-import InvestmentSubMenu from '../MegaMenu/InvestementSubMenu'
-import ContactMenu from '../MegaMenu/ContactMenu'
-import PropertyManagementMenu from '../MegaMenu/PropertyManagementMenu'
+import RentalsMenu from '../../MegaMenu/RentalsMenu'
+import AboutMenu from '../../MegaMenu/AboutMenu'
+import InvestmentSubMenu from '../../MegaMenu/InvestementSubMenu'
+import ContactMenu from '../../MegaMenu/ContactMenu'
+import PropertyManagementMenu from '../../MegaMenu/PropertyManagementMenu'
 import { useState, useEffect } from 'react'
 
 const MainMenu = () => {

@@ -3,7 +3,7 @@ import FooterTop from './FooterTop'
 import FooterBottom from './FooterBottom'
 const Footer = () => {
     return (
-        <div className=''>
+        <div className='w-screen'>
             <FooterTop />
             <FooterBottom />
         </div >

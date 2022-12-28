@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       height: {
         '100': '30rem',
-        '128': 'rem'
+        '128': '27rem'
       }
     },
     colors: {
