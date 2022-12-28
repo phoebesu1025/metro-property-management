@@ -18,9 +18,9 @@ const MainMenu = () => {
             <div className='flex h-fit bg-white justify-between text-paragraph'>
                 <div><img src={MetroLogo} className='h-39px my-3 ml-12 mr-5' /></div>
                 <div className='flex h-fit   my-auto gap-8 mr-40 '>
-                    <div className=' hover:text-red2 group  pt-2 pb-3 w-16'>
-                        <p className='text-center'> Rentals </p>
-                        <img src={Arrow} className='ml-2 mt-2 absolute hidden group-hover:block ' />
+                    <div className=' hover:text-red2 group  pt-2 pb-3 w-16 bg-pink'>
+                        <p className='text-center text'> Rentals </p>
+                        <img src={"./images/redArrow.png"} className='ml-2 mt-2 absolute hidden group-hover:block ' />
                         <div className='hidden group-hover:block absolute  left-0 top-16 mt-2 w-full '><RentalsMenu /></div>
                     </div>
 
@@ -58,5 +58,4 @@ const MainMenu = () => {
         </>
     )
 }
-
 export default MainMenu
