@@ -3,7 +3,7 @@ import { Fragment } from "react";
 const DropdownArray = [
   // Rental
   {
-    name: "Rental",
+    name: "Rentals",
     array: [
       {
         heading: "Looking to rent",

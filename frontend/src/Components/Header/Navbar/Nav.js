@@ -5,7 +5,7 @@ const Nav = () => {
   const dropdowns = DropdownArray;
 
   return (
-    <ul className="flex header-navbar h-12">
+    <ul className="flex header-navbar h-12 basis-4/6">
       {dropdowns.map((dropdown, index) => {
         return (
           <Items
