@@ -3,8 +3,8 @@ import Login from "./Login";
 
 const ButtonGroup = () => {
   return (
-    <div className="header-buttons flex gap-x-4 group">
-      <Login />
+    <div className="header-buttons -mr-10">
+      {/* <Login /> */}  {/*I'll keep it just in case, they might add login function?*/}
       <Diary />
     </div>
   );
