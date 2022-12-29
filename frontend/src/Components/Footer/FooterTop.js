@@ -15,5 +15,3 @@ const FooterTop = () => {
         </div>
     )
 }
-
-export default FooterTop
