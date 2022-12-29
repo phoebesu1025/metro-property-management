@@ -37,5 +37,3 @@ const InvestmentSubMenu = () => {
         </>
     )
 }
-
-export default InvestmentSubMenu
