@@ -1,6 +1,8 @@
+import Dropdown from "./Dropdown/Dropdown";
 import ArrowButton from "./ArrowButton";
 
 const Items = ({ itemName, itemComponent }) => {
+  console.log(itemComponent);
   return (
     <li className="nav-item flex items-center hover:text-red2 group h-[3.2rem] px-4 pb-1 ">
       <div className="relative">
@@ -8,10 +10,7 @@ const Items = ({ itemName, itemComponent }) => {
         <ArrowButton />
       </div>
 
-      <div className="hidden group-hover:block fixed left-0 top-[3.8rem] w-full">
-        {itemComponent}
-      </div>
-
+      {<Dropdown dropdownDetailsArray={itemComponent} />}
     </li>
   );
 };
