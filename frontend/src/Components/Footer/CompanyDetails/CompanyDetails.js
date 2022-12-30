@@ -10,6 +10,8 @@ const CompanyDetails = () => {
       <LogoCompanyFooter />
       <TextCompanyFooter />
       <DataCompany
+        imgSrc="./images/flocationIcon.png"
+        imgAlt={"marker logo"}
         details={
           <Fragment>
             Metro NZ Property <br />
@@ -19,18 +21,16 @@ const CompanyDetails = () => {
             Auckland 1010, New Zealand
           </Fragment>
         }
-        imgSrc="./images/flocationIcon.png"
-        imgAlt={"marker logo"}
       />
       <DataCompany
-        details={"info@metronz.co.nz"}
         imgSrc="./images/fEmail.png"
         imgAlt={"mail-box logo"}
+        details={"info@metronz.co.nz"}
       />
       <DataCompany
-        details={"  +64 9 391 4642 | +64 21 642 119"}
         imgSrc="./images/fPhoneIcon.png"
         imgAlt={"phone logo"}
+        details={"  +64 9 391 4642 | +64 21 642 119"}
       />
 
       <Social />

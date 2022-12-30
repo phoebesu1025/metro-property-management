@@ -8,10 +8,17 @@ const Nav = () => {
     <ul className="flex header-navbar h-12 basis-4/6">
       {dropdowns.map((dropdown, index) => {
         return (
-          <Items
+          <Items // itemComponent, itemName are from Items.js
             key={index}
-            itemComponent={dropdown}
+
             itemName={dropdown.name}
+
+            // from DropdownArray
+            // just simply the Navbar heading name?
+
+            itemComponent={dropdown}
+          //itemComponents from Items.js
+          //redbox?
           />
         );
       })}
