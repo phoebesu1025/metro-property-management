@@ -1,8 +1,6 @@
-
 const express = require('express');
-const { connectToDb, getDb } = require('./db/db');
+const mongoose = require('mongoose');
 const app = express()
-
 const cors = require('cors')
 const corsOptions = {
     origin: '*',
@@ -13,33 +11,31 @@ app.use(express.json());
 app.use(cors(corsOptions));
 require('dotenv').config();
 
-let db
-
-connectToDb((err) => {
-    if (!err) {
-        const PORT = process.env.PORT || 5000;
-        app.listen(PORT, () => {
-            console.log("listening to PORT", PORT);
-        });
-        db = getDb()
-    }
-})
-
-app.get('/mongodb', (req, res) => {
-    let postsArray = []
-
-    db.collection('mission5') //
-        .find({ message: 'Hello World' })//cursor toArray forEach
-        .sort({ message: 1 })
-        .forEach(element => postsArray.push(element))
-        .then(() => {
-            res.status(200).json(postsArray)
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log("listening to PORT", PORT);
+});
+///////////////////////////////////////////////////////////////////////////
+const mongoUrl = 'mongodb+srv://root1:pass123@cluster0.nfckp1n.mongodb.net/geeksOnMission?retryWrites=true'
+mongoose.connect(mongoUrl, () => {
+    console.log("connected")
+},
+    e => console.error(e)
+)
+//////////////////////////////////////////////////////////////////////////
+const UserInfo = require("./db/UserInfo")
+app.get("/", (req, res, next) => {
+    UserInfo.find()
+        .exec()
+        .then(doc => {
+            console.log(doc);
+            res.status(200).json(doc);
         })
-        .catch(() => {
-            res.status(500).json({ error: 'Could no fetch the documents' })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({ error: err });
         })
 })
-
 
 
 
