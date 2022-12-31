@@ -27,7 +27,8 @@ module.exports = {
       footerInput: 'rgba(0,0, 0, 0.3)',
       footerBlackBg: '#333333',
       footerWhite: '#D9D9D9',
-      footerGrey: '#ACABAB'
+      footerGrey: '#ACABAB',
+      propertyManagerBg: '#F9F4F4'
 
     },
     fontSize: {

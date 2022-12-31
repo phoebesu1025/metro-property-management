@@ -18,13 +18,13 @@ const LatestNewsItems = () => {
                                 {LatestNewsArray.author} | {LatestNewsArray.date}
                             </div>
 
-                            <h1 className='font-bold  text-[1rem]  '>
+                            <h1 className='font-bold  text-[1rem] hover:text-red1 hover:cursor-pointer '>
                                 {LatestNewsArray.heading}
                             </h1>
                             <p className='  text-[0.7rem] my-1 text-footerSubGrey'>{LatestNewsArray.content}
                             </p>
 
-                            <div className='text-red2 font-bold underline text-[0.81rem] mt-6'>Read More</div>
+                            <div className='text-red2 font-bold underline text-[0.81rem] mt-6 hover:cursor-pointer'>Read More</div>
                         </div>
                     </div>
                 )

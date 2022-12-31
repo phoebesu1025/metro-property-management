@@ -1,5 +1,5 @@
 import React from 'react'
-import LatestNewsItems from './HeadingLine/LatestNewsItems'
+import LatestNewsItems from './HeadingSection/LatestNewsItems'
 const LatestNewsBanner = () => {
     return (
         <LatestNewsItems />

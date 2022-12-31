@@ -6,6 +6,7 @@ import DataTest from "./Components/db/DataTest.js"
 import RedBanner from "./Components/CommonComponents/RedBanner/RedBanner";
 import Needs from "./Components/CommonComponents/Needs/Needs";
 import LatetestNews from "./Components/CommonComponents/LatestNews/LatestNews"
+import PropertyManager from "./Components/CommonComponents/PropertyManagers/PropertyManager";
 const App = () => {
   return (
     <div>
@@ -16,6 +17,7 @@ const App = () => {
         <p>hi</p>
         <RedBanner />
         <DataTest />
+        <PropertyManager />
         <Needs />
         <LatetestNews />
         <p>hi</p>
