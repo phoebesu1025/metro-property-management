@@ -19,6 +19,7 @@ module.exports = {
       black: '#1A1A1A',
       pink: '#FFBFC1',
       red2: '#DA2B32',
+      buttonGrey: '#666666',
       footerWhitebBg: '#F7F7F7',
       footerSubBlack: "#292A2E",
       footerSubGrey: '#737070',
