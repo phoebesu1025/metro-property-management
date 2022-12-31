@@ -4,7 +4,7 @@ import RedBannerText from './RedBannerText'
 
 const RedBanner = () => {
     return (
-        <div className='flex h-[8rem] bg-red2 text-white'>
+        <div className='flex justify-around h-[8rem] px-10 bg-red2 text-white'>
             <RedBannerText />
             <RedBannerButton />
         </div>

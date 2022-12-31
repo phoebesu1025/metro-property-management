@@ -3,7 +3,7 @@ import Heading from './Heading'
 import LatestNewsBanner from './LatestNewsBanner'
 const LatestNews = () => {
     return (
-        <div className='px-20'>
+        <div className='px-[5rem] py-[5rem]'>
             <Heading />
             <LatestNewsBanner />
         </div >
