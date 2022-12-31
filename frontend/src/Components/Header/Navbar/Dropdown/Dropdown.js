@@ -8,7 +8,7 @@ const Dropdown = ({ dropdownDetailsArray }) => {
       <div className=" flex justify-between text-white  text-paragraph leading-10 ">
 
         {/* Why do we need conditional rendering? */}
-        {/* not sure how it works. when I try to see if i remove conditional rendering, pages will become blank page */}
+        {/* not sure how it works? when I try to see if i remove conditional rendering, pages will become blank page */}
         {dropdownDetailsArray.array.map((dropdownDetails, index) =>
           dropdownDetails.heading === "Keep track of your records" ? (
             <div key={index}>
