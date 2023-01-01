@@ -4,8 +4,9 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     screens: {
-      tablet: '960px',
-      desktop: '1248px'
+      mobile: '150px',
+      tablet: '900px',
+      desktop: '1280px'
     },
     extend: {
       height: {

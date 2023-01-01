@@ -1,17 +1,17 @@
 import React from 'react'
-import Heading from './Heading'
-import ButtonGroup from './ManagerCardSection/Buttons/ButtonGroup'
+import Heading from './HeadingSection/Heading'
+import ManagerInfoItems from './ManagerCardSection/ManagerInfoItems'
 
 const PropertyManager = () => {
     return (
-        <div className='px-[8rem] bg-propertyManagerBg'>
-            <Heading />
-            <ButtonGroup />
+        <div className=' bg-propertyManagerBg py-[6rem]'>
+            <div className="px-[7rem] ">
+                <Heading />
+            </div>
 
-
-
-
-
+            <div className='px-[2rem]'>
+                <ManagerInfoItems />
+            </div>
         </div>
     )
 }
