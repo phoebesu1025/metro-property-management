@@ -4,7 +4,7 @@ import ViewAll from './HeadingSection/ViewAll'
 
 const Heading = () => {
     return (
-        <div className='flex w-full mb-20'>
+        <div className='flex w-full mb-10'>
             <HeadingText />
             <ViewAll />
         </div >
