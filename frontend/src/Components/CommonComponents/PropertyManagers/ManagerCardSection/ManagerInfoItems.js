@@ -7,6 +7,7 @@ const ManagerInfoItems = () => {
 
     const sliderLeft = () => {
         let slider = document.getElementById('slider')
+        console.log(slider.scrollLeft)
         slider.scrollLeft = slider.scrollLeft - 500
     }
 
