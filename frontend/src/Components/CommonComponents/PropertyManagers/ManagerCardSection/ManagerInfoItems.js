@@ -15,13 +15,13 @@ const ManagerInfoItems = () => {
         slider.scrollLeft = slider.scrollLeft + 500;
     }
     return (
-        <div className='flex px-12' >
+        <div className='flex justify-center px-8 ' >
 
-            <div className='my-auto mr-4 px-2 py-2 hover:cursor-pointer' onClick={sliderLeft}>
-                <img src="./images/propertyManagers/arrow.png" alt='arrow-reverse' className='origin-center rotate-180' />
+            <div className='my-auto mr-4 px-2 py-2 cursor-pointer opacity-50 hover:opacity-100' onClick={sliderLeft}>
+                <img src="./images/propertyManagers/arrow.png" alt='arrow-reverse' className='origin-center rotate-180 ' />
             </div>
 
-            <div id='slider' className=' flex w-full justify-start gap-20 overflow-hidden scroll-smooth  mx-[5rem] mx-1 '>
+            <div id='slider' className=' flex w-[83rem] justify-start pl-5 gap-[3.6rem] overflow-hidden scroll-smooth  mx-2 '>
                 {ManagerArrayList.map((ManagerArrayList, index) => {
                     return (
                         <div className='w-[17.56rem] h-[15rem]  bg-white rounded-md shadow-lg px-7' key={index}>
@@ -55,7 +55,7 @@ const ManagerInfoItems = () => {
 
 
 
-            <div className='my-auto ml-4 hover:cursor-pointer h-full px-2 py-2' >
+            <div className='my-auto ml-4 hover:cursor-pointer  px-2 py-2  cursor-pointer opacity-50 hover:opacity-100' >
                 <img src="./images/propertyManagers/arrow.png" alt='arrow' onClick={sliderRight} />
             </div>
         </div>
