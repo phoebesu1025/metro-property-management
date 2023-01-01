@@ -29,8 +29,10 @@ module.exports = {
       footerBlackBg: '#333333',
       footerWhite: '#D9D9D9',
       footerGrey: '#ACABAB',
-      propertyManagerBg: '#F9F4F4'
-
+      propertyManagerBg: '#F9F4F4',
+      successfulInvestorBg: '#F9F4F4',
+      successfulInvestorHd: '#4E4E4E',
+      successfulInvestorTx: '#444343'
     },
     fontSize: {
       'heading1': ['60px'],
