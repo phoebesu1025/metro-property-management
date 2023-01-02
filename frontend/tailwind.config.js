@@ -6,14 +6,18 @@ module.exports = withMT({
   theme: {
     screens: {
 
+
       "2xs": "320px",//Mobile
+
       xs: "500px",
       sm: "620px",
       md: "768px",  //tablet
       lg: "920px",
       xl: "1028px",
       "2xl": "1281px",
+
       "3xl": "1440px"  //desktop
+
     },
     extend: {
       height: {
@@ -33,6 +37,7 @@ module.exports = withMT({
       buttonGrey: "#666666",
       footerWhitebBg: "#F7F7F7",
       footerSubBlack: "#292A2E",
+
       footerSubGrey: '#737070',
       footerSubGrey2: '#424343',
       footerInput: 'rgba(0,0, 0, 0.3)',
