@@ -4,7 +4,7 @@ import ButtonGroup from "./Button/ButtonGroup";
 
 const Header = () => {
   return (
-    <div className="flex justify-between items-center py-2 px-24 fixed w-full bg-white ">
+    <div className="flex justify-between items-center py-2 px-24  w-full bg-white ">
       <CompanyLogo />
       <Nav />
       <ButtonGroup />
