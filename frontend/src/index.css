@@ -5,7 +5,9 @@
 
 body {
   background-color: #f5f5f5;
-  /* user-select  if don't put this one, the text will has the flash  */
+  user-select: none;
+  /* user-select  
+  if don't put this one, the text will has the flash  */
 }
 
 @layer base {

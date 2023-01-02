@@ -1,0 +1,17 @@
+import React from 'react'
+
+const RedBannerButton = () => {
+    return (
+        <div className=' my-auto w-full flex flex-col items-center
+        
+        md:flex-none md:w-fit'>
+            <button className='bg-buttonGrey rounded-md shadow-md 
+            px-[3rem] py-[1.2rem]  
+
+            xl:px-20 xl:py-3'>
+                Explore
+            </button>
+        </div>
+    )
+}
+export default RedBannerButton
