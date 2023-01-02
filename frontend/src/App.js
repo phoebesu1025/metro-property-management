@@ -41,7 +41,6 @@ const App = () => {
         <p>hi</p>
         <p>hi</p>
       </div>
-      <SuccessfulTenancy />
       <Newsletter />
       <Footer />
     </div>

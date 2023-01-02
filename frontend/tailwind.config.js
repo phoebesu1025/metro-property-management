@@ -13,12 +13,7 @@ module.exports = withMT({
       lg: "920px",
       xl: "1028px",
       "2xl": "1281px",
-      "3xl": "1440px",
-
-      mobile: '150px',
-      tablet: '900px',
-      desktop: '1280px'
-
+      "3xl": "1440px"
     },
     extend: {
       height: {

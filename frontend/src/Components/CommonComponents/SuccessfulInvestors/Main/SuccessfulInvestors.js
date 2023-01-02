@@ -38,7 +38,7 @@ const SuccessfulInvestors = () => {
         <div className='bg-successfulInvestorBg flex justify-around px-[7rem] py-[6.5rem] mb-[1rem]'>
             <div className='flex flex-col'>
                 <div className='h-[18rem] w-[25rem] -mt-[1rem] mb-[2rem]'>
-                    <div>{array[arrayIndex]}</div>
+                    <div className=''>{array[arrayIndex]}</div>
                 </div>
 
 
