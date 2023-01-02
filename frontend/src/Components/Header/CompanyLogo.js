@@ -2,7 +2,7 @@ import React from "react";
 
 const CompanyLogo = () => {
   return (
-    <div className="company-logo w-1/7 -ml-10 ">
+    <div className="company-logo">
       <img src="./images/logo.png" alt="Metro Logo" />
     </div>
   );

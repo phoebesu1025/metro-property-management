@@ -14,6 +14,8 @@ import HomeBanner from "./Components/Pages/Home/Banner/HomeBanner";
 import SuccessfulInvestors from "./Components/CommonComponents/SuccessfulInvestors/Main/SuccessfulInvestors";
 import SuccessfulInvestorsV2 from "./Components/CommonComponents/SuccessfulInvestors/Main/SuccessfulInvestorsV2";
 
+import "./App.css";
+
 const App = () => {
   return (
     <div>
@@ -41,7 +43,7 @@ const App = () => {
         <p>hi</p>
         <p>hi</p>
       </div>
-      <SuccessfulTenancy />
+
       <Newsletter />
       <Footer />
     </div>

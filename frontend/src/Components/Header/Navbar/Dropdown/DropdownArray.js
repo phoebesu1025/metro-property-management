@@ -22,7 +22,7 @@ const DropdownArray = [
         ],
       },
       {
-        heading: "Looking to rent",
+        heading: "Meet a property manager",
         imgSrc: "./images/people.png",
         imgAlt: "looking",
         links: ["Book an online meet"],

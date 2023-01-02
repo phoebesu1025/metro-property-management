@@ -1,11 +1,10 @@
-import Dropdown from "./Dropdown/Dropdown";
-import ArrowButton from "./ArrowButton";
+import Dropdown from "./../Dropdown/Dropdown";
+import ArrowButton from "./../ArrowButton";
 
 const Items = ({ itemName, itemComponent }) => {
   console.log(itemComponent);
   return (
-    <li className="nav-item flex items-center hover:text-red2 group h-[3.4rem] px-4 pb-1">
-
+    <li className="nav-item flex items-center cursor-pointer hover:text-red2 group h-[3.4rem] px-4 pb-1">
       <div className="relative">
         <p className="my-auto"> {itemName} </p>
         {/* Rentals, Invest, PM, About, Contact (pass from Nav-DropdownArray)*/}
@@ -13,7 +12,8 @@ const Items = ({ itemName, itemComponent }) => {
       </div>
 
       {<Dropdown dropdownDetailsArray={itemComponent} />}
-      {/*redbox */}{/*from Dropdown.js */}
+      {/*redbox */}
+      {/*from Dropdown.js */}
     </li>
   );
 };
