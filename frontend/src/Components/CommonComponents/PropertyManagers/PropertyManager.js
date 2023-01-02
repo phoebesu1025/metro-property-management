@@ -9,7 +9,7 @@ const PropertyManager = () => {
                 <Heading />
             </div>
 
-            <div className='px-[2rem]'>
+            <div >
                 <ManagerInfoItems />
             </div>
         </div>

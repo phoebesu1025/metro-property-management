@@ -8,21 +8,21 @@ const ManagerInfoItems = () => {
     const sliderLeft = () => {
         let slider = document.getElementById('slider')
         console.log(slider.scrollLeft)
-        slider.scrollLeft = slider.scrollLeft - 500
+        slider.scrollLeft = slider.scrollLeft - 1000
     }
 
     const sliderRight = () => {
         let slider = document.getElementById('slider');
-        slider.scrollLeft = slider.scrollLeft + 500;
+        slider.scrollLeft = slider.scrollLeft + 1000;
     }
     return (
-        <div className='flex justify-center px-8 ' >
+        <div className='flex justify-center  px-[4rem]' >
 
             <div className='my-auto mr-4 px-2 py-2 cursor-pointer opacity-50 hover:opacity-100' onClick={sliderLeft}>
                 <img src="./images/propertyManagers/arrow.png" alt='arrow-reverse' className='origin-center rotate-180 ' />
             </div>
 
-            <div id='slider' className=' flex w-[83rem] justify-start pl-5 gap-[3.6rem] overflow-hidden scroll-smooth  mx-2 '>
+            <div id='slider' className=' flex w-[83rem] justify-start px-5 gap-[3.6rem] overflow-hidden scroll-smooth  mx-2 '>
                 {ManagerArrayList.map((ManagerArrayList, index) => {
                     return (
                         <div className='w-[17.56rem] h-[15rem]  bg-white rounded-md shadow-lg px-7' key={index}>
