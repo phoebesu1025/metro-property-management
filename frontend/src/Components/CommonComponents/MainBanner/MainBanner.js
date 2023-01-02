@@ -1,0 +1,43 @@
+import React from "react";
+
+const MainBanner = ({ data }) => {
+  return (
+    <div
+      className={`
+        relative z-[-1]
+      `}
+    >
+      {/* Mobile banner Image */}
+      <img
+        className={`sm:hidden w-full`}
+        src={`./images/CommonComponents/Banner/${data.imgSrc.mobile}`}
+        alt={data.imgAlt}
+      />
+      {/* Tablet banner Image */}
+      <img
+        className={`xl:hidden  sm:block hidden w-full`}
+        src={`./images/CommonComponents/Banner/${data.imgSrc.tablet}`}
+        alt={data.imgAlt}
+      />
+      {/* Desktop banner Image */}
+      <img
+        className={` xl:block hidden w-full`}
+        src={`./images/CommonComponents/Banner/${data.imgSrc.desktop}`}
+        alt={data.imgAlt}
+      />
+      <h2
+        className={` 
+          text-heading1 leading-[4.5rem] text-white font-bold 
+          absolute 
+          2xl:top-1/3 top-[25%]
+          2xl:px-24 sm:px-12 px-6
+          3xl:w-[70rem] w-full 
+      `}
+      >
+        {data.text}
+      </h2>
+    </div>
+  );
+};
+
+export default MainBanner;
