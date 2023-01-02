@@ -4,7 +4,7 @@ import ViewAll from './ViewAll'
 
 const Heading = () => {
     return (
-        <div className='flex w-full mb-10'>
+        <div className='flex flex-col  w-full mb-10'>
             <HeadingText />
             <ViewAll />
         </div >

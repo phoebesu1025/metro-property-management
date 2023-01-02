@@ -7,9 +7,10 @@ import FaqMix from './FaqMix'
 
 const Faq = () => {
     return (
-        <div className='2xs:px-[2rem] py-[4rem]
-
-        md:mx-[5rem] md:py-[4.7rem]
+        <div className='py-[4rem]
+    px-[1.7rem]
+    xs:px-[3rem] 
+      md:mx-[4rem] md:py-[4.7rem]
 '>
             <FaqHeading />
             <FaqMix />

@@ -2,7 +2,7 @@ import React from 'react'
 
 const HeadingText = () => {
     return (
-        <div className=' w-5/6 text-heading2 font-semibold '>
+        <div className='text-[2.5rem] font-semibold '>
             Latest News
         </div>
     )

@@ -5,12 +5,14 @@ const LatestNewsItems = () => {
     const LatestNewsArrayList = LatestNewsArray;
 
     return (
-        <div className=' flex w-full justify-between '>
+        <div className=' flex flex-col gap-12 w-full justify-center items-center  basis-1/2 overflow-hidden
+        sm:flex-row sm:flex-wrap sm:h-[29rem] sm:gap-12 sm:justify-between'>
+
             {LatestNewsArrayList.map((LatestNewsArray, index) => {
                 return (
                     <div className='w-[20.4rem] h-[29rem]  bg-white rounded-md shadow-lg ' key={index}>
                         <div className='my-auto  '>
-                            <img src={LatestNewsArray.imgSrc} alt={LatestNewsArray.imgAlt} className="mb-7" />
+                            <img src={LatestNewsArray.imgSrc} alt={LatestNewsArray.imgAlt} className="mb-7 w-full" />
                         </div>
 
                         <div className='px-5'>
