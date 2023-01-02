@@ -9,7 +9,7 @@ module.exports = withMT({
       // for edging I used 
       // px-[1.7rem]
       // sm:px-[3rem] 
-      // md:mx-[4rem]/ "lg:px-[7rem] (somehow, it doesn't work after I set xs size)""
+      // lg:mx-[4rem]/ "lg:px-[7rem] (somehow, it doesn't work after I set xs size)""
       "2xs": "320px",//Mobile
       xs: "500px",
       sm: "620px",
