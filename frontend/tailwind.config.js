@@ -6,12 +6,14 @@ module.exports = withMT({
   theme: {
     screens: {
 
-
+      // for edging I used 
+      // px-[1.7rem]
+      // sm:px-[3rem] 
+      // md:mx-[4rem]/ "lg:px-[7rem] (somehow, it doesn't work after I set xs size)""
       "2xs": "320px",//Mobile
-
       xs: "500px",
       sm: "620px",
-      md: "768px",  //tablet
+      md: "768px",  //tablet             
       lg: "920px",
       xl: "1028px",
       "2xl": "1281px",

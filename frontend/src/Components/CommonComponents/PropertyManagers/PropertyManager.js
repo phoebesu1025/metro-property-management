@@ -4,8 +4,11 @@ import ManagerInfoItems from './ManagerCardSection/ManagerInfoItems'
 
 const PropertyManager = () => {
     return (
-        <div className=' bg-propertyManagerBg py-[6rem]'>
-            <div className="px-[7rem] ">
+        <div className=' bg-propertyManagerBg py-[6rem]
+        '>
+            <div className="  px-[1.7rem]
+       xs:px-[3rem] 
+       md:mx-[4rem] ">
                 <Heading />
             </div>
 
