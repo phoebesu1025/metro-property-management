@@ -5,7 +5,7 @@ const NeedsItems = () => {
     const NeedsArrayList = NeedsArray;
 
     return (
-        <div className=' flex w-full justify-between text-paragraph tablet: '>
+        <div className=' flex w-full justify-between text-paragraph '>
             {NeedsArrayList.map((NeedsArray, index) => {
                 return (
                     <div className='w-[15rem] h-[19rem] bg-white rounded-md shadow-lg text-center py-4' key={index}>
