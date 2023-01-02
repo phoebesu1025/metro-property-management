@@ -5,6 +5,7 @@ module.exports = withMT({
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
+
       "2xs": "320px",
       xs: "500px",
       sm: "620px",
@@ -13,6 +14,11 @@ module.exports = withMT({
       xl: "1028px",
       "2xl": "1281px",
       "3xl": "1440px",
+
+      mobile: '150px',
+      tablet: '900px',
+      desktop: '1280px'
+
     },
     extend: {
       height: {
@@ -29,14 +35,18 @@ module.exports = withMT({
       buttonGrey: "#666666",
       footerWhitebBg: "#F7F7F7",
       footerSubBlack: "#292A2E",
-      footerSubGrey: "#737070",
-      footerSubGrey2: "#424343",
-      footerInput: "rgba(0,0, 0, 0.3)",
-      footerBlackBg: "#333333",
-      footerWhite: "#D9D9D9",
-      footerGrey: "#ACABAB",
-      propertyManagerBg: "#F9F4F4",
-      successfulTenancyClr: "#f7f5e9",
+
+      footerSubGrey: '#737070',
+      footerSubGrey2: '#424343',
+      footerInput: 'rgba(0,0, 0, 0.3)',
+      footerBlackBg: '#333333',
+      footerWhite: '#D9D9D9',
+      footerGrey: '#ACABAB',
+      propertyManagerBg: '#F9F4F4',
+      successfulInvestorBg: '#F9F4F4',
+      successfulInvestorHd: '#4E4E4E',
+      successfulInvestorTx: '#444343'
+
     },
     fontSize: {
       heading1: ["3.5rem"],

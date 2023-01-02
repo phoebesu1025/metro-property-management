@@ -7,8 +7,13 @@ import RedBanner from "./Components/CommonComponents/RedBanner/RedBanner";
 import Needs from "./Components/CommonComponents/Needs/Needs";
 import LatetestNews from "./Components/CommonComponents/LatestNews/LatestNews";
 import PropertyManager from "./Components/CommonComponents/PropertyManagers/PropertyManager";
+
 import SuccessfulTenancy from "./Components/SuccessfulTenancy/SuccessfulTenancy";
 import HomeBanner from "./Components/Pages/Home/Banner/HomeBanner";
+
+import SuccessfulInvestors from "./Components/CommonComponents/SuccessfulInvestors/Main/SuccessfulInvestors";
+import SuccessfulInvestorsV2 from "./Components/CommonComponents/SuccessfulInvestors/Main/SuccessfulInvestorsV2";
+
 const App = () => {
   return (
     <div>
@@ -22,7 +27,8 @@ const App = () => {
         <PropertyManager />
         <Needs />
         <LatetestNews />
-        <p>hi</p>
+        <SuccessfulInvestors />
+        <SuccessfulInvestorsV2 />
         <p>hi</p>
         <p>hi</p>
         <p>hi</p>

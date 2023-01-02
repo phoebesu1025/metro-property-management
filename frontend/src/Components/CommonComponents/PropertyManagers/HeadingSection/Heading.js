@@ -1,10 +1,10 @@
 import React from 'react'
-import HeadingText from './HeadingSection/HeadingText'
-import ViewAll from './HeadingSection/ViewAll'
+import HeadingText from './HeadingText'
+import ViewAll from './ViewAll'
 
 const Heading = () => {
     return (
-        <div className='flex w-full mb-20'>
+        <div className='flex w-full mb-10'>
             <HeadingText />
             <ViewAll />
         </div >
