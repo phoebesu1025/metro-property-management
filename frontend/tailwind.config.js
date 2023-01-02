@@ -6,14 +6,14 @@ module.exports = withMT({
   theme: {
     screens: {
 
-      "2xs": "320px",
+      "2xs": "320px",//Mobile
       xs: "500px",
       sm: "620px",
-      md: "768px",
+      md: "768px",  //tablet
       lg: "920px",
       xl: "1028px",
       "2xl": "1281px",
-      "3xl": "1440px"
+      "3xl": "1440px"  //desktop
     },
     extend: {
       height: {
@@ -23,24 +23,31 @@ module.exports = withMT({
     },
     colors: {
       red1: "#E4353C",
-      white: "#FFFFFF",
-      black: "#1A1A1A",
-      pink: "#FFBFC1",
       red2: "#DA2B32",
+      white: "#FFFFFF",
+      black: '#000000',
+      black1: "#1A1A1A",
+      pink: "#FFBFC1",
+
+
       buttonGrey: "#666666",
       footerWhitebBg: "#F7F7F7",
       footerSubBlack: "#292A2E",
-
       footerSubGrey: '#737070',
       footerSubGrey2: '#424343',
       footerInput: 'rgba(0,0, 0, 0.3)',
       footerBlackBg: '#333333',
       footerWhite: '#D9D9D9',
       footerGrey: '#ACABAB',
+
       propertyManagerBg: '#F9F4F4',
       successfulInvestorBg: '#F9F4F4',
       successfulInvestorHd: '#4E4E4E',
-      successfulInvestorTx: '#444343'
+      successfulInvestorTx: '#444343',
+
+      FaqHeading: '#686868',
+      FaqText: '#3F4D64'
+
 
     },
     fontSize: {

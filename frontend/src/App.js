@@ -13,7 +13,7 @@ import HomeBanner from "./Components/Pages/Home/Banner/HomeBanner";
 
 import SuccessfulInvestors from "./Components/CommonComponents/SuccessfulInvestors/Main/SuccessfulInvestors";
 import SuccessfulInvestorsV2 from "./Components/CommonComponents/SuccessfulInvestors/Main/SuccessfulInvestorsV2";
-
+import Faq from "./Components/CommonComponents/FAQ/Main/Faq"
 const App = () => {
   return (
     <div>
@@ -29,6 +29,7 @@ const App = () => {
         <LatetestNews />
         <SuccessfulInvestors />
         <SuccessfulInvestorsV2 />
+        <Faq />
         <p>hi</p>
         <p>hi</p>
         <p>hi</p>

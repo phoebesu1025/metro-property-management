@@ -5,7 +5,7 @@ import StackCard from './StackCard'
 const StoryCardItems1 = () => {
     // const StoryCardArrayList = StoryCardArray
     return (
-        <div className='mt-1 ml-1'>
+        <div className='mt-1 ml-1 '>
 
             <div className='relative z-40 flex flex-col  bg-white
                      w-[24rem] (387px) h-[19.6rem] (313px) shadow-xl 
