@@ -6,7 +6,7 @@ import StoryCardItems2 from '../StoryCardItems/StoryCardItems2'
 import StoryCardItems3 from '../StoryCardItems/StoryCardItems3'
 import { useState } from 'react'
 
-const SuccessfulInvestors = () => {
+const SuccessfulInvestorsV2 = () => {
 
     let [arrayIndex, setArrayIndex] = useState(0)
     let array = [<StoryCardItems0 />, <StoryCardItems1 />, <StoryCardItems2 />, <StoryCardItems3 />]
@@ -36,6 +36,7 @@ const SuccessfulInvestors = () => {
 
     return (
         <div className='bg-successfulInvestorBg flex justify-around px-[7rem] py-[6.5rem] mb-[1rem]'>
+            <Text />
             <div className='flex flex-col'>
                 <div className='h-[18rem] w-[25rem] -mt-[1rem] mb-[2rem]'>
                     <div>{array[arrayIndex]}</div>
@@ -53,10 +54,10 @@ const SuccessfulInvestors = () => {
                 </div>
             </div>
 
-            <Text />
+
 
         </div>
     )
 }
 
-export default SuccessfulInvestors
+export default SuccessfulInvestorsV2

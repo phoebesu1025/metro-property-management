@@ -2,7 +2,7 @@ import React from 'react'
 
 const Text = () => {
     return (
-        <div className='w-[33.4rem] (534px) '>
+        <div className='w-[33.4rem] (534px) my-auto'>
             <h1 className='font-bold text-[1.8rem] (30px) text-successfulInvestorHd mb-10'>
                 Working closely with our customers throughout rental process
             </h1>
