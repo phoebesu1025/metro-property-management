@@ -17,6 +17,7 @@ import CarouselContainer from "./Components/CommonComponents/PropertyCarousel/Ca
 import AllReversible from "./Components/AllReversible/AllReversible";
 
 import "./App.css";
+import SuccessfulTenancy from "./Components/SuccessfulTenancy/SuccessfulTenancy";
 const App = () => {
   return (
     <div>
@@ -45,11 +46,11 @@ const App = () => {
         <p>hi</p>
         <p>hi</p>
         <p>hi</p>
-
         <p>hi</p>
         <p>hi</p>
       </div>
 
+      <SuccessfulTenancy />
       <AllReversible />
 
       <CarouselContainer />
