@@ -49,9 +49,9 @@ const SuccessfulTenancy = () => {
 
       <div className="flex xl:flex-row flex-col ">
         {SuccessfulTenancy.map((singleProcess, index) => (
-          <div>
-            <RentalProcess key={index} singleProcess={singleProcess} />
-            <MobileRentalProcess key={index} singleProcess={singleProcess} />
+          <div key={index}>
+            <RentalProcess singleProcess={singleProcess} />
+            <MobileRentalProcess singleProcess={singleProcess} />
           </div>
         ))}
       </div>

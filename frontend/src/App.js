@@ -18,11 +18,13 @@ import AllReversible from "./Components/AllReversible/AllReversible";
 
 import "./App.css";
 import SuccessfulTenancy from "./Components/SuccessfulTenancy/SuccessfulTenancy";
+import MeetUsBanner from "./Components/Pages/MeetUs/Banner/MeetUsBanner";
 const App = () => {
   return (
     <div>
       <Header />
       <HomeBanner />
+      <MeetUsBanner />
       <div className="pt-16">
         <p>hi</p>
         <p>hi</p>
