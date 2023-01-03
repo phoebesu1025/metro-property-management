@@ -58,7 +58,7 @@ const MobileTabsSF = ({ data, activeTab, changeToActive }) => {
                         <div className="flex justify-center items-center">
                           {list.field.categories.map((inputField, index) => (
                             <label
-                              for={inputField}
+                              htmlFor={inputField}
                               key={index}
                               className="basis-1/2 flex justify-start items-center"
                             >
