@@ -43,7 +43,7 @@ const SuccessfulTenancy = () => {
   return (
     <div className="successful-tenancy 2xl:px-24 xl:px-16 sm:px-12 px-6 py-20">
       <h3 className=" text-heading3 leading-8">How it works,</h3>
-      <h1 className=" text-heading2 leading-[3.5rem] font-semibold xl:w-[25%] w-[50%] ">
+      <h1 className=" text-heading2 leading-[3.5rem] font-semibold xl:w-[25%] sm:w-[50%] w-[100%]">
         Steps to a successful tenancy
       </h1>
 

@@ -26,7 +26,7 @@ const MobileRentalProcess = ({ singleProcess }) => {
           {singleProcess.heading}
         </h2>
 
-        <p className=" text-s text-center w-[50%] mx-auto ">
+        <p className=" text-s text-center sm:w-[50%] w-[80%] mx-auto ">
           {singleProcess.text}
         </p>
       </div>
