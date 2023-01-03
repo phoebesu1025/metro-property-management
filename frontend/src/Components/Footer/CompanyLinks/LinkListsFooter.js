@@ -7,7 +7,7 @@ const LinkListsFooter = ({ heading, lists }) => {
       className={`link-list-footer h-20  mt-2 
       
       ${(heading === "Investments" || heading === "Meet Our Team") &&
-        "lg:mt-[-4rem] mt-[16rem] h-10 md:mt-[20rem] "
+        "2xl:mt-[-4rem] mt-[16rem] h-10 md:mt-[20rem] "
         } 
         
         
