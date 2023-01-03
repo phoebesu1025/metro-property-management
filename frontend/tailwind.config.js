@@ -17,10 +17,8 @@ module.exports = {
       sm: "620px",
       md: "768px", //tablet
       lg: "920px",
-
       xl: "1028px",
       "2xl": "1281px",
-
       "3xl": "1440px", //desktop
     },
     extend: {
