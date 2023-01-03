@@ -4,13 +4,24 @@ import Copyright from "./Copyright/Copyright";
 
 const Footer = () => {
   return (
-    <div className="footer bg-footerBlackBg py-12 px-24 text-footerGrey ">
-      <div className="flex gap-x-10">
-        <CompanyDetails />
+    <div className="footer bg-footerBlackBg   text-footerGrey 
+    px-[4rem] py-[2rem]
+    lg:px-[7rem] lg:pb-[4rem]
+    
+
+    ">
+      <div className="flex flex-col
+       
+      lg:flex-row-reverse lg:w-full ">
         <CompanyLinks />
+        <CompanyDetails />
       </div>
 
-      <Copyright />
+      <div className="
+      order-8 ">
+        <Copyright />
+      </div>
+
     </div>
   );
 };

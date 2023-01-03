@@ -3,7 +3,12 @@ import TextNewsletter from "./TextNewsletter";
 
 const Newsletter = () => {
   return (
-    <div className="newsletter bg-footerWhitebBg flex py-8 px-24 gap-x-20">
+    <div className="newsletter bg-footerWhitebBg flex py-8 
+    flex-col
+    
+    px-[1.7rem]
+    sm:px-[3rem] 
+    lg:px-[7rem] lg:flex-row lg:gap-2">
       <TextNewsletter />
       <FormNewsletter />
     </div>
