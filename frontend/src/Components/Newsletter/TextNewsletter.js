@@ -1,11 +1,20 @@
 const TextNewsletter = () => {
   return (
-    <div className="flex items-center gap-x-4 w-1/2">
-      <p className="font-bold text-footerSubBlack">
+    <div className=" items-center gap-4 
+    
+    lg:my-auto lg:w-[40rem]">
+
+      <p className="font-semibold text-footerSubBlack
+        w-fit inline-block text-[1rem]
+        lg:w-full">
+
         Subscribe to our news letter!
-      </p>
-      <p className="text-footerSubGrey">
-        Get the latest Metro news straight to your inbox!
+
+        <span className="text-footerSubGrey 
+        w-fit ml-1">
+          Get the latest Metro news straight to your inbox!
+        </span>
+
       </p>
     </div>
   );
