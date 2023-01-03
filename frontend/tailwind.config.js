@@ -1,25 +1,27 @@
 /** @type {import('tailwindcss').Config} */
-const withMT = require("@material-tailwind/react/utils/withMT");
-module.exports = withMT({
+module.exports = {
   mode: "jit",
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     screens: {
-
-      // for edging I used 
+      // for edging I used
       // px-[1.7rem]
-      // sm:px-[3rem] 
+      // sm:px-[3rem]
       // lg:mx-[4rem]/ "lg:px-[7rem] (somehow, it doesn't work after I set xs size)""
-      "2xs": "320px",//Mobile
-      xs: "500px",  //*
+
+      "2xs": "320px", //Mobile
+      xs: "500px",
       sm: "620px",
-      md: "768px",  //tablet             
-      lg: "920px",//*
+      md: "768px", //tablet
+      lg: "920px",
+
       xl: "1028px",
       "2xl": "1281px",
 
-      "3xl": "1440px"  //desktop
-
+      "3xl": "1440px", //desktop
     },
     extend: {
       height: {
@@ -31,31 +33,28 @@ module.exports = withMT({
       red1: "#E4353C",
       red2: "#DA2B32",
       white: "#FFFFFF",
-      black: '#000000',
+      black: "#000000",
       black1: "#1A1A1A",
       pink: "#FFBFC1",
-
 
       buttonGrey: "#666666",
       footerWhitebBg: "#F7F7F7",
       footerSubBlack: "#292A2E",
 
-      footerSubGrey: '#737070',
-      footerSubGrey2: '#424343',
-      footerInput: 'rgba(0,0, 0, 0.3)',
-      footerBlackBg: '#333333',
-      footerWhite: '#D9D9D9',
-      footerGrey: '#ACABAB',
+      footerSubGrey: "#737070",
+      footerSubGrey2: "#424343",
+      footerInput: "rgba(0,0, 0, 0.3)",
+      footerBlackBg: "#333333",
+      footerWhite: "#D9D9D9",
+      footerGrey: "#ACABAB",
 
-      propertyManagerBg: '#F9F4F4',
-      successfulInvestorBg: '#F9F4F4',
-      successfulInvestorHd: '#4E4E4E',
-      successfulInvestorTx: '#444343',
+      propertyManagerBg: "#F9F4F4",
+      successfulInvestorBg: "#F9F4F4",
+      successfulInvestorHd: "#4E4E4E",
+      successfulInvestorTx: "#444343",
 
-      FaqHeading: '#686868',
-      FaqText: '#3F4D64'
-
-
+      FaqHeading: "#686868",
+      FaqText: "#3F4D64",
     },
     fontSize: {
       heading1: ["3.5rem"],
@@ -68,5 +67,5 @@ module.exports = withMT({
       roboto: "roboto, sans-serif",
     },
   },
-  plugins: [],
-});
+  plugins: [require("flowbite/plugin")],
+};

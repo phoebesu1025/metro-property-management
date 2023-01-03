@@ -2,7 +2,6 @@ import Dropdown from "./../Dropdown/Dropdown";
 import ArrowButton from "./../ArrowButton";
 
 const Items = ({ itemName, itemComponent }) => {
-  console.log(itemComponent);
   return (
     <li className="nav-item flex items-center cursor-pointer hover:text-red2 group h-[3.4rem] px-4 pb-1">
       <div className="relative">
