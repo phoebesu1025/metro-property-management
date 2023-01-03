@@ -14,7 +14,7 @@ const DropdownInputFilter = ({ filterName, dropdowns }) => {
   }
 
   return (
-    <div className="property-manager-category gap-y-2 relative flex flex-col basis-[30%] ">
+    <div className="property-manager-category gap-y-2 relative flex flex-col 2xl:basis-[28%] sm:basis-[45%] basis-[100%]">
       <label>{filterName}</label>
       <input
         disabled={"disabled"}
