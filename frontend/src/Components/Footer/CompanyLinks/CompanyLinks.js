@@ -5,13 +5,14 @@ const CompanyLinks = () => {
     <div className="grid w-full leading-[4rem] grid-cols-1 gap-y-[2rem]
     //500px xs:grid-cols-3 xs:w-full xs:mb-16 xs:gap-x-[1rem] 
     sm:justify-items-center 
-    lg:gap-y-[21rem]  lg:mt-[1rem] lg:w-[2rem] lg:mb-0 lg:h-[0rem]">
+    2xl:grid-cols-3
+    2xl:gap-y-[21rem] 2xl:gap-x-[1rem] 2xl:mt-[1rem]  2xl:mb-0 ">
 
 
 
       <div className="
       sm:ml-[-5rem]
-      lg:ml-0">
+      2xl:ml-0">
         <LinkListsFooter
           heading={"Rentals"}
           lists={[
@@ -38,7 +39,7 @@ const CompanyLinks = () => {
       <div className="mt-[3rem]
       xs:w-[15.1rem] xs:mt-0
       sm:ml-[5rem]
-      lg:ml-0">
+      2xl:ml-0">
         <LinkListsFooter
           heading={"Property Management"}
           lists={[
@@ -56,7 +57,7 @@ const CompanyLinks = () => {
       <div className="-mt-[5rem]
       xs:mt-[-10rem] 
       sm:ml-[-5rem]
-      lg:ml-0 lg:mt-[-2rem]">
+      2xl:ml-0 2xl:mt-[-10rem]">
         <LinkListsFooter
           heading={"Investments"}
           lists={[
@@ -68,9 +69,9 @@ const CompanyLinks = () => {
         />
 
       </div >
-      <div className="-mt-[11rem]  mr-[3rem]
+      <div className="-mt-[8rem]  mr-[3rem]
       xs:mt-[-10rem]
-        sm:mt-[2rem] ">
+        sm:mt-[-10rem] ">
         <LinkListsFooter
           heading={"Meet Our Team"}
           lists={["Meet Property Manager", "Meet Finance Advisor"]}
