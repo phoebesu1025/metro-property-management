@@ -3,8 +3,8 @@ import React from "react";
 const MobileRentalProcess = ({ singleProcess }) => {
   return (
     <div
-      className={` xl:hidden flex justify-start items-center    
-      relative group py-8 
+      className={` xl:hidden flex justify-around items-center    
+      relative group py-8 xl:mx-0 mx-16
       border-l-2  border-[#d9d9d9]
       `}
     >
@@ -14,19 +14,21 @@ const MobileRentalProcess = ({ singleProcess }) => {
         `}
       ></span>
 
-      <div className="p-4 rounded-full bg-successfulTenancyClr ml-10">
-        <img
-          src={`./images/pages/rental-process/${singleProcess.imgSrc}`}
-          alt={singleProcess.imgAlt}
-        />
-      </div>
-
-      <div className="flex flex-col gap-y-4">
+      <div className=" flex flex-col justify-center items-center gap-y-4 bg-successfulTenancyClr xs:ml-20 ml-0 xs:basis-1/3 basis-1/2 ">
+        <div className="p-4 bg-[#F7F5E9] rounded-full">
+          <img
+            className=" drop-shadow-sm rounded-full"
+            src={`./images/pages/rental-process/${singleProcess.imgSrc}`}
+            alt={singleProcess.imgAlt}
+          />
+        </div>
         <h2 className=" text-paragraph font-bold text-center">
           {singleProcess.heading}
         </h2>
+      </div>
 
-        <p className=" text-s text-center sm:w-[50%] w-[80%] mx-auto ">
+      <div className="xs:flex flex-col gap-y-4 hidden basis-2/3">
+        <p className=" text-s text-center sm:w-[40%] w-[80%] mx-auto ">
           {singleProcess.text}
         </p>
       </div>
