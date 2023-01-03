@@ -8,10 +8,10 @@ const CompanyDetails = () => {
   return (
     <div className=" 
       ">
-      <div className="order-7 mt-20 
-        xs:flex xs:justify-between 
+      <div className="order-7 mt-28 
+        xs:flex xs:justify-between  
         
-        lg:justify-between lg:flex-col lg:mt-[2rem] lg:full lg:mb-0">
+        2xl:justify-between 2xl:flex-col 2xl:mt-[2rem] 2xl:full 2xl:mb-0">
         <div className=" 
         ">
           <LogoCompanyFooter />
@@ -49,7 +49,7 @@ const CompanyDetails = () => {
       <div className="order-last
     
        xs:mt-[-5rem]
-        lg:order-none">
+        2xl:order-none">
 
         <Social />
       </div>

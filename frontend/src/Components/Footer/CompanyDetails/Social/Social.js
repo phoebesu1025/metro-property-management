@@ -26,7 +26,7 @@ const Social = () => {
 
   return (
     <div className="flex justify-between w-full mt-6
-    xs:w-56 lg:mt-[6rem] ">
+    xs:w-56 2xl:mt-[6rem] ">
       {socials.map((social, index) => {
         return (
           <ItemSocial

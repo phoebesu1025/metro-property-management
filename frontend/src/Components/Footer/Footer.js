@@ -6,13 +6,13 @@ const Footer = () => {
   return (
     <div className="footer bg-footerBlackBg   text-footerGrey 
     px-[4rem] py-[2rem]
-    lg:px-[7rem] lg:pb-[4rem]
+    2xl:px-[7rem] 2xl:pb-[4rem]
     
 
     ">
       <div className="flex flex-col
        
-      lg:flex-row-reverse lg:w-full ">
+      2xl:flex-row-reverse 2xl:w-full ">
         <CompanyLinks />
         <CompanyDetails />
       </div>
