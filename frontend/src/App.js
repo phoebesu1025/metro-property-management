@@ -14,13 +14,13 @@ import HomeBanner from "./Components/Pages/Home/Banner/HomeBanner";
 import SuccessfulInvestors from "./Components/CommonComponents/SuccessfulInvestors/Main/SuccessfulInvestors";
 import SuccessfulInvestorsV2 from "./Components/CommonComponents/SuccessfulInvestors/Main/SuccessfulInvestorsV2";
 
-
 import "./App.css";
 
-import Faq from "./Components/CommonComponents/FAQ/Main/Faq"
+import Faq from "./Components/CommonComponents/FAQ/Main/Faq";
 import RedBanner2 from "./Components/CommonComponents/RedBanner/RedBanner2/RedBanner2";
 import RedBanner3 from "./Components/CommonComponents/RedBanner/RedBanner3/RedBanner3";
 import RedBanner4 from "./Components/CommonComponents/RedBanner/RedBanner4/RedBanner4";
+import CarouselContainer from "./Components/CommonComponents/PropertyCarousel/CarouselContainer";
 
 const App = () => {
   return (
@@ -57,6 +57,8 @@ const App = () => {
         <p>hi</p>
         <p>hi</p>
       </div>
+
+      <CarouselContainer />
 
       <Newsletter />
       <Footer />
