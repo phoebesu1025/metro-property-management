@@ -1,3 +1,4 @@
+import MobileRentalProcess from "./MobileRentalProcess";
 import RentalProcess from "./RentalProcess";
 
 const SuccessfulTenancy = () => {
@@ -40,15 +41,18 @@ const SuccessfulTenancy = () => {
   ];
 
   return (
-    <div className="successful-tenancy px-24 py-20">
+    <div className="successful-tenancy 2xl:px-24 xl:px-16 sm:px-12 px-6 py-20">
       <h3 className=" text-heading3 leading-8">How it works,</h3>
-      <h1 className=" text-heading2 leading-[3.5rem] font-semibold w-[25%]">
+      <h1 className=" text-heading2 leading-[3.5rem] font-semibold xl:w-[25%] sm:w-[50%] w-[100%]">
         Steps to a successful tenancy
       </h1>
 
-      <div className="flex">
+      <div className="flex xl:flex-row flex-col ">
         {SuccessfulTenancy.map((singleProcess, index) => (
-          <RentalProcess key={index} singleProcess={singleProcess} />
+          <div>
+            <RentalProcess key={index} singleProcess={singleProcess} />
+            <MobileRentalProcess key={index} singleProcess={singleProcess} />
+          </div>
         ))}
       </div>
     </div>
