@@ -27,7 +27,7 @@ const MainBanner = ({ data }) => {
       />
       <h2
         className={` 
-          text-heading1 leading-[4.5rem] text-white font-bold 
+          xs:text-heading1 text-heading2 xs:leading-[4.5rem] leading-10  text-white font-bold 
           absolute 
           2xl:top-1/3 top-[25%]
           2xl:px-24 sm:px-12 px-6
