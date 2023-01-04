@@ -57,6 +57,8 @@ module.exports = {
       FaqHeading: "#686868",
       FaqText: "#3F4D64",
 
+      bookMeBtnBg: "#303030"
+
     },
     fontSize: {
       heading1: ["3.5rem"],
