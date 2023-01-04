@@ -18,14 +18,14 @@ const CarouselContainer = () => {
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 500, min: 0 },
       items: 1,
     },
   };
   return (
-    <div className="xl:px-24 sm:px-12 px-6">
+    <div className="">
       <Carousel
-        className=""
+        className="pb-20"
         renderButtonGroupOutside={true}
         responsive={responsive}
       >

@@ -100,7 +100,7 @@ const HomeBanner = () => {
     setActiveTab(e.currentTarget.getAttribute("value"));
   }
   return (
-    <div className={`home-banner relative`}>
+    <div className={`home-banner relative xl:mb-36 mb-10`}>
       {data.map(
         (banner, index) =>
           activeTab === banner.label && <MainBanner key={index} data={banner} />

@@ -25,7 +25,7 @@ const Reversible = ({
         title={title}
         heading={heading}
         text={text}
-        subTex={subText}
+        subText={subText}
         buttons={buttons}
       />
       <ImageReversible
