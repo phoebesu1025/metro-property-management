@@ -11,13 +11,12 @@ module.exports = {
       // px-[1.7rem]
       // sm:px-[3rem]
       // lg:mx-[4rem]/ "lg:px-[7rem] (somehow, it doesn't work after I set xs size)""
-
+      //will change to 6rem
       "2xs": "320px", //Mobile
       xs: "500px",
       sm: "620px",
       md: "768px", //tablet
       lg: "920px",
-
       xl: "1028px",
       "2xl": "1281px",
       "3xl": "1440px", //desktop
@@ -26,6 +25,9 @@ module.exports = {
       height: {
         100: "30rem",
         128: "27rem",
+      },
+      backgroundImage: {
+        'myProfileBg': "linear-gradient(93.06deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 64.34%), url('../public/images/myProfile/pic.png')",
       },
     },
     colors: {
@@ -54,6 +56,9 @@ module.exports = {
 
       FaqHeading: "#686868",
       FaqText: "#3F4D64",
+
+      bookMeBtnBg: "#303030"
+
     },
     fontSize: {
       heading1: ["3.5rem"],

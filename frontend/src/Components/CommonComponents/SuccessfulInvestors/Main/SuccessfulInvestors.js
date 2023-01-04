@@ -36,10 +36,10 @@ const SuccessfulInvestors = () => {
 
     return (
         <div className='bg-successfulInvestorBg 
-        flex flex-col justify-center gap-4 my-10
+        flex flex-col justify-center gap-4 
 
         md:flex-row md:justify-around md:px-10
-         px-[7rem] py-[6.5rem] mb-[1rem]'>
+         px-[7rem] py-[3rem] mb-[1rem]'>
             <div className='flex flex-col items-center my-auto'>
                 <div className='h-[18rem] w-[25rem] mt-10'>
                     <div className=''>{array[arrayIndex]}</div>

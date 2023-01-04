@@ -1,16 +1,18 @@
 import HomeBanner from "../../Components/Pages/Home/Banner/HomeBanner";
 import ReversibleHomeBottom from "./ReversibleHomeBottom";
 import ReversibleHomeTop from "./ReversibleHomeTop";
-
+import RedBanner from "../../Components/CommonComponents/RedBanner/RedBanner1/RedBanner1"
+import PropertyManagers from "../../Components/CommonComponents/PropertyManagers/PropertyManager";
+import LatestNews from "../../Components/CommonComponents/LatestNews/LatestNews"
 const Home = () => {
   return (
     <div className="home-page">
       <HomeBanner />
       <ReversibleHomeTop />
-      {/* Phoebe Red Banner with text and button */}
+      <RedBanner />
       <ReversibleHomeBottom /> ``
-      {/* Phoebe Meet Our Property Manager */}
-      {/* Phoebe latest News */}
+      <PropertyManagers />
+      <LatestNews />
     </div>
   );
 };
