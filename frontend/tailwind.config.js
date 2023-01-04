@@ -20,6 +20,7 @@ module.exports = {
       xl: "1028px",
       "2xl": "1281px",
       "3xl": "1440px", //desktop
+      "4xl": "1550px", //desktop
     },
     extend: {
       height: {
@@ -27,7 +28,8 @@ module.exports = {
         128: "27rem",
       },
       backgroundImage: {
-        'myProfileBg': "linear-gradient(93.06deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 64.34%), url('../public/images/myProfile/pic.png')",
+        myProfileBg:
+          "linear-gradient(93.06deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 64.34%), url('../public/images/myProfile/pic.png')",
       },
     },
     colors: {
@@ -57,8 +59,7 @@ module.exports = {
       FaqHeading: "#686868",
       FaqText: "#3F4D64",
 
-      bookMeBtnBg: "#303030"
-
+      bookMeBtnBg: "#303030",
     },
     fontSize: {
       heading1: ["3.5rem"],

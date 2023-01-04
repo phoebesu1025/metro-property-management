@@ -1,9 +1,10 @@
 import React from "react";
 import MainBanner from "../../../Components/CommonComponents/MainBanner/MainBanner";
+import SearchFilterPs from "./SearchFilterPs";
 
 const BannerPropertySearch = () => {
   return (
-    <div className="property-search-banner relative">
+    <div className="property-search-banner relative mb-44 ">
       <MainBanner
         data={{
           imgSrc: {
@@ -16,7 +17,7 @@ const BannerPropertySearch = () => {
         }}
       />
 
-      <div className="property-search-filter"></div>
+      <SearchFilterPs />
     </div>
   );
 };
