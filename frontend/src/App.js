@@ -14,9 +14,9 @@ import "./App.css";
 
 import BuyHomeWhileRenting from "./Pages/BuyHomeWhileRenting/BuyHomeWhileRenting";
 import MeetOurProfessionals from "./Pages/MeetOurProfessionals/MeetOurProfessionals";
-import ExistingUser from "./Components/Pages/MyProfile/ExistingUser/ExistingUser";
+import ExistingUser from "./Pages/MyProfile/ExistingUser/ExistingUser";
 import WelcomeBoard2 from "./Components/CommonComponents/WelcomeBoard2/WelcomeBoard2";
-import NewUser from "./Components/Pages/MyProfile/NewUser/NewUser";
+import NewUser from "./Pages/MyProfile/NewUser/NewUser";
 const App = () => {
   return (
     <BrowserRouter>
@@ -31,6 +31,10 @@ const App = () => {
         <Route path="/buy-a-home-while-renting" element={<BuyHomeWhileRenting />} />
         <Route path="/meet-our-professionals" element={<MeetOurProfessionals />}
         />
+        <Route path="/new-user" element={<NewUser />} />
+        <Route path="/existing-user" element={<ExistingUser />} />
+        <Route path="/welcome-board-2" element={<WelcomeBoard2 />} />
+
       </Routes>
 
       <Newsletter />
