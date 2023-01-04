@@ -1,3 +1,4 @@
+import { Routes, Route, BrowserRouter } from "react-router-dom"
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Newsletter from "./Components/Newsletter/Newsletter";
@@ -19,47 +20,25 @@ import AllReversible from "./Components/AllReversible/AllReversible";
 import "./App.css";
 import SuccessfulTenancy from "./Components/SuccessfulTenancy/SuccessfulTenancy";
 import MeetUsBanner from "./Components/Pages/MeetUs/Banner/MeetUsBanner";
+/**  ----------------- testing pages   -------------------          */
+import ExistingUser from "./Components/Pages/MyProfile/ExistingUser/ExistingUser";
+import WelcomeBoard2 from "./Components/CommonComponents/WelcomeBoard2/WelcomeBoard2";
+import NewUser from "./Components/Pages/MyProfile/NewUser/NewUser";
+
 const App = () => {
   return (
-    <div>
-      <Header />
-      <HomeBanner />
-      <MeetUsBanner />
-      <div className="pt-16">
-        <p>hi</p>
-        <p>hi</p>
+    <>
 
-        <DataTest />
-        <RedBanner1 />
-        <br />
-        <RedBanner2 />
-        <br />
-        <RedBanner3 />
-        <br />
-        <RedBanner4 />
-        <PropertyManager />
-        <Needs />
-        <LatetestNews />
-        <SuccessfulInvestors />
-        <SuccessfulInvestorsV2 />
-        <Faq />
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-        <p>hi</p>
-      </div>
 
-      <SuccessfulTenancy />
-      <AllReversible />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/existing-user" element={<ExistingUser />} />
+          <Route path="/new-user" element={<NewUser />} />
+        </Routes>
+      </BrowserRouter>
 
-      <CarouselContainer />
 
-      <Newsletter />
-      <Footer />
-    </div>
+    </>
   );
 };
 
