@@ -6,7 +6,7 @@ import TitleReversible from "./TitleReversible";
 
 const ContentReversible = ({ title, heading, text, subText, buttons }) => {
   return (
-    <div className="text-content basis-1/2 flex flex-col gap-y-4">
+    <div className="text-content  basis-1/2 flex flex-col gap-y-4 ">
       {/* Showing title if the title prop is passed */}
       {title && <TitleReversible title={title} />}
 

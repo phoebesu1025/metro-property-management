@@ -4,6 +4,7 @@ import ButtonGroup from "./Button/ButtonGroup";
 import HamButton from "./Hamburger/HamButton";
 import { useState } from "react";
 import NavMobile from "./Navbar/Mobile/NavMobile";
+import CrossButton from "./CrossButton/CrossButton";
 
 const Header = () => {
   const [isActiveMobileNav, setIsActiveMobileNav] = useState(false);
@@ -24,7 +25,12 @@ const Header = () => {
       <ButtonGroup />
 
       {isActiveMobileNav && <NavMobile />}
-      <HamButton handleMobileNavbar={handleMobileNavbar} />
+
+      {isActiveMobileNav ? (
+        <CrossButton handleMobileNavbar={handleMobileNavbar} />
+      ) : (
+        <HamButton handleMobileNavbar={handleMobileNavbar} />
+      )}
     </div>
   );
 };

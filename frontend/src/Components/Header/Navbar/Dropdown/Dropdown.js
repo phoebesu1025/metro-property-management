@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Dropdown = ({ dropdownDetailsArray }) => {
   // pass dropdownDetailsArray to Items as the redbox area
   // dropdownDetailsArray => Items.js/itemComponent => Nav.js/itemComponent={dropdown}
@@ -26,9 +28,9 @@ const Dropdown = ({ dropdownDetailsArray }) => {
                 Create an account to keep track of your favorites and rental
                 process.
               </p>
-              <p className="mb-10 font-bold">Join My Diary</p>
+              <Link className="mb-10 font-bold">Join My Diary</Link>
               <p className="leading-none">Already a Metro customer?</p>
-              <p className="font-bold">Sign into Tenant Portal</p>
+              <Link className="font-bold">Sign into Tenant Portal</Link>
             </div>
           ) : (
             // list apart from heading: "Keep track of your records"
@@ -53,7 +55,9 @@ const Dropdown = ({ dropdownDetailsArray }) => {
                 <ul>
                   {/* DropdownArray.array.links */}
                   {dropdownDetails.links.map((link, index) => (
-                    <li key={index}>{link}</li>
+                    <li key={index}>
+                      <Link to={link.path}>{link.name}</Link>
+                    </li>
                   ))}
                 </ul>
               )}

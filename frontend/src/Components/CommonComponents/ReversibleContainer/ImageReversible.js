@@ -8,7 +8,7 @@ const ImageReversible = ({
 }) => {
   return (
     <div
-      className={`image-content basis-1/2 h-80 
+      className={`image-content  basis-1/2 h-80 
   flex justify-center items-baseline 
   lg:block ${hideImageOnMobile && "hidden"}
   `}

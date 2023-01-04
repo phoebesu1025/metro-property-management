@@ -2,10 +2,28 @@ li {
   cursor: pointer;
 }
 
+a:hover {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
 .react-multiple-carousel__arrow--left {
   left: 0 !important;
 }
 
 .react-multiple-carousel__arrow--right {
   right: 0 !important;
+}
+
+/* Small devices (landscape phones, 440px and up) */
+@media (max-width: 500px) {
+  .react-multiple-carousel__arrow--left {
+    bottom: 0;
+    left: 30% !important;
+  }
+
+  .react-multiple-carousel__arrow--right {
+    bottom: 0;
+    right: 30% !important;
+  }
 }
