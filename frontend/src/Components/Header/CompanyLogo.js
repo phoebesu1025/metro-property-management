@@ -1,9 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CompanyLogo = () => {
   return (
     <div className="company-logo">
-      <img src="./images/logo.png" alt="Metro Logo" />
+      <Link to="/">
+        <img src="./images/logo.png" alt="Metro Logo" />
+      </Link>
     </div>
   );
 };

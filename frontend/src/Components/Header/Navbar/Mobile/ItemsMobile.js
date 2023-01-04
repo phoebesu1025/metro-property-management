@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ItemsMobile = ({ data, tab, backToNavList }) => {
   const [activeSubMenu, setActiveSubMenu] = useState();
 
   function changeActiveSubMenu(e) {
-    console.log(e.currentTarget.value);
     if (activeSubMenu === e.currentTarget.value) {
       setActiveSubMenu("");
     } else {
@@ -31,9 +31,8 @@ const ItemsMobile = ({ data, tab, backToNavList }) => {
       </p>
 
       {data.array.map((list, index) => (
-        <div>
+        <div key={index}>
           <button
-            key={index}
             value={list.heading}
             onClick={changeActiveSubMenu}
             className={` 
@@ -59,33 +58,37 @@ const ItemsMobile = ({ data, tab, backToNavList }) => {
             {data.array.map((list, index) =>
               (list.heading === "Keep track of your records") &
               (activeSubMenu === "Keep track of your records") ? (
-                <div>
+                <div key={index}>
                   <p className="bg-white text-red1 xl:px-36 sm:px-20 px-16 py-8 border-b-2 border-red1">
                     Create an account to keep track of your favorites and rental
                     process.
                   </p>
-                  <p className="font-bold bg-white text-red1 xl:px-36 sm:px-20 px-16 py-8 border-b-2 border-red1">
+                  <Link className="font-bold bg-white text-red1 xl:px-36 sm:px-20 px-16 py-8 border-b-2 border-red1">
                     Join My Diary
-                  </p>
+                  </Link>
                   <p className="bg-white text-red1 xl:px-36 sm:px-20 px-16 py-8 border-b-2 border-red1">
                     Already a Metro customer?
                   </p>
-                  <p className="font-bold bg-white text-red1 xl:px-36 sm:px-20 px-16 py-8 border-b-2 border-red1">
+                  <Link className="font-bold bg-white text-red1 xl:px-36 sm:px-20 px-16 py-8 border-b-2 border-red1">
                     Sign into Tenant Portal
-                  </p>
+                  </Link>
                 </div>
               ) : activeSubMenu === list.heading && list.links ? (
                 list.links.map((link, index) => (
-                  <p
+                  <Link
+                    to={link.path}
                     className="bg-white text-red1 xl:px-36 sm:px-20 px-16 py-8 border-b-2 border-red1 "
                     key={index}
                   >
-                    {link}
-                  </p>
+                    {link.name}
+                  </Link>
                 ))
               ) : (
                 activeSubMenu === list.heading && (
-                  <p className="bg-white text-red1 xl:px-36 sm:px-20 px-16 py-8 border-b-2 border-red1">
+                  <p
+                    key={index}
+                    className="bg-white text-red1 xl:px-36 sm:px-20 px-16 py-8 border-b-2 border-red1"
+                  >
                     {list.text}
                   </p>
                 )
