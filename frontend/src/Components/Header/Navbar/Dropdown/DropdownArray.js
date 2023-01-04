@@ -10,7 +10,7 @@ const DropdownArray = [
         imgSrc: "./images/looking.png",
         imgAlt: "looking",
         links: [
-          { name: "Rental Listings", path: "rental-listings" },
+          { name: "Rental Listings", path: "property-search" },
           { name: "Rental Process", path: "rental-process" },
         ],
       },
