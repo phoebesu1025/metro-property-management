@@ -32,6 +32,10 @@ const MainBanner = ({ data }) => {
           2xl:top-1/3 top-[25%]
           2xl:px-24 sm:px-12 px-6
           3xl:w-[70rem] w-full 
+          ${
+            data.text === "Property Search" &&
+            "left-0 right-0 text-center font-normal 2xl:top-[20%]  mx-auto "
+          }
       `}
       >
         {data.text}

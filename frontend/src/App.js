@@ -10,6 +10,7 @@ import TenantServices from "./Pages/TenantServices/TenantServices";
 import "./App.css";
 import BuyHomeWhileRenting from "./Pages/BuyHomeWhileRenting/BuyHomeWhileRenting";
 import MeetOurProfessionals from "./Pages/MeetOurProfessionals/MeetOurProfessionals";
+import PropertySearch from "./Pages/PropertySearch/PropertySearch";
 const App = () => {
   return (
     <BrowserRouter>
@@ -29,6 +30,7 @@ const App = () => {
           path="/meet-our-professionals"
           element={<MeetOurProfessionals />}
         />
+        <Route path="/property-search" element={<PropertySearch />} />
       </Routes>
 
       <Newsletter />
