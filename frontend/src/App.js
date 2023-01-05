@@ -15,6 +15,7 @@ import NewUser from "./Pages/MyProfile/NewUser/NewUser";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
 
+import "./App.css";
 const App = () => {
   return (
     <BrowserRouter>

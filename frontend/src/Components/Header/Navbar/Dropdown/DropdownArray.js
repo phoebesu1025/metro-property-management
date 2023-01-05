@@ -19,9 +19,6 @@ const DropdownArray = [
         imgSrc: "./images/service.png",
         imgAlt: "looking",
         links: [
-          "Tenant Services",
-          "Own a home while renting",
-          "Healthy home standards",
           { name: "Tenant Services", path: "tenant-services" },
           {
             name: "Own a home while renting",
