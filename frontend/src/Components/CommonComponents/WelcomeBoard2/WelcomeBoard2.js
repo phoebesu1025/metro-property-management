@@ -4,7 +4,7 @@ import WelcomeBoard2Btn from './Buttons/ButtonGroup'
 import WelcomeBoard2Txt from './WelcomeBoard2Txt'
 const WelcomeBoard2 = () => {
     return (
-        <div className='px-[1.7rem]
+        <div className='px-[1.7rem] mt-[5rem]
          sm:px-[3rem]
          lg:px-[6rem]'>
             <NeedsBanner />

@@ -55,8 +55,12 @@ const App = () => {
         <Route path="/tenancy-application-references" element={<TAReferences />} />
         <Route path="/tenancy-application-reviews" element={<TAReviews />} />
         <Route path="/tenancy-application-complete" element={<TAComplete />} />
-        <Route path="login" element={<Login />} />
-      </Routes>
+        <Route path="login" element={<Login />} /></Routes>
+
+
+
+
+
 
       <Newsletter />
       <Footer />
