@@ -20,6 +20,7 @@ module.exports = {
       xl: "1028px",
       "2xl": "1281px",
       "3xl": "1440px", //desktop
+      "4xl": "1550px", //desktop
     },
     extend: {
       height: {
@@ -32,8 +33,6 @@ module.exports = {
         'tenancyApplication': "linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 180.34%), url('../public/images/tenancyApplication/bg.png')",
 
         'marbleBg': "url('../public/images/tenancyApplication/marbleBg.png')"
-
-      }
     },
     colors: {
       red1: "#E4353C",
@@ -63,9 +62,8 @@ module.exports = {
       FaqText: "#3F4D64",
 
       bookMeBtnBg: "#303030",
+
       buttonBorderGrey1: "#494646",
-
-
     },
     fontSize: {
       heading1: ["3.5rem"],
