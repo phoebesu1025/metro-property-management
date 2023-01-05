@@ -36,10 +36,34 @@ app.get("/", (req, res, next) => {
             res.status(500).json({ error: err });
         })
 })
-
-
-
-
+//////////////////////////////////////////////////////////////////////////
+const PropertyManagers = require("./db/PropertyManagers")
+app.get("/propertyManagers", (req, res, next) => {
+    PropertyManagers.find()
+        .limit(7)
+        .exec()
+        .then(doc => {
+            console.log(doc);
+            res.status(200).json(doc);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({ error: err });
+        })
+})
+//-------For Name filter---not working yet
+app.get("/propertyManagers/name", (req, res, next) => {
+    PropertyManagers.findOne({ name: new RegExp('^' + name + '$', "i") })
+        .exec()
+        .then(doc => {
+            console.log(doc);
+            res.status(200).json(doc);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({ error: err });
+        })
+})
 
 
 
