@@ -47,7 +47,7 @@ const DropdownPropertySearch = ({
       flex-col
       bg-white w-full
       drop-shadow-2xl
-      rounded-md
+      rounded-md z-10
       ${showDropdown ? "flex" : "hidden"}
        `}
       >

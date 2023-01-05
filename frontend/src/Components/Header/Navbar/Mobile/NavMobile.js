@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DropdownArray from "../Dropdown/DropdownArray";
 import ItemsMobile from "./ItemsMobile";
 
-const NavMobile = () => {
+const NavMobile = ({ handleMobileNavbar }) => {
   const dropdowns = DropdownArray;
   const [activeTab, setActiveTab] = useState();
 
@@ -44,6 +44,7 @@ const NavMobile = () => {
           (subMenu, index) =>
             activeTab === subMenu.name && (
               <ItemsMobile
+                handleMobileNavbar={handleMobileNavbar}
                 key={index}
                 backToNavList={backToNavList}
                 tab={activeTab}

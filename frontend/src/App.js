@@ -14,6 +14,7 @@ import WelcomeBoard2 from "./Components/CommonComponents/WelcomeBoard2/WelcomeBo
 import NewUser from "./Pages/MyProfile/NewUser/NewUser";
 import Login from "./Pages/Login/Login";
 
+import "./App.css";
 const App = () => {
   return (
     <BrowserRouter>
