@@ -18,6 +18,7 @@ import TAReferences from "./Pages/TenancyApplication/TAReferences";
 import TAReviews from "./Pages/TenancyApplication/TAReviews";
 import TAComplete from "./Pages/TenancyApplication/TAComplete";
 import Login from "./Pages/Login/Login";
+import Signup from "./Pages/Signup/Signup";
 
 import "./App.css";
 const App = () => {
@@ -46,6 +47,11 @@ const App = () => {
         <Route path="/existing-user" element={<ExistingUser />} />
         <Route path="/welcome-board-2" element={<WelcomeBoard2 />} />
 
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Signup />} />
+    
+
+
 
 
         {/* Chanelle's Pages */}
@@ -55,9 +61,10 @@ const App = () => {
         <Route path="/tenancy-application-references" element={<TAReferences />} />
         <Route path="/tenancy-application-reviews" element={<TAReviews />} />
         <Route path="/tenancy-application-complete" element={<TAComplete />} />
-        <Route path="login" element={<Login />} /></Routes>
+        <Route path="login" element={<Login />} />
 
 
+        </Routes>
 
 
 

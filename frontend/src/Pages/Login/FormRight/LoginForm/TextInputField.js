@@ -1,5 +1,4 @@
-import React from "react";
-import TextRed from "../RedText/TextRed";
+import TextRed from "../../../Common/LoginSignup/FormRight/RedText/TextRed";
 
 const TextInputField = ({ type }) => {
   return (
