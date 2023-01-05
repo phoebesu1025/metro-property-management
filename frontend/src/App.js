@@ -1,6 +1,6 @@
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import "./App.css";
 
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
@@ -9,14 +9,12 @@ import Home from "./Pages/Home/Home";
 import RentalProcess from "./Pages/RentalProcess/RentalProcess";
 import TenantServices from "./Pages/TenantServices/TenantServices";
 
-import "./App.css";
-
-
 import BuyHomeWhileRenting from "./Pages/BuyHomeWhileRenting/BuyHomeWhileRenting";
 import MeetOurProfessionals from "./Pages/MeetOurProfessionals/MeetOurProfessionals";
 import ExistingUser from "./Pages/MyProfile/ExistingUser/ExistingUser";
 import WelcomeBoard2 from "./Components/CommonComponents/WelcomeBoard2/WelcomeBoard2";
 import NewUser from "./Pages/MyProfile/NewUser/NewUser";
+import TenancyApplication from "./Pages/TenancyApplication/TenancyApplication"
 const App = () => {
   return (
     <BrowserRouter>
@@ -34,6 +32,9 @@ const App = () => {
         <Route path="/new-user" element={<NewUser />} />
         <Route path="/existing-user" element={<ExistingUser />} />
         <Route path="/welcome-board-2" element={<WelcomeBoard2 />} />
+
+        {/* Chanelle's Pages */}
+        <Route path="/tenancy-application" element={<TenancyApplication />} />
 
       </Routes>
 
