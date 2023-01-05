@@ -13,6 +13,7 @@ import ExistingUser from "./Pages/MyProfile/ExistingUser/ExistingUser";
 import WelcomeBoard2 from "./Components/CommonComponents/WelcomeBoard2/WelcomeBoard2";
 import NewUser from "./Pages/MyProfile/NewUser/NewUser";
 import Login from "./Pages/Login/Login";
+import Signup from "./Pages/Signup/Signup";
 
 const App = () => {
   return (
@@ -40,6 +41,7 @@ const App = () => {
         <Route path="/existing-user" element={<ExistingUser />} />
         <Route path="/welcome-board-2" element={<WelcomeBoard2 />} />
         <Route path="login" element={<Login />} />
+        <Route path="register" element={<Signup />} />
       </Routes>
 
       <Newsletter />

@@ -1,9 +1,11 @@
-import SignUpText from "./LinkToSignUp/SignUpText";
+import HeadingText from "../../Common/LoginSignup/FormRight/Heading/HeadingText";
+
 import LoginForm from "./LoginForm/LoginForm";
-import LoginHeadingText from "./LoginHeading/LoginHeadingText";
-import RequiredText from "./Required/RequiredText";
-import ButtonSocial from "./SocialLogin/ButtonSocial";
-import LineText from "./TextHr/LineText";
+
+import ButtonSocial from "./../../Common/LoginSignup/FormRight/Social/ButtonSocial";
+import LineText from "../../Common/LoginSignup/FormRight/TextHr/LineText";
+import RequiredText from "../../Common/LoginSignup/FormRight/Required/RequiredText";
+import SwitchLink from "../../Common/LoginSignup/FormRight/SwitchLink/SwitchLink";
 
 const LoginMain = () => {
   return (
@@ -13,14 +15,14 @@ const LoginMain = () => {
        2xl:px-20 xl:px-8 md:px-[20%] sm:px-[10%] px-[5%]
        `}
     >
-      <LoginHeadingText />
+      <HeadingText text="Log into My Diary" />
       <ButtonSocial name="google" />
       <ButtonSocial name="apple" />
       <ButtonSocial name="facebook" />
-      <LineText />
+      <LineText text="or continue with account," />
       <RequiredText />
       <LoginForm />
-      <SignUpText />
+      <SwitchLink text="Don’t you have an account?" buttonText={"Register"} />
     </div>
   );
 };
