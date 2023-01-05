@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import ProcessBar3 from './Common/ProcessBar3'
 import CurrentLandlordRef from './Form3/CurrentLandlordRef'
 import PreviousLandlordRef from './Form3/PreviousLandlordRef'
@@ -13,10 +15,14 @@ const References = () => {
             <CurrentLandlordRef />
             <PreviousLandlordRef />
             <OtherReferences />
-            <div className='flex'>
-                <BackBtn />
-                <NextBtn /></div>
+            <div className='flex justify-between mx-[10rem]'>
 
+                <Link to="/tenancy-application-co-applicants"><BackBtn /></Link>
+                <Link to="/tenancy-application-reviews"><NextBtn /></Link>
+
+
+
+            </div>
 
 
 

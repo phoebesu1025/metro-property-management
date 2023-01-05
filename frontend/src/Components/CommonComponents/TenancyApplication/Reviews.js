@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import ProcessBar4 from './Common/ProcessBar4'
 import Heading from './Form4/Heading'
 import ReviewYourDetails from './Form4/ReviewYourDetails'
@@ -22,8 +23,18 @@ const Reviews = () => {
             </div>
 
             <div className='lg:px-[10rem] flex  w-full justify-start'>
-                <SaveBtn />
-                <SubmitBtn />
+
+                <Link to="/"><SaveBtn /></Link>
+                <Link to="/tenancy-application-complete"><SubmitBtn /></Link>
+
+            </div>
+
+
+
+
+
+
+            <div className='flex justify-between mx-[10rem]'>
             </div>
 
 

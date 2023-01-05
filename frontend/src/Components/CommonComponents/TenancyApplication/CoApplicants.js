@@ -1,9 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import ProcessBar2 from '../../../Components/CommonComponents/TenancyApplication/Common/ProcessBar2'
 import CoApplicantsSection from './Form2/CoApplicants'
 import CoApplicants1 from './Form2/CoApplicants1'
-import NumberCount from './Common/NumberCount'
-
 import BackBtn from './Common/BackBtn'
 import NextBtn from './Common/NextBtn'
 import OtherNonTenant from './Form2/OtherNonTenant'
@@ -19,8 +18,14 @@ const CoApplicants = () => {
 
 
 
-            <div className='flex'><BackBtn />
-                <NextBtn /></div>
+            <div className='flex justify-between mx-[10rem]'>
+
+                <Link to="/tenancy-application-your-detail"><BackBtn /></Link>
+                <Link to="/tenancy-application-references"><NextBtn /></Link>
+
+
+
+            </div>
 
 
 
