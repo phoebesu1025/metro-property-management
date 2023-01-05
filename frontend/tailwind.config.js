@@ -31,7 +31,7 @@ module.exports = {
 
         'tenancyApplication': "linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 180.34%), url('../public/images/tenancyApplication/bg.png')",
 
-        'marbleBg': "linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 180.34%), url('../public/images/tenancyApplication/marbleBg.png')"
+        'marbleBg': "url('../public/images/tenancyApplication/marbleBg.png')"
 
       }
     },
