@@ -24,7 +24,9 @@ const Header = () => {
       <Nav />
       <ButtonGroup />
 
-      {isActiveMobileNav && <NavMobile />}
+      {isActiveMobileNav && (
+        <NavMobile handleMobileNavbar={handleMobileNavbar} />
+      )}
 
       {isActiveMobileNav ? (
         <CrossButton handleMobileNavbar={handleMobileNavbar} />

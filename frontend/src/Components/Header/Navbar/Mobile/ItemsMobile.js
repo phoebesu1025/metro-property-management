@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ItemsMobile = ({ data, tab, backToNavList }) => {
+const ItemsMobile = ({ data, tab, backToNavList, handleMobileNavbar }) => {
   const [activeSubMenu, setActiveSubMenu] = useState();
 
   function changeActiveSubMenu(e) {
@@ -58,24 +58,31 @@ const ItemsMobile = ({ data, tab, backToNavList }) => {
             {data.array.map((list, index) =>
               (list.heading === "Keep track of your records") &
               (activeSubMenu === "Keep track of your records") ? (
-                <div key={index}>
+                <div className="flex flex-col" key={index}>
                   <p className="bg-white text-red1 xl:px-36 sm:px-20 px-16 py-8 border-b-2 border-red1">
                     Create an account to keep track of your favorites and rental
                     process.
                   </p>
-                  <Link className="font-bold bg-white text-red1 xl:px-36 sm:px-20 px-16 py-8 border-b-2 border-red1">
+                  <Link
+                    onClick={handleMobileNavbar}
+                    className="font-bold bg-white text-red1 xl:px-36 sm:px-20 px-16 py-8 border-b-2 border-red1"
+                  >
                     Join My Diary
                   </Link>
                   <p className="bg-white text-red1 xl:px-36 sm:px-20 px-16 py-8 border-b-2 border-red1">
                     Already a Metro customer?
                   </p>
-                  <Link className="font-bold bg-white text-red1 xl:px-36 sm:px-20 px-16 py-8 border-b-2 border-red1">
+                  <Link
+                    onClick={handleMobileNavbar}
+                    className="font-bold  bg-white text-red1 xl:px-36 sm:px-20 px-16 py-8 border-b-2 border-red1"
+                  >
                     Sign into Tenant Portal
                   </Link>
                 </div>
               ) : activeSubMenu === list.heading && list.links ? (
                 list.links.map((link, index) => (
                   <Link
+                    onClick={handleMobileNavbar}
                     to={link.path}
                     className="bg-white text-red1 xl:px-36 sm:px-20 px-16 py-8 border-b-2 border-red1 "
                     key={index}
