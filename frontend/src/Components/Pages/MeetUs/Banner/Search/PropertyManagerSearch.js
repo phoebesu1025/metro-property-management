@@ -68,7 +68,7 @@ const PropertyManagerSearch = () => {
 
       </div>
       {/* ///////////////////////////////////////////////////////////////////// */}
-      <div className=' py-[3rem] 
+      <div className=' py-[rem] 
         '>
         <div className="  px-[1.7rem]
             xs:px-[3rem] 
