@@ -49,22 +49,22 @@ const App = () => {
 
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Signup />} />
-    
 
 
 
 
-        {/* Chanelle's Pages */}
+
+        {/* Tenancy Application Site */}
 
         <Route path="/tenancy-application-your-detail" element={<TAYourDetail />} />
         <Route path="/tenancy-application-co-applicants" element={<TACoApplicants />} />
         <Route path="/tenancy-application-references" element={<TAReferences />} />
         <Route path="/tenancy-application-reviews" element={<TAReviews />} />
         <Route path="/tenancy-application-complete" element={<TAComplete />} />
-        <Route path="login" element={<Login />} />
+        {/* Tenancy Application Site */}
 
 
-        </Routes>
+      </Routes>
 
 
 

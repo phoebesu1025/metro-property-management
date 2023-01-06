@@ -19,6 +19,7 @@ const MeetUsBanner = () => {
       />
 
       <PropertyManagerSearch />
+
     </div>
   );
 };

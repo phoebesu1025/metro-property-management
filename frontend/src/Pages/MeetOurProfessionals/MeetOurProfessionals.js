@@ -8,7 +8,7 @@ const MeetOurProfessionals = () => {
   return (
     <div className="meet-our-professional-page">
       <MeetUsBanner />
-      <PropertyManagersAll />
+      {/* <PropertyManagersAll /> */}
       <RedBanner />
       <Faq />
     </div>
