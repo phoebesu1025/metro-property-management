@@ -45,7 +45,7 @@ app.get("/", (req, res, next) => {
 const PropertyManagers = require("./db/PropertyManagers");
 app.get("/propertyManagers", (req, res, next) => {
   PropertyManagers.find()
-    .limit(7)
+
     .exec()
     .then((doc) => {
       console.log(doc);
@@ -77,15 +77,6 @@ app.get("/", (req, res) =>
     group: "Geeks On Mission",
     "mission No.": 5,
   })
-);
-app.get("/risk", (req, res) =>
-  res.json({ message: "Welcome to Risk Rating API!" })
-);
-
-app.get("/note", (req, res) => {
-  res.send(
-    "we just need to see how to link mongodb's data to our backend, then we can submit this?🍃🐳"
-  );
-});
+)
 
 app.use(karanRouter);
