@@ -5,31 +5,28 @@ import ButtonGroup from "../../../../Header/Button/ButtonGroup";
 import PropertyManagerAll from "../../../../CommonComponents/PropertyManagers/PropertyManagerAll";
 
 const PropertyManagerSearch = () => {
-  const [searchResult, setSearchResult] = useState([])
-  const [key, setKey] = useState("")
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const [showData, setShowData] = useState('')
+
+
 
   useEffect(() => {
-    const search = async () => {
-      try {
-        if (!key.trim()) {
-          setSearchResult([])
-          return
-        }
-        const res = await axios.get("http://localhost:5000/propertyManagers", { params: { key: key, limit: 5 } })
-        setSearchResult(res)
-        console.log(res)
-      } catch (error) {
-        console.log(error)
+    fetch("http://localhost:5000/propertyManagers")
+      .then(response => response.json())
+      .then(result => {
+        console.log(result);
+        setShowData(result)
       }
-    }
-    search()
-  }, [key])
+      )
+      .catch(error => console.log('error', error));
+  }, [])
 
   return (
     <>
       <div
-        className={`absolute 2xl:px-24 sm:px-12 px-6
-      w-full xl:top-[30%] 85 sm:top-[20%]  xs:top-[20%] 2xs:top-[10%] top-[10%] drop-shadow-2xl
+        className={`relative 2xl:px-24 sm:px-12 px-6
+      w-full xl:top-[-5rem] 85 sm:top-[-5rem]  xs:top-[-5rem] 2xs:top-[-5rem] top-[-5rem] drop-shadow-2xl
       `}
       >
 
@@ -41,7 +38,7 @@ const PropertyManagerSearch = () => {
           {/*   Search by name */}
           <div className="name-search flex flex-col gap-y-2 2xl:basis-[25%] sm:basis-[45%] basis-[100%]">
             <label>Search by Property manager Name</label>
-            <input placeholder="Enter the name" type={"text"} value={key} onChange={(e) => setKey(e.target.value)} />
+            <input placeholder="Enter the name" type={"text"} onChange={(e) => setSearchTerm(e.target.value)} />
           </div>
           {/* //////////// */}
 
@@ -71,7 +68,66 @@ const PropertyManagerSearch = () => {
 
       </div>
       {/* ///////////////////////////////////////////////////////////////////// */}
-      <PropertyManagerAll />
+      <div className=' py-[3rem] 
+        '>
+        <div className="  px-[1.7rem]
+            xs:px-[3rem] 
+            lg:px-[6rem] ">
+
+
+
+          <div className='flex justify-center' >
+
+
+
+            <div id='slider' className=' flex  flex-wrap justify-center gap-8
+                    md:justify-start'>
+              {Array.from(showData).filter((val) => {
+                if (searchTerm === "") {
+                  return val
+                } else if (val.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                  return val
+                }
+              }).map((ManagerArrayList) => {
+                return (
+                  <div className='w-[17.56rem] h-[15rem]  bg-white rounded-md shadow-lg px-7' key={ManagerArrayList._id}>
+                    <div className='top-section flex justify-between py-6'>
+                      <div className='my-auto'><img src={ManagerArrayList.imgSrc} alt={ManagerArrayList.imgAlt} /></div>
+
+                      <div className='flex flex-col text-[0.6rem] font-semibold text-end'>
+                        <div>{`${ManagerArrayList.successfulClient} Successful Clients`}</div>
+                        <div>{ManagerArrayList.email}</div>
+                        <div>{ManagerArrayList.phone}</div>
+                      </div>
+                    </div>
+
+
+
+                    <div>
+                      <h1 className='font-bold text-[0.9rem] -mt-[0.3rem] '>
+                        {ManagerArrayList.name}
+                      </h1>
+                      <p className=' w-[13.5rem] mx-auto text-[0.6rem] leading-4 mb-5'>
+                        {ManagerArrayList.detail} <br />
+                        {`Available to meet on ${ManagerArrayList.availableDate}`}
+                      </p>
+                    </div>
+                    <ButtonGroup />
+                  </div>
+                )
+              })
+              }
+              {/*Might can divide into more components? */}
+            </div>
+
+
+
+
+
+          </div>
+
+        </div>
+      </div>
     </>
   );
 };
