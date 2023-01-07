@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import FormButton from "../../../Common/LoginSignup/FormRight/Form/FormButton";
 import TextInputField from "../../../Common/LoginSignup/FormRight/Form/TextInputField";
 import TextValidate from "../../../Common/LoginSignup/FormRight/Form/TextValidate";
@@ -6,21 +6,52 @@ import PasswordValidation from "./Functions/PasswordValidation";
 import axios from "axios";
 
 const SignupForm = () => {
+  // Variables to store input fields value
   const [inputName, setInputName] = useState("");
   const [inputEmail, setInputEmail] = useState("");
   const [inputPassword, setInputPassword] = useState("");
+
+  // UseRefs for password text validation
+  const moreLength = useRef(); //At least 8 characters
+  const haveNumber = useRef(); //At least 1 number
+  const haveSpecChar = useRef(); //At least 1 special char
+
+  // Error Variable
   const [customError, setCustomError] = useState("");
+
+  // Variable to check password accessibility
   const [passValidate, setPassValidate] = useState({
-    lengthIsMore: false,
-    containNumber: false,
-    containSpecialChar: false,
+    lengthIsMore: false, //At least 8 characters
+    containNumber: false, //At least 1 number
+    containSpecialChar: false, //At least 1 special char
   });
 
   useEffect(() => {
+    // Password validity and change image from red cross -> green tick
     PasswordValidation(inputPassword, setPassValidate);
-    console.log(customError);
   }, [inputPassword, customError]);
 
+  // password Verification and changing text to red if password criteria is invalid
+  function handlePassVerification(givenVerification, textField) {
+    if (!givenVerification) {
+      textField.current.children[1].classList.add("text-red1");
+      textField.current.children[1].classList.add("font-bold");
+      textField.current.children[1].classList.add(
+        "animate-[bounce_0.5s_ease-in-out_infinite]"
+      );
+      // Removing the class after 1250 milliseconds
+      setTimeout(() => {
+        textField.current.children[1].classList.remove("text-red1");
+        textField.current.children[1].classList.remove("font-bold");
+        textField.current.children[1].classList.remove(
+          "animate-[bounce_0.5s_ease-in-out_infinite]"
+        );
+      }, 1250);
+      throw new Error("please check your password");
+    }
+  }
+
+  // Api Call to create user
   function handleSignup(e) {
     e.preventDefault();
     let data = JSON.stringify({
@@ -28,6 +59,10 @@ const SignupForm = () => {
       email: inputEmail,
       password: inputPassword,
     });
+
+    handlePassVerification(passValidate.lengthIsMore, moreLength);
+    handlePassVerification(passValidate.containNumber, haveNumber);
+    handlePassVerification(passValidate.containSpecialChar, haveSpecChar);
 
     let config = {
       name: "sign-up",
@@ -45,7 +80,7 @@ const SignupForm = () => {
       })
       .catch((error) => {
         setCustomError(error.response.data);
-        console.error("sds");
+        console.error(error.response.data);
       });
   }
 
@@ -59,14 +94,17 @@ const SignupForm = () => {
       <TextInputField getInput={setInputPassword} type="password" />
 
       <TextValidate
+        reactUseRef={moreLength}
         imgSrc={passValidate.lengthIsMore}
         text="At least 8 characters"
       />
       <TextValidate
+        reactUseRef={haveNumber}
         imgSrc={passValidate.containNumber}
         text="At least 1 number"
       />
       <TextValidate
+        reactUseRef={haveSpecChar}
         imgSrc={passValidate.containSpecialChar}
         text="At least 1 special char"
       />
