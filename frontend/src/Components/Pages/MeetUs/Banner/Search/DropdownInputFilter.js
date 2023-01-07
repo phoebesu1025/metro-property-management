@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const DropdownInputFilter = ({ filterName, dropdowns }) => {
+const DropdownInputFilter = ({ filterName, dropdowns, }) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
@@ -31,6 +31,7 @@ const DropdownInputFilter = ({ filterName, dropdowns }) => {
           alt="dropdown-icon"
         />
       </button>
+
       <ul
         className={`dropdown absolute  top-[97%]
       flex-col
