@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const FaqFooter = () => {
     return (
@@ -7,7 +8,7 @@ const FaqFooter = () => {
                 Still have questions?
             </h1>
             <p className='mt-1'>
-                <span className='text-red1 underline font-semibold'>Meet our team</span> and speak about the rental properties we have available and the tenant services we offer.
+                <Link to="/meet-our-professionals"><span className='text-red1 underline font-semibold'>Meet our team</span></Link> and speak about the rental properties we have available and the tenant services we offer.
 
             </p>
 

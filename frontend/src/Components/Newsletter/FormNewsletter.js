@@ -1,4 +1,9 @@
 const FormNewsletter = () => {
+  const handleClick = (e) => {
+    document.getElementsByTagName("input") //still working on this
+    alert('Subscribed successfully! 🎉🎉🎉');
+
+  }
   return (
     <form className="
     mt-12
@@ -11,7 +16,7 @@ const FormNewsletter = () => {
       flex-col  items-end 
       
       xs:flex-row xs:justify-between">
-        <input
+        <input required
           type="text"
           className="border-footerInput rounded-md border-solid border  
           w-full h-[2.95rem] px-4 py-3
@@ -19,11 +24,11 @@ const FormNewsletter = () => {
           xs:w-[21rem] 
             "
         />
-        <button className=" bg-red2 text-white rounded-md w-[12.5rem] h-[2.95rem] px-10 py-3 ">
+        <button className=" bg-red2 text-white rounded-md w-[12.5rem] h-[2.95rem] px-10 py-3 " onClick={handleClick}>
           Subscribe
         </button>
       </div>
-    </form>
+    </form >
   );
 };
 
