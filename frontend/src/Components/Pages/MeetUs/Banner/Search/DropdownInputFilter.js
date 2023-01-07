@@ -7,7 +7,9 @@ const DropdownInputFilter = ({ filterName, dropdowns, }) => {
   function getInput(e) {
     setInputValue(e.currentTarget.innerText);
     setShowDropdown(!showDropdown);
+    console.log(e.currentTarget.innerText)
   }
+
 
   function handleShowDropdown() {
     setShowDropdown(!showDropdown);
@@ -41,11 +43,11 @@ const DropdownInputFilter = ({ filterName, dropdowns, }) => {
       ${showDropdown ? "flex" : "hidden"}
        `}
       >
-        {dropdowns.map((dropdown, index) => (
+        {dropdowns.map((dropdown, index, value) => (
           <li
             key={index}
             onClick={getInput}
-            value={"Residential Property Manager"}
+            value={value}
             className="px-6 py-4 border-b-2 last:border-b-0 "
           >
             {dropdown}
