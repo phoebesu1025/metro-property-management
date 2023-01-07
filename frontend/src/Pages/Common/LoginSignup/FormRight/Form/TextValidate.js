@@ -1,11 +1,11 @@
 import React from "react";
 
-const TextValidate = ({ text, imgSrc }) => {
+const TextValidate = ({ text, imgSrc, reactUseRef }) => {
   return (
     <div
+      ref={reactUseRef}
       className={`flex justify-start items-center 
-        gap-x-2 -mt-2 
-        ${imgSrc && "animate-[wiggle_.5s_ease-in-5]"}
+        gap-x-2 -mt-2 text-[#424343B2]
         `}
     >
       <img
@@ -15,7 +15,7 @@ const TextValidate = ({ text, imgSrc }) => {
         }.png`}
         alt=""
       />
-      <p className="text-paragraph  text-[#424343B2]  ">{text}</p>
+      <p className="text-paragraph">{text}</p>
     </div>
   );
 };
