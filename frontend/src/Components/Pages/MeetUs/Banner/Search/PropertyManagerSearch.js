@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react"
 import DropdownInputFilter from "./DropdownInputFilter";
 import axios from "axios"
-import ButtonGroup from "../../../../Header/Button/ButtonGroup";
+import ButtonGroup from "../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/ButtonGroup";
 import PropertyManagerAll from "../../../../CommonComponents/PropertyManagers/PropertyManagerAll";
 
 const PropertyManagerSearch = () => {
-  const [searchTerm, setSearchTerm] = useState('')
-
   const [showData, setShowData] = useState('')
+  const [searchTerm, setSearchTerm] = useState('')
+  const [locationDropdown, setLocationDropdown] = useState('')
+
+
 
 
 
@@ -68,11 +70,9 @@ const PropertyManagerSearch = () => {
 
       </div>
       {/* ///////////////////////////////////////////////////////////////////// */}
-      <div className=' py-[rem] 
+      <div className=' py-[rem] 2xl:px-24 sm:px-12 px-6
         '>
-        <div className="  px-[1.7rem]
-            xs:px-[3rem] 
-            lg:px-[6rem] ">
+        <div className="  ">
 
 
 
@@ -80,8 +80,8 @@ const PropertyManagerSearch = () => {
 
 
 
-            <div id='slider' className=' flex  flex-wrap justify-center gap-8
-                    md:justify-start'>
+            <div id='slider' className=' grid grid-cols-1 gap-y-5
+            xs:grid-cols-2 gap-x-11 lg:grid-cols-3 2xl:grid-cols-4 '>
               {Array.from(showData).filter((val) => {
                 if (searchTerm === "") {
                   return val

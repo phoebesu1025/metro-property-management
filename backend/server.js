@@ -44,7 +44,7 @@ app.get("/", (req, res, next) => {
 //////////////////////////////////////////////////////////////////////////
 const PropertyManagers = require("./db/PropertyManagers");
 app.get("/propertyManagers", (req, res, next) => {
-  PropertyManagers.find()
+  PropertyManagers.find(req.query)
 
     .exec()
     .then((doc) => {
@@ -56,27 +56,13 @@ app.get("/propertyManagers", (req, res, next) => {
       res.status(500).json({ error: err });
     });
 });
-//-------For Name filter---not working yet
-app.get("/propertyManagers/name", (req, res, next) => {
-  PropertyManagers.findOne({ name: new RegExp("^" + name + "$", "i") })
-    .exec()
-    .then((doc) => {
-      console.log(doc);
-      res.status(200).json(doc);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json({ error: err });
-    });
-});
+///
 
-app.get("/", (req, res) =>
-  res.json({
-    message: "Welcome",
-    level: 5,
-    group: "Geeks On Mission",
-    "mission No.": 5,
-  })
-)
+
+
+
+
+
+
 
 app.use(karanRouter);

@@ -16,10 +16,10 @@ const Faq3 = () => {
             '>
 
                 {/* /*------------------question+button----------------------------*/}
-                <div className={` FAQ Line ${toggle === true ? '' : 'shadow-inner'}
-                2xs:flex flex-row w-full justify-between px-10 py-4 shadow-md 
+                <div className={` FAQ Line ${toggle === true ? 'shadow-md' : 'shadow-inner'}
+                2xs:flex flex-row w-full justify-between px-10 py-4  
                 
-                lg:w-5/6
+                lg:w-[55rem]
                 
                 `}>
                     <p className='2xs:py-3 my-auto w-[50rem]
@@ -48,7 +48,7 @@ const Faq3 = () => {
                     
                     2xs: opacity-0
                     
-                    lg:relative lg:opacity-80 lg:-left-[3.5rem] lg:bottom-[9rem]'>
+                    lg:relative lg:opacity-80 lg:-left-[2.5rem] lg:bottom-[7rem]'>
                         <img src='./images/faq/arrow.png' alt='arrow' />
                     </div>
 
