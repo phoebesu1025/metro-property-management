@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-const DropdownInputFilter = ({ filterName, dropdowns, }) => {
+const DropdownInputFilter = ({ filterName, dropdowns, selectDropdown, dropdownValue }) => {
   const [showDropdown, setShowDropdown] = useState(false);
-  const [inputValue, setInputValue] = useState("");
+
 
   function getInput(e) {
-    setInputValue(e.currentTarget.innerText);
+    selectDropdown(e.currentTarget.innerText);
     setShowDropdown(!showDropdown);
-    console.log(e.currentTarget.innerText)
+    // console.log(e.currentTarget.innerText)
   }
 
 
@@ -20,7 +20,7 @@ const DropdownInputFilter = ({ filterName, dropdowns, }) => {
       <label>{filterName}</label>
       <input
         disabled={"disabled"}
-        value={inputValue}
+        value={dropdownValue}
         placeholder="Choose one"
         type={"text"}
       />

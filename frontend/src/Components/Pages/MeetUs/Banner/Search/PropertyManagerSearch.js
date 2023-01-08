@@ -7,13 +7,11 @@ import PropertyManagerAll from "../../../../CommonComponents/PropertyManagers/Pr
 const PropertyManagerSearch = () => {
   const [showData, setShowData] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
-  const [locationDropdown, setLocationDropdown] = useState('')
-
-
-
-
+  const [inputCatagories, setInputCatagories] = useState("");
+  const [inputLocation, setInputLocation] = useState("");
 
   useEffect(() => {
+    console.log(inputCatagories, inputLocation)
     fetch("http://localhost:5000/propertyManagers")
       .then(response => response.json())
       .then(result => {
@@ -22,7 +20,7 @@ const PropertyManagerSearch = () => {
       }
       )
       .catch(error => console.log('error', error));
-  }, [])
+  }, [inputCatagories, inputLocation])
 
   return (
     <>
@@ -51,11 +49,15 @@ const PropertyManagerSearch = () => {
               "Commercial Property Manager",
               "Finance Advisor",
             ]}
+            selectDropdown={setInputCatagories}
+            dropdownValue={inputCatagories}
           />
 
           <DropdownInputFilter
             filterName={"Filter by location"}
             dropdowns={["Auckland Central", "Albany", "Hamilton"]}
+            selectDropdown={setInputLocation}
+            dropdownValue={inputLocation}
           />
 
 

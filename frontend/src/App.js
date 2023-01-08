@@ -47,7 +47,7 @@ const App = () => {
         <Route path="/existing-user" element={<ExistingUser />} />
         <Route path="/welcome-board-2" element={<WelcomeBoard2 />} />
 
-        <Route path="login" element={<Login />} />
+        <Route exact path="login" element={<Login />} />
         <Route path="register" element={<Signup />} />
 
 
