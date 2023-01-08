@@ -8,7 +8,7 @@ const FormNewsletter = () => {
     setUserInput(e.target.value);
   }
 
-  const handleClick = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
 
     var myHeaders = new Headers();
@@ -29,6 +29,7 @@ const FormNewsletter = () => {
         console.log(result, "subscribed")
         if (result.status == "ok") {
           alert('Subscribed successfully! 🎉🎉🎉');
+          setUserInput('');
         } else {
           alert('You\'already subscribed')
         }
@@ -41,7 +42,7 @@ const FormNewsletter = () => {
     <form className="
     mt-12
     lg:my-auto
-    lg:"onSubmit={handleClick} >
+    lg:"onSubmit={handleSubmit} >
       <p className="text-paragraph w-full text-footerSubGrey2 mb-2 ">
         Your Email Address
       </p>
@@ -59,7 +60,7 @@ const FormNewsletter = () => {
           onChange={handleChange}
           value={userInput}
         />
-        <button className=" bg-red2 text-white rounded-md w-[12.5rem] h-[2.95rem] px-10 py-3 " onSubmit={handleClick}>
+        <button className=" bg-red2 text-white rounded-md w-[12.5rem] h-[2.95rem] px-10 py-3 " onSubmit={handleSubmit}>
           Subscribe
         </button>
       </div>
