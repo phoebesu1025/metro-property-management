@@ -8,7 +8,7 @@ const FaqFooter = () => {
                 Still have questions?
             </h1>
             <p className='mt-1'>
-                <Link to="/meet-our-professionals"><span className='text-red1 underline font-semibold'>Meet our team</span></Link> and speak about the rental properties we have available and the tenant services we offer.
+                <Link to="/meet-our-professionals" onClick={() => { window.scroll(0, 0); }}><span className='text-red1 underline font-semibold'>Meet our team</span></Link> and speak about the rental properties we have available and the tenant services we offer.
 
             </p>
 
