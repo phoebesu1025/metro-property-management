@@ -3,7 +3,6 @@ import { useState } from 'react';
 
 const FormNewsletter = () => {
   const [userInput, setUserInput] = useState('');
-  const [post, setPost] = useState('');
 
   const handleChange = (e) => {
     setUserInput(e.target.value);
@@ -51,7 +50,7 @@ const FormNewsletter = () => {
       
       xs:flex-row xs:justify-between">
         <input required
-          type="text"
+          type="email"
           className="border-footerInput rounded-md border-solid border  
           w-full h-[2.95rem] px-4 py-3
 
