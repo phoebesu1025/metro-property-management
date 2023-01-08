@@ -14,10 +14,10 @@ SubscribeRouter.post("/subscribe", async (req, res) => {
             email
         });
         console.log(subscribe);
-        res.status(200).json(subscribe);
+        res.send({ status: "ok" })
     } catch (e) {
-        const newError = e;
-        res.status(400).send(`${newError}`);
+        res.send({ status: "error" });
+        console.log(e);
     }
 })
 module.exports = SubscribeRouter
