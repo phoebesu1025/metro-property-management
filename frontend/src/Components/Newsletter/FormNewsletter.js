@@ -1,9 +1,42 @@
+import React from 'react'
+import { useState } from 'react';
 const FormNewsletter = () => {
-  const handleClick = (e) => {
-    document.getElementsByTagName("input") //still working on this
-    alert('Subscribed successfully! 🎉🎉🎉');
+  const [userInput, setUserInput] = useState('');
+  const [post, setPost] = useState('');
 
+  const handleChange = (e) => {
+    setUserInput(e.target.value);
   }
+
+  const handleClick = (e) => {
+
+    alert('Subscribed successfully! 🎉🎉🎉');
+    console.log(userInput)
+    e.preventDefault();
+
+
+
+    //Fetching/////////////////////////////////////////////
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    var raw = JSON.stringify({
+      email: userInput
+    });
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    fetch("http://localhost:5000/Subscribe", requestOptions)
+      .then(response => response.text())
+      .then(result => {
+        setPost(result)
+      })
+      .catch(error => console.log('error', error));
+  }
+
   return (
     <form className="
     mt-12
@@ -23,6 +56,8 @@ const FormNewsletter = () => {
 
           xs:w-[21rem] 
             "
+          onChange={handleChange}
+          value={userInput}
         />
         <button className=" bg-red2 text-white rounded-md w-[12.5rem] h-[2.95rem] px-10 py-3 " onClick={handleClick}>
           Subscribe

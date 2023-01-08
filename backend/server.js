@@ -26,36 +26,9 @@ mongoose.connect(process.env.mongoUrl)
 
 const { karanRouter } = require("./Routers/KaranRouter");
 const PropertyManagersRouter = require("./Routers/PropertyManagers");
+const SubscribeRouter = require("./Routers/SubscribeRouter")
 /////////////////////////
 app.use(karanRouter);
 app.use("/", PropertyManagersRouter);
+app.use("/", SubscribeRouter);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-app.get("/", (req, res, next) => {
-  UserInfo.find()
-    .exec()
-    .then((doc) => {
-      console.log(doc);
-      res.status(200).json(doc);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json({ error: err });
-    });
-});
