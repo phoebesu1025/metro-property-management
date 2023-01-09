@@ -1,12 +1,18 @@
 import { useState, useEffect } from "react"
 import DropdownInputFilter from "./DropdownInputFilter";
 import ButtonGroup from "../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/ButtonGroup";
+import BookMeeting from './../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/BookMeeting'
+import SendMessage from './../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/SendMessage'
+import PropertyManagersPopUp1 from "./PopUp/PropertyManagersPopUp1";
 
 const PropertyManagerSearch = () => {
   const [showData, setShowData] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
   const [inputCatagories, setInputCatagories] = useState("");
   const [inputLocation, setInputLocation] = useState("");
+  const [openPopUp, setOpenPopUp] = useState(false);
+
+  const handlePopUp = () => { setOpenPopUp(true) }
 
   useEffect(() => {
     console.log(inputCatagories, inputLocation)
@@ -22,6 +28,8 @@ const PropertyManagerSearch = () => {
   console.log(searchTerm)
   return (
     <>
+      {openPopUp && <PropertyManagersPopUp1 closePopUp={setOpenPopUp} />}
+
       <div
         className={`relative 2xl:px-24 sm:px-12 px-6
       w-full xl:top-[-5rem] 85 sm:top-[-5rem]  xs:top-[-5rem] 2xs:top-[-5rem] top-[-5rem] drop-shadow-2xl
@@ -46,6 +54,7 @@ const PropertyManagerSearch = () => {
               "Residential Property Manager",
               "Commercial Property Manager",
               "Finance Advisor",
+              "All"
             ]}
             selectDropdown={setInputCatagories}
             dropdownValue={inputCatagories}
@@ -53,7 +62,7 @@ const PropertyManagerSearch = () => {
 
           <DropdownInputFilter
             filterName={"Filter by location"}
-            dropdowns={["Auckland Central", "Albany", "Hamilton"]}
+            dropdowns={["Auckland Central", "Albany", "Hamilton", "All"]}
             selectDropdown={setInputLocation}
             dropdownValue={inputLocation}
           />
@@ -62,8 +71,8 @@ const PropertyManagerSearch = () => {
           {/* button */}
 
           <div className="flex justify-end items-end 2xl:basis-[10%] sm:basis-[45%] basis-[100%]">
-            <button className="property-manger-search-btn bg-red1 text-white  px-10 py-2 rounded-md " onClick={() => setInputCatagories('') || setInputLocation('')}>
-              Reset
+            <button className="property-manger-search-btn bg-red1 text-white  px-10 py-2 rounded-md " onClick={() => showData}>
+              Search
             </button>
           </div>
         </div>
@@ -84,6 +93,16 @@ const PropertyManagerSearch = () => {
             xs:grid-cols-2 gap-x-11 lg:grid-cols-3 2xl:grid-cols-4 '>
               {Array.from(showData).filter((val) => {
                 if ((val.name.toLowerCase().includes(searchTerm.toLowerCase())) && (val.location.includes(inputLocation)) && (val.category.includes(inputCatagories))) {
+                  return val
+                } else if ((val.name.toLowerCase().includes(searchTerm.toLowerCase())) && (inputLocation == "All") && ((inputCatagories == val.category))) {
+                  return val
+                } else if ((val.name.toLowerCase().includes(searchTerm.toLowerCase())) && (inputCatagories == "All") && ((inputLocation == val.location))) {
+                  return val
+                } else if ((val.name.toLowerCase().includes(searchTerm.toLowerCase())) && (inputCatagories == "All") && ((inputLocation == "All"))) {
+                  return val
+                } else if ((val.name.toLowerCase().includes(searchTerm.toLowerCase())) && (inputCatagories == "All") && (inputLocation == "")) {
+                  return val
+                } else if ((val.name.toLowerCase().includes(searchTerm.toLowerCase())) && (inputLocation == "All") && (inputCatagories == "")) {
                   return val
                 }
 
@@ -111,7 +130,17 @@ const PropertyManagerSearch = () => {
                         {`Available to meet on ${ManagerArrayList.availableDate}`}
                       </p>
                     </div>
-                    <ButtonGroup />
+
+
+                    <div className='flex justify-between w-[13.5rem]'>
+                      <button className='text-footerSubGrey2 bg-none w-[6.5rem] px-[0.3rem] text-[0.57rem] rounded-md font-semibold border-footerSubGrey2 border-solid border-x-2 border-y-2' onClick={handlePopUp}>
+                        Send Message
+                      </button>
+                      <BookMeeting />
+                    </div>
+
+
+
                   </div>
                 )
               })

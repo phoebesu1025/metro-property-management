@@ -64,6 +64,9 @@ module.exports = {
 
       bookMeBtnBg: "#303030",
       buttonBorderGrey1: "#494646",
+      popUpTxt1: "#787878",
+      popUpStar: "#CC1543",
+      popUpInput: "#949495"
 
 
     },
