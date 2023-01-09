@@ -1,9 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import FormButton from "../../../Common/LoginSignup/FormRight/Form/FormButton";
 import TextInputField from "../../../Common/LoginSignup/FormRight/Form/TextInputField";
 import TextValidate from "../../../Common/LoginSignup/FormRight/Form/TextValidate";
 import PasswordValidation from "./Functions/PasswordValidation";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import LoggedUserContext from "../../../../Context/LoggedUserContext";
 
 const SignupForm = () => {
   // Variables to store input fields value
@@ -25,6 +27,10 @@ const SignupForm = () => {
     containNumber: false, //At least 1 number
     containSpecialChar: false, //At least 1 special char
   });
+
+  const navigate = useNavigate();
+  // eslint-disable-next-line no-unused-vars
+  const [_, setLoggedUser] = useContext(LoggedUserContext);
 
   useEffect(() => {
     // Password validity and change image from red cross -> green tick
@@ -77,6 +83,8 @@ const SignupForm = () => {
     axios(config)
       .then((response) => {
         console.log(JSON.stringify(response.data));
+        setLoggedUser(response.data);
+        navigate("/welcome-board-2");
       })
       .catch((error) => {
         setCustomError(error.response.data);
