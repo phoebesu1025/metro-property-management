@@ -2,6 +2,11 @@ li {
   cursor: pointer;
 }
 
+button > a:hover {
+  font-weight: normal;
+  text-decoration: none;
+}
+
 a:hover {
   font-weight: 700;
   text-decoration: underline;
