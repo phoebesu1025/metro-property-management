@@ -27,7 +27,7 @@ const FormNewsletter = () => {
       .then(res => res.json())
       .then(result => {
         console.log(result, "subscribed")
-        if (result.status == "ok") {
+        if (result.status === "ok") {
           alert('Subscribed successfully! 🎉🎉🎉');
           setUserInput('');
         } else {

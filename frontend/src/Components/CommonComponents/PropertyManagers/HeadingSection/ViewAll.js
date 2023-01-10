@@ -5,7 +5,7 @@ const ViewAll = () => {
     return (
         <div className='text-buttonGrey font-semibold text-[1rem] text-end underline cursor-pointer pt-9
         mb:w-1/6  mb:pt-32 '>
-            <Link to="/meet-our-professionals">View All</Link>
+            <Link to="/meet-our-professionals" onClick={() => { window.scroll(0, 0) }}>View All</Link>
         </div>
     )
 }
