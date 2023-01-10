@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 import DropdownInputFilter from "./DropdownInputFilter";
-import ButtonGroup from "../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/ButtonGroup";
-import BookMeeting from './../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/BookMeeting'
-import SendMessage from './../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/SendMessage'
+//import ButtonGroup from "../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/ButtonGroup";
+import BookMeeting from "./../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/BookMeeting";
+//import SendMessage from "./../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/SendMessage";
 import PropertyManagersPopUp1 from "./PopUp/PropertyManagersPopUp1";
 import PropertyManagersPopUp2 from "./PopUp/PropertyManagersPopUp2";
 import PropertyManagersPopUp3 from "./PopUp/PropertyManagersPopUp3";
@@ -12,8 +12,8 @@ import PropertyManagersPopUp6 from "./PopUp/PropertyManagersPopUp6";
 import PropertyManagersPopUp7 from "./PopUp/PropertyManagersPopUp7";
 
 const PropertyManagerSearch = () => {
-  const [showData, setShowData] = useState('')
-  const [searchTerm, setSearchTerm] = useState('')
+  const [showData, setShowData] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [inputCatagories, setInputCatagories] = useState("");
   const [inputLocation, setInputLocation] = useState("");
   const [openPopUp1, setOpenPopUp1] = useState(false);
@@ -24,20 +24,17 @@ const PropertyManagerSearch = () => {
   const [openPopUp6, setOpenPopUp6] = useState(false);
   const [openPopUp7, setOpenPopUp7] = useState(false);
 
-  // const handlePopUp1 = () => { setOpenPopUp1(true) }
-
   useEffect(() => {
-    console.log(inputCatagories, inputLocation)
+    console.log(inputCatagories, inputLocation);
     fetch("http://localhost:5000/propertyManagers")
-      .then(response => response.json())
-      .then(result => {
+      .then((response) => response.json())
+      .then((result) => {
         console.log(result);
-        setShowData(result)
-      }
-      )
-      .catch(error => console.log('error', error));
-  }, [inputCatagories, inputLocation])
-  console.log(searchTerm)
+        setShowData(result);
+      })
+      .catch((error) => console.log("error", error));
+  }, [inputCatagories, inputLocation]);
+  console.log(searchTerm);
   return (
     <>
       <div>hi</div>
@@ -53,16 +50,18 @@ const PropertyManagerSearch = () => {
       w-full xl:top-[-5rem] 85 sm:top-[-5rem]  xs:top-[-5rem] 2xs:top-[-5rem] top-[-5rem] drop-shadow-2xl
       `}
       >
-
         <div
           className={`flex sm:flex-row flex-wrap gap-2 flex-col justify-between py-8 px-12
         rounded-xl bg-white`}
         >
-
           {/*   Search by name */}
           <div className="name-search flex flex-col gap-y-2 2xl:basis-[25%] sm:basis-[45%] basis-[100%]">
             <label>Search by Property manager Name</label>
-            <input placeholder="Enter the name" type={"text"} onChange={(e) => setSearchTerm(e.target.value)} />
+            <input
+              placeholder="Enter the name"
+              type={"text"}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
           </div>
           {/* //////////// */}
 
@@ -72,7 +71,7 @@ const PropertyManagerSearch = () => {
               "Residential Property Manager",
               "Commercial Property Manager",
               "Finance Advisor",
-              "All"
+              "All",
             ]}
             selectDropdown={setInputCatagories}
             dropdownValue={inputCatagories}
@@ -85,69 +84,100 @@ const PropertyManagerSearch = () => {
             dropdownValue={inputLocation}
           />
 
-
           {/* button */}
 
           <div className="flex justify-end items-end 2xl:basis-[10%] sm:basis-[45%] basis-[100%]">
-            <button className="property-manger-search-btn bg-red1 text-white  px-10 py-2 rounded-md " onClick={() => showData}>
+            <button
+              className="property-manger-search-btn bg-red1 text-white  px-10 py-2 rounded-md "
+              onClick={() => showData}
+            >
               Search
             </button>
           </div>
         </div>
-
       </div>
       {/* ///////////////////////////////////////////////////////////////////// */}
-      <div className=' py-[rem] 2xl:px-24 sm:px-12 px-6
-        '>
+      <div
+        className=" py-[rem] 2xl:px-24 sm:px-12 px-6
+        "
+      >
         <div className="  ">
+          <div className="flex justify-center">
+            <div
+              id="slider"
+              className=" grid grid-cols-1 gap-y-5
+            xs:grid-cols-2 gap-x-11 lg:grid-cols-3 2xl:grid-cols-4 "
+            >
+              {Array.from(showData)
+                .filter((val) => {
+                  if (
+                    val.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+                    val.location.includes(inputLocation) &&
+                    val.category.includes(inputCatagories)
+                  ) {
+                    return val;
+                  } else if (
+                    val.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+                    inputLocation == "All" &&
+                    inputCatagories == val.category
+                  ) {
+                    return val;
+                  } else if (
+                    val.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+                    inputCatagories == "All" &&
+                    inputLocation == val.location
+                  ) {
+                    return val;
+                  } else if (
+                    val.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+                    inputCatagories == "All" &&
+                    inputLocation == "All"
+                  ) {
+                    return val;
+                  } else if (
+                    val.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+                    inputCatagories == "All" &&
+                    inputLocation == ""
+                  ) {
+                    return val;
+                  } else if (
+                    val.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+                    inputLocation == "All" &&
+                    inputCatagories == ""
+                  ) {
+                    return val;
+                  }
+                })
+                .map((ManagerArrayList) => {
+                  return (
+                    <div
+                      className="w-[17.56rem] h-[15rem]  bg-white rounded-md shadow-lg px-7"
+                      key={ManagerArrayList._id}
+                    >
+                      <div className="top-section flex justify-between py-6">
+                        <div className="my-auto">
+                          <img
+                            src={ManagerArrayList.imgSrc}
+                            alt={ManagerArrayList.imgAlt}
+                          />
+                        </div>
 
-
-
-          <div className='flex justify-center' >
-
-
-
-            <div id='slider' className=' grid grid-cols-1 gap-y-5
-            xs:grid-cols-2 gap-x-11 lg:grid-cols-3 2xl:grid-cols-4 '>
-              {Array.from(showData).filter((val) => {
-                if ((val.name.toLowerCase().includes(searchTerm.toLowerCase())) && (val.location.includes(inputLocation)) && (val.category.includes(inputCatagories))) {
-                  return val
-                } else if ((val.name.toLowerCase().includes(searchTerm.toLowerCase())) && (inputLocation == "All") && ((inputCatagories == val.category))) {
-                  return val
-                } else if ((val.name.toLowerCase().includes(searchTerm.toLowerCase())) && (inputCatagories == "All") && ((inputLocation == val.location))) {
-                  return val
-                } else if ((val.name.toLowerCase().includes(searchTerm.toLowerCase())) && (inputCatagories == "All") && ((inputLocation == "All"))) {
-                  return val
-                } else if ((val.name.toLowerCase().includes(searchTerm.toLowerCase())) && (inputCatagories == "All") && (inputLocation == "")) {
-                  return val
-                } else if ((val.name.toLowerCase().includes(searchTerm.toLowerCase())) && (inputLocation == "All") && (inputCatagories == "")) {
-                  return val
-                }
-
-              }).map((ManagerArrayList) => {
-                return (
-                  <div className='w-[17.56rem] h-[15rem]  bg-white rounded-md shadow-lg px-7' key={ManagerArrayList._id}>
-                    <div className='top-section flex justify-between py-6'>
-                      <div className='my-auto'><img src={ManagerArrayList.imgSrc} alt={ManagerArrayList.imgAlt} /></div>
-
-                      <div className='flex flex-col text-[0.6rem] font-semibold text-end'>
-                        <div>{`${ManagerArrayList.successfulClient} Successful Clients`}</div>
-                        <div>{ManagerArrayList.email}</div>
-                        <div>{ManagerArrayList.phone}</div>
+                        <div className="flex flex-col text-[0.6rem] font-semibold text-end">
+                          <div>{`${ManagerArrayList.successfulClient} Successful Clients`}</div>
+                          <div>{ManagerArrayList.email}</div>
+                          <div>{ManagerArrayList.phone}</div>
+                        </div>
                       </div>
-                    </div>
 
-
-
-                    <div>
-                      <h1 className='font-bold text-[0.9rem] -mt-[0.3rem] '>
-                        {ManagerArrayList.name}
-                      </h1>
-                      <p className=' w-[13.5rem] mx-auto text-[0.6rem] leading-4 mb-5'>
-                        {ManagerArrayList.detail} <br />
-                        {`Available to meet on ${ManagerArrayList.availableDate}`}
-                      </p>
-                    </div>
+                      <div>
+                        <h1 className="font-bold text-[0.9rem] -mt-[0.3rem] ">
+                          {ManagerArrayList.name}
+                        </h1>
+                        <p className=" w-[13.5rem] mx-auto text-[0.6rem] leading-4 mb-5">
+                          {ManagerArrayList.detail} <br />
+                          {`Available to meet on ${ManagerArrayList.availableDate}`}
+                        </p>
+                      </div>
 
 
                     <div className='flex justify-between w-[13.5rem]'>
@@ -173,23 +203,23 @@ const PropertyManagerSearch = () => {
                         Send Message
                       </button>
                       <BookMeeting />
+
+                      <div className="flex justify-between w-[13.5rem]">
+                        <button
+                          className="text-footerSubGrey2 bg-none w-[6.5rem] px-[0.3rem] text-[0.57rem] rounded-md font-semibold border-footerSubGrey2 border-solid border-x-2 border-y-2"
+                          onClick={handlePopUp}
+                        >
+                          Send Message
+                        </button>
+                        <BookMeeting />
+                      </div>
+
                     </div>
-
-
-
-                  </div>
-                )
-              })
-              }
+                  );
+                })}
               {/*Might can divide into more components? */}
             </div>
-
-
-
-
-
           </div>
-
         </div>
       </div>
     </>
