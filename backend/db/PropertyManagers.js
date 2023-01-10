@@ -9,7 +9,9 @@ const UserDetailsSchema = new mongoose.Schema(
         email: String,
         phone: String,
         detail: String,
-        availableDate: String
+        availableDate: String,
+        location: String,
+        category: String,
     },
     {
         collection: "PropertyManagers",
