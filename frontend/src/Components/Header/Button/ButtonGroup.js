@@ -9,6 +9,7 @@ import User from "./User";
 const ButtonGroup = () => {
   // eslint-disable-next-line no-unused-vars
   const [LoggedUser, _] = useContext(LoggedUserContext);
+
   return (
     <div className="header-buttons  gap-x-2 ml-auto sm:flex hidden">
       {/* <Login /> */}{" "}

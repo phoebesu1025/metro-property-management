@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // Context
 import LoggedUserContext from "./Context/LoggedUserContext";
 
+// Pages or Components
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import Newsletter from "./Components/Newsletter/Newsletter";
@@ -22,11 +24,13 @@ import TAReviews from "./Pages/TenancyApplication/TAReviews";
 import TAComplete from "./Pages/TenancyApplication/TAComplete";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
-
-import "./App.css";
-import { useState } from "react";
 import WelcomeBoard1 from "./Pages/WelcomBoard/WelcomeBoard1";
 import UserNavbar from "./Components/UserNav/UserNavbar";
+
+// Css
+import "./App.css";
+// import axios from "axios";
+
 const App = () => {
   const loggedUser = useState(null);
 

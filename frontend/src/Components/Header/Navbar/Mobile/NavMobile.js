@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import DropdownArray from "../Dropdown/DropdownArray";
 import ItemsMobile from "./ItemsMobile";
 
@@ -8,6 +9,8 @@ const NavMobile = ({ handleMobileNavbar }) => {
 
   const [showSubMenu, setShowDropdown] = useState(false);
 
+  const navigate = useNavigate();
+
   function changeToActiveTab(e) {
     setActiveTab(e.currentTarget.value);
     setShowDropdown(true);
@@ -16,6 +19,12 @@ const NavMobile = ({ handleMobileNavbar }) => {
   function backToNavList() {
     setShowDropdown(false);
   }
+
+  function handleMyAccount() {
+    navigate("/login");
+    handleMobileNavbar();
+  }
+
   return (
     <div
       className={`absolute bg-red1 
@@ -53,8 +62,11 @@ const NavMobile = ({ handleMobileNavbar }) => {
             )
         )}
 
-      <button className="sm:hidden flex absolute text-heading3 font-bold sm:left-12 left-6 bottom-[20%] px-8 rounded-md py-4 bg-black">
-        My Diary
+      <button
+        onClick={handleMyAccount}
+        className="sm:hidden flex absolute text-heading3 font-bold sm:left-12 left-6 bottom-[20%] px-8 rounded-md py-4 bg-black"
+      >
+        My Account
       </button>
     </div>
   );
