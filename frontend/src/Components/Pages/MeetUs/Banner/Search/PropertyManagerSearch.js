@@ -12,8 +12,8 @@ import PropertyManagersPopUp6 from "./PopUp/PropertyManagersPopUp6";
 import PropertyManagersPopUp7 from "./PopUp/PropertyManagersPopUp7";
 
 const PropertyManagerSearch = () => {
-  const [showData, setShowData] = useState('')
-  const [searchTerm, setSearchTerm] = useState('')
+  const [showData, setShowData] = useState("")
+  const [searchTerm, setSearchTerm] = useState("")
   const [inputCatagories, setInputCatagories] = useState("");
   const [inputLocation, setInputLocation] = useState("");
   const [openPopUp1, setOpenPopUp1] = useState(false);
@@ -23,6 +23,8 @@ const PropertyManagerSearch = () => {
   const [openPopUp5, setOpenPopUp5] = useState(false);
   const [openPopUp6, setOpenPopUp6] = useState(false);
   const [openPopUp7, setOpenPopUp7] = useState(false);
+
+  // const handlePopUp1 = () => { setOpenPopUp1(true) }
 
   // const handlePopUp1 = () => { setOpenPopUp1(true) }
 
@@ -199,8 +201,9 @@ const PropertyManagerSearch = () => {
                             } else if (ManagerArrayList.id == "7") {
                               return setOpenPopUp7("true")
                             }
-                          }}
-                        >
+                          }}>
+
+
                           Send Message
                         </button>
                         <BookMeeting />
