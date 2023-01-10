@@ -40,6 +40,7 @@ const PropertyManagerSearch = () => {
   console.log(searchTerm)
   return (
     <>
+      <div>hi</div>
       {openPopUp1 && <PropertyManagersPopUp1 closePopUp={setOpenPopUp1} />}
       {openPopUp2 && <PropertyManagersPopUp2 closePopUp={setOpenPopUp2} />}
       {openPopUp3 && <PropertyManagersPopUp3 closePopUp={setOpenPopUp3} />}
