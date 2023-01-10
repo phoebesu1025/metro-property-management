@@ -85,7 +85,7 @@ const DropdownArray = [
   },
   // Property Management
   {
-    name: "Property Management",
+    name: "Management",
     array: [
       {
         heading: "Looking for Property Management",
@@ -155,7 +155,7 @@ const DropdownArray = [
   },
   //About US
   {
-    name: "About Us",
+    name: "About",
     array: [
       {
         heading: "About Us",

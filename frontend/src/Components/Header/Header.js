@@ -2,9 +2,12 @@ import CompanyLogo from "./CompanyLogo";
 import Nav from "./Navbar/Desktop/Nav";
 import ButtonGroup from "./Button/ButtonGroup";
 import HamButton from "./Hamburger/HamButton";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import NavMobile from "./Navbar/Mobile/NavMobile";
 import CrossButton from "./CrossButton/CrossButton";
+import UserAuthApi from "../../Function/UserAuthApi";
+import LoggedUserContext from "../../Context/LoggedUserContext";
+import axios from "axios";
 
 const Header = () => {
   const [isActiveMobileNav, setIsActiveMobileNav] = useState(false);
@@ -12,6 +15,36 @@ const Header = () => {
   function handleMobileNavbar() {
     setIsActiveMobileNav(!isActiveMobileNav);
   }
+
+  // eslint-disable-next-line no-unused-vars
+  const [_, setLoggedUser] = useContext(LoggedUserContext);
+
+  const localUser = localStorage.getItem("localLoginUser");
+
+  useEffect(() => {
+    const data = JSON.stringify({
+      email: localUser,
+    });
+
+    const config = {
+      method: "post",
+      url: "http://localhost:5000/auth/user",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
+
+    axios(config)
+      .then((response) => {
+        setLoggedUser(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [localUser]);
 
   return (
     <div

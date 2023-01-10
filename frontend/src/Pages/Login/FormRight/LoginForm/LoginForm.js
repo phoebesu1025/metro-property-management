@@ -10,6 +10,9 @@ const LoginForm = () => {
   const [emailField, setInputEmail] = useState();
   const [passwordField, setPasswordField] = useState();
 
+  // Error Handling
+  const [customError, setCustomError] = useState();
+
   // eslint-disable-next-line no-unused-vars
   const [_, setLoggedUser] = useContext(LoggedUserContext);
 
@@ -34,27 +37,35 @@ const LoginForm = () => {
     axios(config)
       .then((response) => {
         setLoggedUser(response.data);
+        localStorage.setItem("localLoginUser", response.data.email);
         navigate("/");
       })
       .catch((error) => {
+        setCustomError(error.response.data);
         console.log(error);
       });
   }
-  console.log(emailField, passwordField);
 
   return (
     <form
       onSubmit={handleLogin}
       className="login-form w-full flex flex-col gap-y-5"
     >
-      <TextInputField name="email" getInput={setInputEmail} type="email" />
       <TextInputField
+        required="required"
+        name="email"
+        getInput={setInputEmail}
+        type="email"
+      />
+      <TextInputField
+        required="required"
         name="password"
         getInput={setPasswordField}
         type="password"
       />
       <TextValidate text="Caps Lock is on" />
       <FormButton text="Log In" />
+      {customError && <p className="text-red1 font-semibold">{customError}</p>}
     </form>
   );
 };

@@ -35,7 +35,7 @@ const SignupForm = () => {
   useEffect(() => {
     // Password validity and change image from red cross -> green tick
     PasswordValidation(inputPassword, setPassValidate);
-  }, [inputPassword, customError]);
+  }, [inputPassword]);
 
   // password Verification and changing text to red if password criteria is invalid
   function handlePassVerification(givenVerification, textField) {
@@ -84,7 +84,8 @@ const SignupForm = () => {
       .then((response) => {
         console.log(JSON.stringify(response.data));
         setLoggedUser(response.data);
-        navigate("/welcome-board-2");
+        localStorage.setItem("localLoginUser", response.data.email);
+        navigate("/welcome-board-1");
       })
       .catch((error) => {
         setCustomError(error.response.data);
@@ -97,9 +98,20 @@ const SignupForm = () => {
       onSubmit={handleSignup}
       className="sign-up-form w-full flex flex-col gap-y-5"
     >
-      <TextInputField name="name" getInput={setInputName} type="text" />
-      <TextInputField name="email" getInput={setInputEmail} type="email" />
       <TextInputField
+        required="required"
+        name="name"
+        getInput={setInputName}
+        type="text"
+      />
+      <TextInputField
+        required="required"
+        name="email"
+        getInput={setInputEmail}
+        type="email"
+      />
+      <TextInputField
+        required="required"
         name="password"
         getInput={setInputPassword}
         type="password"

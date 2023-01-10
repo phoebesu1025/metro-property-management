@@ -9,7 +9,6 @@ const UserNavbar = () => {
   const [activeUserItem, setActiveUserItem] = useState();
   // eslint-disable-next-line no-unused-vars
   const [loggedUser, _] = useContext(LoggedUserContext);
-  console.log(loggedUser);
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.

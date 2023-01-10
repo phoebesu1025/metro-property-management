@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TextRed from "../RedText/TextRed";
 
-const TextInputField = ({ type, getInput, name }) => {
+const TextInputField = ({ type, getInput, name, required }) => {
   function handleInputChange(e) {
     getInput(e.currentTarget.value);
   }
@@ -26,6 +26,7 @@ const TextInputField = ({ type, getInput, name }) => {
       </label>
       <div className="relative mt-2">
         <input
+          required={required}
           onChange={handleInputChange}
           type={`${type === "password" ? showPassword : type}`}
           className={` w-full  rounded-md `}

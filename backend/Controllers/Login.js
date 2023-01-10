@@ -12,10 +12,9 @@ const Login = async (req, res) => {
     const isCorrectPassword = bcrypt.compareSync(password, findUser.password);
     console.log(isCorrectPassword);
     if (!isCorrectPassword) {
-      throw new Error(`Incorrect passwords`);
+      throw new Error(`Incorrect password`);
     }
 
-    //console.log(findUser);
     res.json(findUser);
   } catch (e) {
     const newError = e;
