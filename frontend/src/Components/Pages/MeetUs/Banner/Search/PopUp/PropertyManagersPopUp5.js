@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import PopUpForm1 from './PopUpForm1'
 import { Link } from 'react-router-dom'
 
-const PropertyManagersPopUp1 = ({ closePopUp }) => {
+const PropertyManagersPopUp5 = ({ closePopUp }) => {
     const [showData, setShowData] = useState(true)
 
     useEffect(() => {
-        fetch("http://localhost:5000/propertyManagers/63b0c46e4aa0047bb15e89a5")
+        fetch("http://localhost:5000/propertyManagers/63b0c61e4aa0047bb15e89ae")
             .then(response => response.json())
             .then(result => {
                 console.log(result);
@@ -30,37 +30,16 @@ const PropertyManagersPopUp1 = ({ closePopUp }) => {
                         <h1 className='text-[0.75rem] font-semibold'>{showData.name}</h1>
                         <p className='text-[0.625rem] text-FaqHeading'>{showData.category}</p>
                     </div>
-
-
-
-
-
-
-
-
-
-
                 </div>
                 <div className='mx-[5.75rem]'>
                     <div><h1 className='text-[1.375rem] font-bold'>Send a message</h1>
                         <p className='text-[0.625rem]'>All fields marked with <span className='text-popUpStar'>*</span> are required()</p>
                     </div>
-
-
-
-
                     <PopUpForm1 />
                 </div>
-
-
-
-
-
-
-
             </div>
         </div>
     )
 }
 
-export default PropertyManagersPopUp1
+export default PropertyManagersPopUp5

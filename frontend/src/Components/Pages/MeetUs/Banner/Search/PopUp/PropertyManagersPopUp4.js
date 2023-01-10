@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import PopUpForm1 from './PopUpForm1'
 import { Link } from 'react-router-dom'
 
-const PropertyManagersPopUp1 = ({ closePopUp }) => {
+const PropertyManagersPopUp4 = ({ closePopUp }) => {
     const [showData, setShowData] = useState(true)
 
     useEffect(() => {
-        fetch("http://localhost:5000/propertyManagers/63b0c46e4aa0047bb15e89a5")
+        fetch("http://localhost:5000/propertyManagers/63b0c5404aa0047bb15e89ac")
             .then(response => response.json())
             .then(result => {
                 console.log(result);
@@ -63,4 +63,4 @@ const PropertyManagersPopUp1 = ({ closePopUp }) => {
     )
 }
 
-export default PropertyManagersPopUp1
+export default PropertyManagersPopUp4
