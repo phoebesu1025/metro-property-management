@@ -4,25 +4,17 @@ import DropdownInputFilter from "./DropdownInputFilter";
 import BookMeeting from "./../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/BookMeeting";
 //import SendMessage from "./../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/SendMessage";
 import PropertyManagersPopUp1 from "./PopUp/PropertyManagersPopUp1";
-import PropertyManagersPopUp2 from "./PopUp/PropertyManagersPopUp2";
-import PropertyManagersPopUp3 from "./PopUp/PropertyManagersPopUp3";
-import PropertyManagersPopUp4 from "./PopUp/PropertyManagersPopUp4";
-import PropertyManagersPopUp5 from "./PopUp/PropertyManagersPopUp5";
-import PropertyManagersPopUp6 from "./PopUp/PropertyManagersPopUp6";
-import PropertyManagersPopUp7 from "./PopUp/PropertyManagersPopUp7";
 
 const PropertyManagerSearch = () => {
   const [showData, setShowData] = useState("")
   const [searchTerm, setSearchTerm] = useState("")
   const [inputCatagories, setInputCatagories] = useState("");
   const [inputLocation, setInputLocation] = useState("");
-  const [openPopUp1, setOpenPopUp1] = useState(false);
-  const [openPopUp2, setOpenPopUp2] = useState(false);
-  const [openPopUp3, setOpenPopUp3] = useState(false);
-  const [openPopUp4, setOpenPopUp4] = useState(false);
-  const [openPopUp5, setOpenPopUp5] = useState(false);
-  const [openPopUp6, setOpenPopUp6] = useState(false);
-  const [openPopUp7, setOpenPopUp7] = useState(false);
+  const [openPopUp, setOpenPopUp] = useState(false);
+
+  const handlePopUp = () => {
+    setOpenPopUp(true);
+  };
 
   // const handlePopUp1 = () => { setOpenPopUp1(true) }
 
@@ -39,6 +31,7 @@ const PropertyManagerSearch = () => {
   console.log(searchTerm);
   return (
     <>
+
       {openPopUp1 && <PropertyManagersPopUp1 closePopUp={setOpenPopUp1} />}
       {openPopUp2 && <PropertyManagersPopUp2 closePopUp={setOpenPopUp2} />}
       {openPopUp3 && <PropertyManagersPopUp3 closePopUp={setOpenPopUp3} />}
@@ -181,6 +174,7 @@ const PropertyManagerSearch = () => {
                         </p>
                       </div>
 
+
                       <div className='flex justify-between w-[13.5rem]'>
                         <button className='text-footerSubGrey2 bg-none w-[6.5rem] px-[0.3rem] text-[0.57rem] rounded-md font-semibold border-footerSubGrey2 border-solid border-x-2 border-y-2'
                           onClick={() => {
@@ -200,7 +194,8 @@ const PropertyManagerSearch = () => {
                               return setOpenPopUp7("true")
                             }
                           }}
-                        >
+
+                        
                           Send Message
                         </button>
                         <BookMeeting />
