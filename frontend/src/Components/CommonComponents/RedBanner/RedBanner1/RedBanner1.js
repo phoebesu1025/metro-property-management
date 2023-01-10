@@ -9,7 +9,7 @@ const RedBanner = () => {
          sm:px-[3rem] 
     
         
-        md:h-[8rem] md:flex-row md:justify-between md:px-[7rem]'>
+        md:h-[8rem] md:flex-row md:justify-between md:mx-[6rem]'>
             <RedBannerText />
             <RedBannerButton />
         </div>

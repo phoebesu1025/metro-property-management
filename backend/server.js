@@ -27,9 +27,11 @@ mongoose.connect(process.env.mongoUrl)
 const { karanRouter } = require("./Routers/KaranRouter");
 const PropertyManagersRouter = require("./Routers/PropertyManagers");
 const SubscribeRouter = require("./Routers/SubscribeRouter")
+const SendMessageRouter = require("./Routers/SendMessageRouter")
 /////////////////////////
 app.use(karanRouter);
 app.use("/", PropertyManagersRouter);
 app.use("/:id", PropertyManagersRouter);
 app.use("/", SubscribeRouter);
+app.use("/", SendMessageRouter)
 
