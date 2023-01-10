@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import PopUpForm1 from './PopUpForm1'
 
-const PropertyManagersPopUp1 = ({ closePopUp }) => {
+const PropertyManagersPopUp2 = ({ closePopUp }) => {
     const [showData, setShowData] = useState(true)
 
     useEffect(() => {
-        fetch("http://localhost:5000/propertyManagers/63b0c46e4aa0047bb15e89a5")
+        fetch("http://localhost:5000/propertyManagers/63b0c4df4aa0047bb15e89a8")
             .then(response => response.json())
             .then(result => {
                 console.log(result);
@@ -62,4 +62,4 @@ const PropertyManagersPopUp1 = ({ closePopUp }) => {
     )
 }
 
-export default PropertyManagersPopUp1
+export default PropertyManagersPopUp2
