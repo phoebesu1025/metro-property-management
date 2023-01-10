@@ -12,8 +12,8 @@ import PropertyManagersPopUp6 from "./PopUp/PropertyManagersPopUp6";
 import PropertyManagersPopUp7 from "./PopUp/PropertyManagersPopUp7";
 
 const PropertyManagerSearch = () => {
-  const [showData, setShowData] = useState("");
-  const [searchTerm, setSearchTerm] = useState("");
+  const [showData, setShowData] = useState("")
+  const [searchTerm, setSearchTerm] = useState("")
   const [inputCatagories, setInputCatagories] = useState("");
   const [inputLocation, setInputLocation] = useState("");
   const [openPopUp1, setOpenPopUp1] = useState(false);
@@ -23,6 +23,8 @@ const PropertyManagerSearch = () => {
   const [openPopUp5, setOpenPopUp5] = useState(false);
   const [openPopUp6, setOpenPopUp6] = useState(false);
   const [openPopUp7, setOpenPopUp7] = useState(false);
+
+  // const handlePopUp1 = () => { setOpenPopUp1(true) }
 
   useEffect(() => {
     console.log(inputCatagories, inputLocation);
@@ -37,7 +39,6 @@ const PropertyManagerSearch = () => {
   console.log(searchTerm);
   return (
     <>
-      <div>hi</div>
       {openPopUp1 && <PropertyManagersPopUp1 closePopUp={setOpenPopUp1} />}
       {openPopUp2 && <PropertyManagersPopUp2 closePopUp={setOpenPopUp2} />}
       {openPopUp3 && <PropertyManagersPopUp3 closePopUp={setOpenPopUp3} />}
@@ -45,6 +46,7 @@ const PropertyManagerSearch = () => {
       {openPopUp5 && <PropertyManagersPopUp5 closePopUp={setOpenPopUp5} />}
       {openPopUp6 && <PropertyManagersPopUp6 closePopUp={setOpenPopUp6} />}
       {openPopUp7 && <PropertyManagersPopUp7 closePopUp={setOpenPopUp7} />}
+
       <div
         className={`relative 2xl:px-24 sm:px-12 px-6
       w-full xl:top-[-5rem] 85 sm:top-[-5rem]  xs:top-[-5rem] 2xs:top-[-5rem] top-[-5rem] drop-shadow-2xl
@@ -179,41 +181,30 @@ const PropertyManagerSearch = () => {
                         </p>
                       </div>
 
-
-                    <div className='flex justify-between w-[13.5rem]'>
-                      <button className='text-footerSubGrey2 bg-none w-[6.5rem] px-[0.3rem] text-[0.57rem] rounded-md font-semibold border-footerSubGrey2 border-solid border-x-2 border-y-2'
-                        onClick={() => {
-                          if (ManagerArrayList.id == "1") {
-                            return setOpenPopUp1("true")
-                          } else if (ManagerArrayList.id == "2") {
-                            return setOpenPopUp2("true")
-                          } else if (ManagerArrayList.id == "3") {
-                            return setOpenPopUp3("true")
-                          } else if (ManagerArrayList.id == "4") {
-                            return setOpenPopUp4("true")
-                          } else if (ManagerArrayList.id == "5") {
-                            return setOpenPopUp5("true")
-                          } else if (ManagerArrayList.id == "6") {
-                            return setOpenPopUp6("true")
-                          } else if (ManagerArrayList.id == "7") {
-                            return setOpenPopUp7("true")
-                          }
-                        }}
-                      >
-                        Send Message
-                      </button>
-                      <BookMeeting />
-
-                      <div className="flex justify-between w-[13.5rem]">
-                        <button
-                          className="text-footerSubGrey2 bg-none w-[6.5rem] px-[0.3rem] text-[0.57rem] rounded-md font-semibold border-footerSubGrey2 border-solid border-x-2 border-y-2"
-                          onClick={handlePopUp}
+                      <div className='flex justify-between w-[13.5rem]'>
+                        <button className='text-footerSubGrey2 bg-none w-[6.5rem] px-[0.3rem] text-[0.57rem] rounded-md font-semibold border-footerSubGrey2 border-solid border-x-2 border-y-2'
+                          onClick={() => {
+                            if (ManagerArrayList.id == "1") {
+                              return setOpenPopUp1("true")
+                            } else if (ManagerArrayList.id == "2") {
+                              return setOpenPopUp2("true")
+                            } else if (ManagerArrayList.id == "3") {
+                              return setOpenPopUp3("true")
+                            } else if (ManagerArrayList.id == "4") {
+                              return setOpenPopUp4("true")
+                            } else if (ManagerArrayList.id == "5") {
+                              return setOpenPopUp5("true")
+                            } else if (ManagerArrayList.id == "6") {
+                              return setOpenPopUp6("true")
+                            } else if (ManagerArrayList.id == "7") {
+                              return setOpenPopUp7("true")
+                            }
+                          }}
                         >
                           Send Message
                         </button>
                         <BookMeeting />
                       </div>
-
                     </div>
                   );
                 })}
