@@ -28,7 +28,7 @@ import { useState } from "react";
 import WelcomeBoard1 from "./Pages/WelcomBoard/WelcomeBoard1";
 import UserNavbar from "./Components/UserNav/UserNavbar";
 const App = () => {
-  const loggedUser = useState();
+  const loggedUser = useState(null);
 
   return (
     <BrowserRouter>

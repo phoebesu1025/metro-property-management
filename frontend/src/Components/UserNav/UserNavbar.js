@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ItemUserNavbar from "./ItemUserNavbar";
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import LoggedUserContext from "../../Context/LoggedUserContext";
 
 const UserNavbar = () => {
   const [activeUserItem, setActiveUserItem] = useState();
-
+  // eslint-disable-next-line no-unused-vars
+  const [loggedUser, _] = useContext(LoggedUserContext);
+  console.log(loggedUser);
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -27,49 +30,53 @@ const UserNavbar = () => {
     },
   };
   return (
-    <Carousel
-      className="flex justify-start items-center bg-[#333333] text-white 2xl:px-24 xl:px-16 sm:px-12 px-6 "
-      renderButtonGroupOutside={true}
-      responsive={responsive}
-      removeArrowOnDeviceType={[
-        "superLargeDesktop",
-        "desktop",
-        "tablet",
-        "mobile",
-      ]}
-    >
-      <ItemUserNavbar
-        getActiveTab={setActiveUserItem}
-        activeUserItem={activeUserItem}
-        item={"Profile"}
-      />
-      <ItemUserNavbar
-        getActiveTab={setActiveUserItem}
-        activeUserItem={activeUserItem}
-        item={"My Account"}
-      />
-      <ItemUserNavbar
-        getActiveTab={setActiveUserItem}
-        activeUserItem={activeUserItem}
-        item={"My Favorites"}
-      />
+    <div className={`${loggedUser ? "block" : "hidden"} w-full`}>
+      <Carousel
+        className={` justify-start items-center
+    bg-[#333333] text-white 
+    2xl:px-24 xl:px-16 sm:px-12 px-6`}
+        renderButtonGroupOutside={true}
+        responsive={responsive}
+        removeArrowOnDeviceType={[
+          "superLargeDesktop",
+          "desktop",
+          "tablet",
+          "mobile",
+        ]}
+      >
+        <ItemUserNavbar
+          getActiveTab={setActiveUserItem}
+          activeUserItem={activeUserItem}
+          item={"Profile"}
+        />
+        <ItemUserNavbar
+          getActiveTab={setActiveUserItem}
+          activeUserItem={activeUserItem}
+          item={"My Account"}
+        />
+        <ItemUserNavbar
+          getActiveTab={setActiveUserItem}
+          activeUserItem={activeUserItem}
+          item={"My Favorites"}
+        />
 
-      <ItemUserNavbar
-        getActiveTab={setActiveUserItem}
-        activeUserItem={activeUserItem}
-        item={"My Applications"}
-      />
-      <ItemUserNavbar
-        getActiveTab={setActiveUserItem}
-        activeUserItem={activeUserItem}
-        item={"Talk to us"}
-      />
-      <ItemUserNavbar
-        getActiveTab={setActiveUserItem}
-        activeUserItem={activeUserItem}
-        item={"Messages"}
-      />
-    </Carousel>
+        <ItemUserNavbar
+          getActiveTab={setActiveUserItem}
+          activeUserItem={activeUserItem}
+          item={"My Applications"}
+        />
+        <ItemUserNavbar
+          getActiveTab={setActiveUserItem}
+          activeUserItem={activeUserItem}
+          item={"Talk to us"}
+        />
+        <ItemUserNavbar
+          getActiveTab={setActiveUserItem}
+          activeUserItem={activeUserItem}
+          item={"Messages"}
+        />
+      </Carousel>
+    </div>
   );
 };
 

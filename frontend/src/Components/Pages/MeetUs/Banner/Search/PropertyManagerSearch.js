@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import DropdownInputFilter from "./DropdownInputFilter";
-import ButtonGroup from "../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/ButtonGroup";
+//import ButtonGroup from "../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/ButtonGroup";
 import BookMeeting from "./../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/BookMeeting";
-import SendMessage from "./../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/SendMessage";
+//import SendMessage from "./../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/SendMessage";
 import PropertyManagersPopUp1 from "./PopUp/PropertyManagersPopUp1";
 
 const PropertyManagerSearch = () => {
