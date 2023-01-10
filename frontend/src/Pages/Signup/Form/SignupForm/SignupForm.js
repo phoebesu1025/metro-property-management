@@ -97,9 +97,13 @@ const SignupForm = () => {
       onSubmit={handleSignup}
       className="sign-up-form w-full flex flex-col gap-y-5"
     >
-      <TextInputField getInput={setInputName} type="name" />
-      <TextInputField getInput={setInputEmail} type="email" />
-      <TextInputField getInput={setInputPassword} type="password" />
+      <TextInputField name="name" getInput={setInputName} type="text" />
+      <TextInputField name="email" getInput={setInputEmail} type="email" />
+      <TextInputField
+        name="password"
+        getInput={setInputPassword}
+        type="password"
+      />
 
       <TextValidate
         reactUseRef={moreLength}
