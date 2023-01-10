@@ -30,6 +30,5 @@ const SubscribeRouter = require("./Routers/SubscribeRouter")
 /////////////////////////
 app.use(karanRouter);
 app.use("/", PropertyManagersRouter);
-app.use("/:id", PropertyManagersRouter);
 app.use("/", SubscribeRouter);
 

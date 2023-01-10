@@ -18,17 +18,7 @@ PropertyManagersRouter.get("/PropertyManagers", (req, res, next) => {
 });
 /////////////////////////////////
 PropertyManagersRouter.get("/PropertyManagers/:id", (req, res, next) => {
-    const { id } = req.params
-    console.log({ id })
-    PropertyManagers.findById(id)
-        .exec()
-        .then((doc) => {
-            console.log(doc);
-            res.status(200).json(doc);
-        }).catch((err) => {
-            console.log(err);
-            res.status(500).json({ error: err });
-        });
+    res.json("hi")
 });
 
 
