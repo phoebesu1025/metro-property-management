@@ -5,7 +5,6 @@ import HamButton from "./Hamburger/HamButton";
 import { useContext, useEffect, useState } from "react";
 import NavMobile from "./Navbar/Mobile/NavMobile";
 import CrossButton from "./CrossButton/CrossButton";
-import UserAuthApi from "../../Function/UserAuthApi";
 import LoggedUserContext from "../../Context/LoggedUserContext";
 import axios from "axios";
 

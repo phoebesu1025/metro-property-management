@@ -29,7 +29,6 @@ import UserNavbar from "./Components/UserNav/UserNavbar";
 
 // Css
 import "./App.css";
-// import axios from "axios";
 
 const App = () => {
   const loggedUser = useState(null);
