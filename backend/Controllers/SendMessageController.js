@@ -1,5 +1,6 @@
 const Message = require('../db/SendMessage')
 
+
 const CreateMessage = async (req, res) => {
     try {
         const { name, email, phone, prefer, message } = req.body;
