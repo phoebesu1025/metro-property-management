@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const DoubleDropdownPropertySearch = ({
   filterName,
@@ -10,6 +10,44 @@ const DoubleDropdownPropertySearch = ({
   const [inputValueLeft, setInputValueLeft] = useState("");
   const [showDropdownRight, setShowDropdownRight] = useState(false);
   const [inputValueRight, setInputValueRight] = useState("");
+
+  function outsideClickHandler() {
+    setShowDropdownRight(false);
+    setShowDropdownLeft(false);
+  }
+
+  const ref = useRef();
+  useOnClickOutside(ref, outsideClickHandler);
+
+  function useOnClickOutside(ref, handler) {
+    useEffect(
+      () => {
+        const listener = (event) => {
+          // Do nothing if clicking ref's element or descendent elements
+          if (!ref.current || ref.current.contains(event.target)) {
+            return;
+          }
+
+          handler(event);
+        };
+
+        document.addEventListener("mousedown", listener);
+        document.addEventListener("touchstart", listener);
+
+        return () => {
+          document.removeEventListener("mousedown", listener);
+          document.removeEventListener("touchstart", listener);
+        };
+      },
+      // Add ref and handler to effect dependencies
+      // It's worth noting that because passed in handler is a new ...
+      // ... function on every render that will cause this effect ...
+      // ... callback/cleanup to run every render. It's not a big deal ...
+      // ... but to optimize you can wrap handler in useCallback before ...
+      // ... passing it into this hook.
+      [ref, handler]
+    );
+  }
 
   // Left
   function getInputLeft(e) {
@@ -33,6 +71,7 @@ const DoubleDropdownPropertySearch = ({
 
   return (
     <div
+      ref={ref}
       className={`property-manager-category gap-y-2 relative flex   ${length}`}
     >
       <label className=" text-s absolute left-0 -top-6 uppercase text-[#303030] ">
