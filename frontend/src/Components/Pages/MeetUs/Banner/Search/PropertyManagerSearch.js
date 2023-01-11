@@ -14,7 +14,7 @@ import PropertyManagersPopUp7 from "./PopUp/PropertyManagersPopUp7";
 const PropertyManagerSearch = () => {
   const [showData, setShowData] = useState("")
   const [searchTerm, setSearchTerm] = useState("")
-  const [inputCatagories, setInputCatagories] = useState("");
+  const [inputCategories, setInputCategories] = useState("");
   const [inputLocation, setInputLocation] = useState("");
   const [openPopUp1, setOpenPopUp1] = useState(false);
   const [openPopUp2, setOpenPopUp2] = useState(false);
@@ -24,21 +24,59 @@ const PropertyManagerSearch = () => {
   const [openPopUp6, setOpenPopUp6] = useState(false);
   const [openPopUp7, setOpenPopUp7] = useState(false);
 
+  let URL = "http://localhost:5000/propertyManagers?";
+
   // const handlePopUp1 = () => { setOpenPopUp1(true) }
 
   // const handlePopUp1 = () => { setOpenPopUp1(true) }
+
+  let requestOptions = {
+    method: 'POST',
+    redirect: 'follow'
+  };
 
   useEffect(() => {
-    console.log(inputCatagories, inputLocation);
-    fetch("http://localhost:5000/propertyManagers")
-      .then((response) => response.json())
-      .then((result) => {
-        console.log(result);
-        setShowData(result);
+
+    if (inputCategories) {
+
+      if (inputCategories !== "All") {
+        if (URL.at(-1) === "?") {
+          URL = URL + `category=${inputCategories}`
+        } else {
+          URL = URL + `&category=${inputCategories}`
+        }
+      }
+    }
+
+    if (inputLocation) {
+      if (inputLocation !== "All") {
+        if (URL.at(-1) === "?") {
+          URL = URL + `location=${inputLocation}`
+        } else {
+          URL = URL + `&location=${inputLocation}`
+        }
+      }
+    }
+
+    fetch(URL, requestOptions)
+      .then(response => response.json())
+      .then(result => {
+        console.log(result)
+        setShowData(result)
       })
-      .catch((error) => console.log("error", error));
-  }, [inputCatagories, inputLocation]);
-  console.log(searchTerm);
+      .catch(error => console.log('error', error));
+  }, [inputCategories, inputLocation]);
+  // useEffect(() => {
+  //   console.log(inputCategories, inputLocation);
+  //   fetch(`http://localhost:5000/propertyManagers?location=${inputLocation}`)
+  //     .then((response) => response.json())
+  //     .then((result) => {
+  //       console.log(result);
+  //       setShowData(result);
+  //     })
+  //     .catch((error) => console.log("error", error));
+  // }, [inputCategories, inputLocation]);
+  // console.log(searchTerm);
   return (
     <>
       {openPopUp1 && <PropertyManagersPopUp1 closePopUp={setOpenPopUp1} />}
@@ -76,8 +114,8 @@ const PropertyManagerSearch = () => {
               "Finance Advisor",
               "All",
             ]}
-            selectDropdown={setInputCatagories}
-            dropdownValue={inputCatagories}
+            selectDropdown={setInputCategories}
+            dropdownValue={inputCategories}
           />
 
           <DropdownInputFilter
@@ -114,39 +152,7 @@ const PropertyManagerSearch = () => {
               {Array.from(showData)
                 .filter((val) => {
                   if (
-                    val.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-                    val.location.includes(inputLocation) &&
-                    val.category.includes(inputCatagories)
-                  ) {
-                    return val;
-                  } else if (
-                    val.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-                    inputLocation == "All" &&
-                    inputCatagories == val.category
-                  ) {
-                    return val;
-                  } else if (
-                    val.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-                    inputCatagories == "All" &&
-                    inputLocation == val.location
-                  ) {
-                    return val;
-                  } else if (
-                    val.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-                    inputCatagories == "All" &&
-                    inputLocation == "All"
-                  ) {
-                    return val;
-                  } else if (
-                    val.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-                    inputCatagories == "All" &&
-                    inputLocation == ""
-                  ) {
-                    return val;
-                  } else if (
-                    val.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-                    inputLocation == "All" &&
-                    inputCatagories == ""
+                    val.name.toLowerCase().includes(searchTerm.toLowerCase())
                   ) {
                     return val;
                   }
