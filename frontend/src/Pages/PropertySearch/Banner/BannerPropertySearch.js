@@ -2,7 +2,7 @@ import React from "react";
 import MainBanner from "../../../Components/CommonComponents/MainBanner/MainBanner";
 import SearchFilterPs from "./SearchFilterPs";
 
-const BannerPropertySearch = ({ properties, setProperties }) => {
+const BannerPropertySearch = ({ setProperties, setCustomError }) => {
   return (
     <div className="property-search-banner relative 3xl:mb-36 2xl:mb-60  mb-0">
       <MainBanner
@@ -17,7 +17,10 @@ const BannerPropertySearch = ({ properties, setProperties }) => {
         }}
       />
 
-      <SearchFilterPs properties={properties} setProperties={setProperties} />
+      <SearchFilterPs
+        setCustomError={setCustomError}
+        setProperties={setProperties}
+      />
     </div>
   );
 };

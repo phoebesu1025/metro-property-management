@@ -7,31 +7,63 @@ import RentSaleButtons from "./RentSaleButtons/RentSaleButtons";
 import SearchButton from "./RentSaleButtons/SearchButton";
 import TextInput from "./TextInput";
 
-const SearchFilterPs = ({ properties, setProperties }) => {
+const SearchFilterPs = ({ setCustomError, setProperties }) => {
   const [region, setRegion] = useState("All Regions");
   const [suburb, setSuburb] = useState("All Suburbs");
-  const [lowPrice, setLowPrice] = useState("");
-  const [highPrice, setHighPrice] = useState("");
+  const [lowPrice, setLowPrice] = useState("Any");
+  const [highPrice, setHighPrice] = useState("Any");
   const [bedroom, setBedroom] = useState("Any");
-  const [bathroom, setBathroom] = useState("");
+  const [bathroom, setBathroom] = useState("Any");
   const [propertyType, setPropertyType] = useState("");
-  const [carPark, setCarPark] = useState("");
-  const [tenants, setTenants] = useState("");
+  const [carPark, setCarPark] = useState("Any");
+  const [tenants, setTenants] = useState("Any");
+  const [petFriendly, setPetFriendly] = useState(false);
+  const [furnished, setFurnished] = useState(false);
+  const [availability, setAvailability] = useState(false);
 
   // const [URL, setURL] = useState(
   //   "http://localhost:5000/property-search?email:{$exists:true}"
   // );
 
+  //  $and: [{ price: { $gte: 400 } }, { price: { $lte: 500 } }],
   useEffect(() => {
+    console.log(petFriendly);
     let data = {
       region: region,
       suburb: suburb,
       bedroom: bedroom,
+      bathroom: bathroom,
+      carPark: carPark,
+      tenants: tenants,
+      price: lowPrice + highPrice,
+      petFriendly: petFriendly,
+      availability: availability,
+      furnished: furnished,
     };
 
     region === "All Regions" && delete data.region;
     suburb === "All Suburbs" && delete data.suburb;
     bedroom === "Any" && delete data.bedroom;
+    bathroom === "Any" && delete data.bathroom;
+    carPark === "Any" && delete data.carPark;
+    tenants === "Any" && delete data.tenants;
+    !petFriendly && delete data.petFriendly;
+    !furnished && delete data.furnished;
+    !availability && delete data.availability;
+
+    if ((lowPrice === "Any") & (highPrice === "Any")) {
+      delete data.price;
+    } else if (lowPrice === "Any") {
+      data.price = { $lte: highPrice };
+    } else if (highPrice === "Any") {
+      data.price = { $gte: lowPrice };
+    } else {
+      delete data.price;
+      data["$and"] = [
+        { price: { $gte: lowPrice } },
+        { price: { $lte: highPrice } },
+      ];
+    }
 
     let config = {
       method: "post",
@@ -45,18 +77,25 @@ const SearchFilterPs = ({ properties, setProperties }) => {
     axios(config)
       .then((response) => {
         setProperties(response.data);
+        setCustomError("");
       })
       .catch((error) => {
+        setCustomError(error.response.data);
+        setProperties("");
         console.log(error);
       });
   }, [
+    availability,
     bathroom,
     bedroom,
     carPark,
+    furnished,
     highPrice,
     lowPrice,
+    petFriendly,
     propertyType,
     region,
+    setCustomError,
     setProperties,
     suburb,
     tenants,
@@ -86,7 +125,7 @@ const SearchFilterPs = ({ properties, setProperties }) => {
             }
             placeholderText={"All Regions"}
             filterName={"Region"}
-            dropdowns={["All Regions", "Auckland", "Papakura", "Manukau"]}
+            dropdowns={["All Regions", "Auckland", "Hamilton", "Wellington"]}
             updateDropdown={setRegion}
             dropdownValue={region}
           />
@@ -97,7 +136,13 @@ const SearchFilterPs = ({ properties, setProperties }) => {
             }
             placeholderText={"All Suburbs"}
             filterName={"Suburbs"}
-            dropdowns={["All Suburbs", "Takanini", "Manurewa", "Wey Mouth"]}
+            dropdowns={[
+              "All Suburbs",
+              "Manukau",
+              "Northcote",
+              "Albany",
+              "Papakura",
+            ]}
             updateDropdown={setSuburb}
             dropdownValue={suburb}
           />
@@ -108,7 +153,7 @@ const SearchFilterPs = ({ properties, setProperties }) => {
             }
             placeholderText={"Any"}
             filterName={"Price"}
-            dropdowns={["1", "2", "3"]}
+            dropdowns={["Any", "300", "400", "500", "600", "700", "800", "900"]}
             updateLowPrice={setLowPrice}
             updateHighPrice={setHighPrice}
             dropdownLowPrice={lowPrice}
@@ -121,7 +166,7 @@ const SearchFilterPs = ({ properties, setProperties }) => {
             }
             placeholderText={"Any"}
             filterName={"Bedrooms"}
-            dropdowns={["1", "2", "3", "4"]}
+            dropdowns={["Any", "1", "2", "3", "4"]}
             updateDropdown={setBedroom}
             dropdownValue={bedroom}
           />
@@ -132,7 +177,7 @@ const SearchFilterPs = ({ properties, setProperties }) => {
             }
             placeholderText={"Any"}
             filterName={"Bathrooms"}
-            dropdowns={["1", "2", "3"]}
+            dropdowns={["Any", "1", "2", "3"]}
             updateDropdown={setBathroom}
             dropdownValue={bathroom}
           />
@@ -156,7 +201,7 @@ const SearchFilterPs = ({ properties, setProperties }) => {
             }
             placeholderText={"Any "}
             filterName={"No. Of Car Park"}
-            dropdowns={["1", "2", "3"]}
+            dropdowns={["Any", "1", "2", "3"]}
             updateDropdown={setCarPark}
             dropdownValue={carPark}
           />
@@ -167,12 +212,18 @@ const SearchFilterPs = ({ properties, setProperties }) => {
             }
             placeholderText={"Any"}
             filterName={"No. Of Tenants"}
-            dropdowns={["1", "2", "3"]}
+            dropdowns={["Any", "1", "2", "3"]}
             updateDropdown={setTenants}
             dropdownValue={tenants}
           />
 
           <CheckboxInput
+            petFriendly={petFriendly}
+            setPetFriendly={setPetFriendly}
+            availability={availability}
+            setFurnished={setFurnished}
+            furnished={furnished}
+            setAvailability={setAvailability}
             length={
               "3xl:basis-[30%]  lg:basis-[45%] sm:basis-[45%] basis-[100%]"
             }
