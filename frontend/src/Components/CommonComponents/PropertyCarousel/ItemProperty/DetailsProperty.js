@@ -1,10 +1,10 @@
 import React from "react";
 
-const DetailsProperty = () => {
+const DetailsProperty = ({ details }) => {
   return (
-    <div className="property-details flex justify-between">
-      <p className="price">$1.1M</p>
-      <p className="code">MPM121343</p>
+    <div className="property-details flex justify-between ">
+      <p className="price">{`$${details.price}/w`}</p>
+      <p className="code">{details.code}</p>
     </div>
   );
 };

@@ -9,7 +9,7 @@ import TextInput from "./TextInput";
 const SearchFilterPs = () => {
   return (
     <div
-      className={` property-search-filter absolute 2xl:px-24 sm:px-12 px-6 py-12
+      className={` property-search-filter relative 2xl:absolute 2xl:px-24 sm:px-12 px-6 py-12
       w-full xl:top-[60%] sm:top-[80%]  2xs:top-[70%] top-[88%] drop-shadow-2xl
       
       `}
@@ -19,38 +19,52 @@ const SearchFilterPs = () => {
           className={`flex sm:flex-row flex-wrap gap-y-10 gap-x-[1%] flex-col justify-between   pt-12
          `}
         >
-          <RentSaleButtons />
+          <RentSaleButtons
+            length={
+              "3xl:basis-[18%] xl:basis-[23%]  lg:basis-[30%] basis-[100%]"
+            }
+          />
 
           <DropdownPropertySearch
-            length={"basis-[18%]"}
+            length={
+              "3xl:basis-[18%] xl:basis-[23%] lg:basis-[30%] sm:basis-[45%] basis-[100%]"
+            }
             placeholderText={"All Regions"}
             filterName={"Region"}
             dropdowns={["Auckland", "Papakura", "Manukau"]}
           />
 
           <DropdownPropertySearch
-            length={"basis-[18%]"}
+            length={
+              "3xl:basis-[18%] xl:basis-[23%] lg:basis-[30%] sm:basis-[45%] basis-[100%]"
+            }
             placeholderText={"All Suburbs"}
             filterName={"Suburbs"}
             dropdowns={["Takanini", "Manurewa", "Wey Mouth"]}
           />
 
           <DoubleDropdownPropertySearch
-            length={"basis-[10%]"}
+            length={
+              "3xl:basis-[18%] xl:basis-[18%] lg:basis-[60%] basis-[100%]"
+            }
             placeholderText={"Any"}
             filterName={"Price"}
             dropdowns={["1", "2", "3"]}
           />
 
           <DropdownPropertySearch
-            length={"basis-[10%]"}
+            length={
+              "3xl:basis-[9%] xl:basis-[18%] lg:basis-[30%] sm:basis-[45%] basis-[100%]"
+            }
             placeholderText={"Any"}
             filterName={"Bedrooms"}
             dropdowns={["1", "2", "3"]}
           />
 
           <DropdownPropertySearch
-            length={"basis-[10%]"}
+            length={
+              "3xl:basis-[9%] xl:basis-[18%] lg:basis-[20%] sm:basis-[45%] basis-[100%]"
+            }
             placeholderText={"Any"}
             filterName={"Bathrooms"}
             dropdowns={["1", "2", "3"]}
@@ -59,38 +73,49 @@ const SearchFilterPs = () => {
           {/* Flex 2nd */}
 
           <DropdownPropertySearch
-            length={"basis-[9%]"}
+            length={
+              "3xl:basis-[9%] xl:basis-[18%] lg:basis-[30%] sm:basis-[45%] basis-[100%]"
+            }
             placeholderText={"Any"}
             filterName={"Property Type"}
             dropdowns={["Auckland", "Papakura", "Manukau"]}
           />
 
           <DropdownPropertySearch
-            length={"basis-[9%]"}
+            length={
+              "3xl:basis-[9%] xl:basis-[18%] lg:basis-[20%] sm:basis-[45%] basis-[100%]"
+            }
             placeholderText={"Any "}
             filterName={"No. Of Car Park"}
             dropdowns={["1", "2", "3"]}
           />
 
           <DropdownPropertySearch
-            length={"basis-[9%]"}
+            length={
+              "3xl:basis-[9%] xl:basis-[18%] lg:basis-[20%] sm:basis-[45%] basis-[100%]"
+            }
             placeholderText={"Any"}
             filterName={"No. Of Tenants"}
             dropdowns={["1", "2", "3"]}
           />
 
-          <DropdownPropertySearch
-            length={"basis-[9%]"}
-            placeholderText={"Any"}
-            filterName={"Bathrooms"}
-            dropdowns={["1", "2", "3"]}
+          <CheckboxInput
+            length={
+              "3xl:basis-[30%]  lg:basis-[45%] sm:basis-[45%] basis-[100%]"
+            }
           />
 
-          <CheckboxInput />
+          <TextInput
+            length={
+              "3xl:basis-[18%] lg:basis-[30%] sm:basis-[45%] basis-[100%]"
+            }
+          />
 
-          <TextInput />
-
-          <SearchButton />
+          <SearchButton
+            length={
+              "3xl:basis-[18%] lg:basis-[20%] sm:basis-[45%] basis-[100%]"
+            }
+          />
         </div>
       </div>
     </div>

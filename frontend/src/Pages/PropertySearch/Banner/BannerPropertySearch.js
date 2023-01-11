@@ -4,7 +4,7 @@ import SearchFilterPs from "./SearchFilterPs";
 
 const BannerPropertySearch = () => {
   return (
-    <div className="property-search-banner relative mb-44 ">
+    <div className="property-search-banner relative 3xl:mb-36 2xl:mb-60  mb-0">
       <MainBanner
         data={{
           imgSrc: {

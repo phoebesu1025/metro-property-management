@@ -1,8 +1,8 @@
 import React from "react";
 
-const TextInput = () => {
+const TextInput = ({ length }) => {
   return (
-    <div className="name-search relative basis-[15%]">
+    <div className={`name-search relative ${length}`}>
       <label className="text-s absolute left-0 -top-6 uppercase text-[#303030] ">
         Keywords
       </label>

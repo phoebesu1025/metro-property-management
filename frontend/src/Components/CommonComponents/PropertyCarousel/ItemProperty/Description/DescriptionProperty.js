@@ -1,30 +1,32 @@
 import React from "react";
 import ItemDescription from "./ItemDescription";
 
-const DescriptionProperty = () => {
+const DescriptionProperty = ({ description }) => {
   return (
-    <div className="property-description flex justify-start gap-x-4">
+    <div className="property-description flex justify-start gap-x-4 ">
       <ItemDescription
         imgSrc="Icon _ Beds"
         itemName="Beds"
-        itemDescription="4"
+        itemDescription={description.bedroom}
       />
 
       <ItemDescription
         imgSrc="Icon _ Baths"
         itemName="Bathrooms"
-        itemDescription="1"
+        itemDescription={description.bathroom}
       />
       <ItemDescription
         imgSrc="Icon _ Garage Park"
         itemName="Parking"
-        itemDescription="2"
+        itemDescription={description.parking}
       />
-      <ItemDescription
-        imgSrc="Icon _ Pet Friendly"
-        itemName="Pet Friendly"
-        itemDescription="Pet Friendly"
-      />
+      {description.petFriendly && (
+        <ItemDescription
+          imgSrc="Icon _ Pet Friendly"
+          itemName="Pet Friendly"
+          itemDescription="Pet Friendly"
+        />
+      )}
     </div>
   );
 };
