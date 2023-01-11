@@ -33,7 +33,7 @@ const DoubleDropdownPropertySearch = ({
 
   return (
     <div
-      className={`property-manager-category gap-y-2 relative flex   basis-[20%]`}
+      className={`property-manager-category gap-y-2 relative flex   ${length}`}
     >
       <label className=" text-s absolute left-0 -top-6 uppercase text-[#303030] ">
         {filterName}

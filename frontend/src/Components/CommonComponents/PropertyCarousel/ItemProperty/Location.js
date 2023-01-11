@@ -1,9 +1,9 @@
 import React from "react";
 
-const Location = () => {
+const Location = ({ text }) => {
   return (
-    <div className="location-title">
-      <p>7min walk to the Beach</p>
+    <div className="location-title ">
+      <p className="font-semibold">{text}</p>
     </div>
   );
 };

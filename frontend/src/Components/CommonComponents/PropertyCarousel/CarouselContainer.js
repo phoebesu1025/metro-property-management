@@ -1,8 +1,10 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Property from "./ItemProperty/Property";
+import PropertyArray from "./PropertyArray";
 
 const CarouselContainer = () => {
+  const Properties = PropertyArray;
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -29,12 +31,9 @@ const CarouselContainer = () => {
         renderButtonGroupOutside={true}
         responsive={responsive}
       >
-        <Property />
-        <Property />
-        <Property />
-        <Property />
-        <Property />
-        <Property />
+        {Properties.map((property, index) => (
+          <Property item={property} key={index} />
+        ))}
       </Carousel>
     </div>
   );
