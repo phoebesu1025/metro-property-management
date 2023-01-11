@@ -1,12 +1,18 @@
+import { useState } from "react";
 import BannerPropertySearch from "./Banner/BannerPropertySearch";
 import PropertyListing from "./PropertyListing/PropertyListing";
 
 const PropertySearch = () => {
+  const [properties, setProperties] = useState();
+
   return (
     <div className="property-search">
-      <BannerPropertySearch />
+      <BannerPropertySearch
+        properties={properties}
+        setProperties={setProperties}
+      />
 
-      <PropertyListing />
+      <PropertyListing properties={properties} />
     </div>
   );
 };

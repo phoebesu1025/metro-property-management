@@ -45,7 +45,7 @@ const DropdownPropertySearch = ({
 
   function getInput(e) {
     updateDropdown(e.currentTarget.innerText);
-    setShowDropdown(!showDropdown);
+    setShowDropdown(false);
   }
 
   function handleShowDropdown() {

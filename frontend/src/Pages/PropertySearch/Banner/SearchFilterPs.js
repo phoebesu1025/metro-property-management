@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import CheckboxInput from "./CheckboxInput";
 import DoubleDropdownPropertySearch from "./DoubleDropdownPropertySearch";
@@ -6,30 +7,48 @@ import RentSaleButtons from "./RentSaleButtons/RentSaleButtons";
 import SearchButton from "./RentSaleButtons/SearchButton";
 import TextInput from "./TextInput";
 
-const SearchFilterPs = () => {
-  const [region, setRegion] = useState("");
-  const [suburb, setSuburb] = useState("");
+const SearchFilterPs = ({ properties, setProperties }) => {
+  const [region, setRegion] = useState("All Regions");
+  const [suburb, setSuburb] = useState("All Suburbs");
   const [lowPrice, setLowPrice] = useState("");
   const [highPrice, setHighPrice] = useState("");
-  const [bedroom, setBedroom] = useState("");
+  const [bedroom, setBedroom] = useState("Any");
   const [bathroom, setBathroom] = useState("");
   const [propertyType, setPropertyType] = useState("");
   const [carPark, setCarPark] = useState("");
   const [tenants, setTenants] = useState("");
 
+  // const [URL, setURL] = useState(
+  //   "http://localhost:5000/property-search?email:{$exists:true}"
+  // );
+
   useEffect(() => {
-    console.log(
-      region,
-      suburb,
-      lowPrice,
-      highPrice,
-      bedroom,
-      bathroom,
-      propertyType,
-      carPark,
-      tenants,
-      tenants
-    );
+    let data = {
+      region: region,
+      suburb: suburb,
+      bedroom: bedroom,
+    };
+
+    region === "All Regions" && delete data.region;
+    suburb === "All Suburbs" && delete data.suburb;
+    bedroom === "Any" && delete data.bedroom;
+
+    let config = {
+      method: "post",
+      url: "http://localhost:5000/property-search",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
+
+    axios(config)
+      .then((response) => {
+        setProperties(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, [
     bathroom,
     bedroom,
@@ -38,6 +57,7 @@ const SearchFilterPs = () => {
     lowPrice,
     propertyType,
     region,
+    setProperties,
     suburb,
     tenants,
   ]);
@@ -66,7 +86,7 @@ const SearchFilterPs = () => {
             }
             placeholderText={"All Regions"}
             filterName={"Region"}
-            dropdowns={["Auckland", "Papakura", "Manukau"]}
+            dropdowns={["All Regions", "Auckland", "Papakura", "Manukau"]}
             updateDropdown={setRegion}
             dropdownValue={region}
           />
@@ -77,7 +97,7 @@ const SearchFilterPs = () => {
             }
             placeholderText={"All Suburbs"}
             filterName={"Suburbs"}
-            dropdowns={["Takanini", "Manurewa", "Wey Mouth"]}
+            dropdowns={["All Suburbs", "Takanini", "Manurewa", "Wey Mouth"]}
             updateDropdown={setSuburb}
             dropdownValue={suburb}
           />
@@ -101,7 +121,7 @@ const SearchFilterPs = () => {
             }
             placeholderText={"Any"}
             filterName={"Bedrooms"}
-            dropdowns={["1", "2", "3"]}
+            dropdowns={["1", "2", "3", "4"]}
             updateDropdown={setBedroom}
             dropdownValue={bedroom}
           />
