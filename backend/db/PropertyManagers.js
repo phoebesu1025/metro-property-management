@@ -10,6 +10,8 @@ const UserDetailsSchema = new mongoose.Schema(
     phone: String,
     detail: String,
     availableDate: String,
+    location: String,
+    category: String,
   },
   {
     collection: "PropertyManagers",

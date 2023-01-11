@@ -14,7 +14,7 @@ import PropertyManagersPopUp7 from "./PopUp/PropertyManagersPopUp7";
 const PropertyManagerSearch = () => {
   const [showData, setShowData] = useState("")
   const [searchTerm, setSearchTerm] = useState("")
-  const [inputCatagories, setInputCatagories] = useState("");
+  const [inputCategories, setInputCategories] = useState("");
   const [inputLocation, setInputLocation] = useState("");
   const [openPopUp1, setOpenPopUp1] = useState(false);
   const [openPopUp2, setOpenPopUp2] = useState(false);
@@ -24,24 +24,61 @@ const PropertyManagerSearch = () => {
   const [openPopUp6, setOpenPopUp6] = useState(false);
   const [openPopUp7, setOpenPopUp7] = useState(false);
 
+  let URL = "http://localhost:5000/propertyManagers?";
+
   // const handlePopUp1 = () => { setOpenPopUp1(true) }
 
   // const handlePopUp1 = () => { setOpenPopUp1(true) }
+
+  let requestOptions = {
+    method: 'POST',
+    redirect: 'follow'
+  };
 
   useEffect(() => {
-    console.log(inputCatagories, inputLocation);
-    fetch("http://localhost:5000/propertyManagers")
-      .then((response) => response.json())
-      .then((result) => {
-        console.log(result);
-        setShowData(result);
+
+    if (inputCategories) {
+
+      if (inputCategories !== "All") {
+        if (URL.at(-1) === "?") {
+          URL = URL + `category=${inputCategories}`
+        } else {
+          URL = URL + `&category=${inputCategories}`
+        }
+      }
+    }
+
+    if (inputLocation) {
+      if (inputLocation !== "All") {
+        if (URL.at(-1) === "?") {
+          URL = URL + `location=${inputLocation}`
+        } else {
+          URL = URL + `&location=${inputLocation}`
+        }
+      }
+    }
+
+    fetch(URL, requestOptions)
+      .then(response => response.json())
+      .then(result => {
+        console.log(result)
+        setShowData(result)
       })
-      .catch((error) => console.log("error", error));
-  }, [inputCatagories, inputLocation]);
-  console.log(searchTerm);
+      .catch(error => console.log('error', error));
+  }, [inputCategories, inputLocation]);
+  // useEffect(() => {
+  //   console.log(inputCategories, inputLocation);
+  //   fetch(`http://localhost:5000/propertyManagers?location=${inputLocation}`)
+  //     .then((response) => response.json())
+  //     .then((result) => {
+  //       console.log(result);
+  //       setShowData(result);
+  //     })
+  //     .catch((error) => console.log("error", error));
+  // }, [inputCategories, inputLocation]);
+  // console.log(searchTerm);
   return (
     <>
-      <div>hi</div>
       {openPopUp1 && <PropertyManagersPopUp1 closePopUp={setOpenPopUp1} />}
       {openPopUp2 && <PropertyManagersPopUp2 closePopUp={setOpenPopUp2} />}
       {openPopUp3 && <PropertyManagersPopUp3 closePopUp={setOpenPopUp3} />}
@@ -77,8 +114,8 @@ const PropertyManagerSearch = () => {
               "Finance Advisor",
               "All",
             ]}
-            selectDropdown={setInputCatagories}
-            dropdownValue={inputCatagories}
+            selectDropdown={setInputCategories}
+            dropdownValue={inputCategories}
           />
 
           <DropdownInputFilter
@@ -92,10 +129,10 @@ const PropertyManagerSearch = () => {
 
           <div className="flex justify-end items-end 2xl:basis-[10%] sm:basis-[45%] basis-[100%]">
             <button
-              className="property-manger-search-btn bg-red1 text-white  px-10 py-2 rounded-md "
+              className="property-manger-search-btn flex justify-center gap-2 bg-red1 text-white  px-8 py-2 rounded-md "
               onClick={() => showData}
             >
-              Search
+              <img src="./images/propertyManagers/search.png" alt="search" /> <p>Search</p>
             </button>
           </div>
         </div>
@@ -115,39 +152,7 @@ const PropertyManagerSearch = () => {
               {Array.from(showData)
                 .filter((val) => {
                   if (
-                    val.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-                    val.location.includes(inputLocation) &&
-                    val.category.includes(inputCatagories)
-                  ) {
-                    return val;
-                  } else if (
-                    val.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-                    inputLocation == "All" &&
-                    inputCatagories == val.category
-                  ) {
-                    return val;
-                  } else if (
-                    val.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-                    inputCatagories == "All" &&
-                    inputLocation == val.location
-                  ) {
-                    return val;
-                  } else if (
-                    val.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-                    inputCatagories == "All" &&
-                    inputLocation == "All"
-                  ) {
-                    return val;
-                  } else if (
-                    val.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-                    inputCatagories == "All" &&
-                    inputLocation == ""
-                  ) {
-                    return val;
-                  } else if (
-                    val.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-                    inputLocation == "All" &&
-                    inputCatagories == ""
+                    val.name.toLowerCase().includes(searchTerm.toLowerCase())
                   ) {
                     return val;
                   }
