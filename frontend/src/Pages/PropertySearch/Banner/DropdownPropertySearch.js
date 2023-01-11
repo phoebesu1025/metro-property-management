@@ -5,9 +5,10 @@ const DropdownPropertySearch = ({
   dropdowns,
   placeholderText,
   length,
+  updateDropdown,
+  dropdownValue,
 }) => {
   const [showDropdown, setShowDropdown] = useState(false);
-  const [inputValue, setInputValue] = useState("");
 
   const ref = useRef();
   useOnClickOutside(ref, () => setShowDropdown(false));
@@ -43,7 +44,7 @@ const DropdownPropertySearch = ({
   }
 
   function getInput(e) {
-    setInputValue(e.currentTarget.innerText);
+    updateDropdown(e.currentTarget.innerText);
     setShowDropdown(!showDropdown);
   }
 
@@ -62,7 +63,7 @@ const DropdownPropertySearch = ({
       <input
         className={` rounded-sm w-full  border-0 font-bold text-black `}
         disabled={"disabled"}
-        value={inputValue}
+        value={dropdownValue}
         placeholder={placeholderText}
         type={"text"}
       />

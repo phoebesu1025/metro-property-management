@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CheckboxInput from "./CheckboxInput";
 import DoubleDropdownPropertySearch from "./DoubleDropdownPropertySearch";
 import DropdownPropertySearch from "./DropdownPropertySearch";
@@ -7,6 +7,41 @@ import SearchButton from "./RentSaleButtons/SearchButton";
 import TextInput from "./TextInput";
 
 const SearchFilterPs = () => {
+  const [region, setRegion] = useState("");
+  const [suburb, setSuburb] = useState("");
+  const [lowPrice, setLowPrice] = useState("");
+  const [highPrice, setHighPrice] = useState("");
+  const [bedroom, setBedroom] = useState("");
+  const [bathroom, setBathroom] = useState("");
+  const [propertyType, setPropertyType] = useState("");
+  const [carPark, setCarPark] = useState("");
+  const [tenants, setTenants] = useState("");
+
+  useEffect(() => {
+    console.log(
+      region,
+      suburb,
+      lowPrice,
+      highPrice,
+      bedroom,
+      bathroom,
+      propertyType,
+      carPark,
+      tenants,
+      tenants
+    );
+  }, [
+    bathroom,
+    bedroom,
+    carPark,
+    highPrice,
+    lowPrice,
+    propertyType,
+    region,
+    suburb,
+    tenants,
+  ]);
+
   return (
     <div
       className={` property-search-filter relative 2xl:absolute 2xl:px-24 sm:px-12 px-6 py-12
@@ -32,6 +67,8 @@ const SearchFilterPs = () => {
             placeholderText={"All Regions"}
             filterName={"Region"}
             dropdowns={["Auckland", "Papakura", "Manukau"]}
+            updateDropdown={setRegion}
+            dropdownValue={region}
           />
 
           <DropdownPropertySearch
@@ -41,6 +78,8 @@ const SearchFilterPs = () => {
             placeholderText={"All Suburbs"}
             filterName={"Suburbs"}
             dropdowns={["Takanini", "Manurewa", "Wey Mouth"]}
+            updateDropdown={setSuburb}
+            dropdownValue={suburb}
           />
 
           <DoubleDropdownPropertySearch
@@ -50,6 +89,10 @@ const SearchFilterPs = () => {
             placeholderText={"Any"}
             filterName={"Price"}
             dropdowns={["1", "2", "3"]}
+            updateLowPrice={setLowPrice}
+            updateHighPrice={setHighPrice}
+            dropdownLowPrice={lowPrice}
+            dropdownHighPrice={highPrice}
           />
 
           <DropdownPropertySearch
@@ -59,6 +102,8 @@ const SearchFilterPs = () => {
             placeholderText={"Any"}
             filterName={"Bedrooms"}
             dropdowns={["1", "2", "3"]}
+            updateDropdown={setBedroom}
+            dropdownValue={bedroom}
           />
 
           <DropdownPropertySearch
@@ -68,6 +113,8 @@ const SearchFilterPs = () => {
             placeholderText={"Any"}
             filterName={"Bathrooms"}
             dropdowns={["1", "2", "3"]}
+            updateDropdown={setBathroom}
+            dropdownValue={bathroom}
           />
 
           {/* Flex 2nd */}
@@ -79,6 +126,8 @@ const SearchFilterPs = () => {
             placeholderText={"Any"}
             filterName={"Property Type"}
             dropdowns={["Auckland", "Papakura", "Manukau"]}
+            updateDropdown={setPropertyType}
+            dropdownValue={propertyType}
           />
 
           <DropdownPropertySearch
@@ -88,6 +137,8 @@ const SearchFilterPs = () => {
             placeholderText={"Any "}
             filterName={"No. Of Car Park"}
             dropdowns={["1", "2", "3"]}
+            updateDropdown={setCarPark}
+            dropdownValue={carPark}
           />
 
           <DropdownPropertySearch
@@ -97,6 +148,8 @@ const SearchFilterPs = () => {
             placeholderText={"Any"}
             filterName={"No. Of Tenants"}
             dropdowns={["1", "2", "3"]}
+            updateDropdown={setTenants}
+            dropdownValue={tenants}
           />
 
           <CheckboxInput
@@ -123,20 +176,3 @@ const SearchFilterPs = () => {
 };
 
 export default SearchFilterPs;
-
-/* 
- ----  Text Input  ----
-
-    <div className="name-search flex flex-col gap-y-2 2xl:basis-[25%] sm:basis-[45%] basis-[100%]">
-          <label>Search by Property manager Name</label>
-          <input placeholder="Enter the name" type={"text"} />
-        </div>
-
-
-
-
-
-
-
-
-*/
