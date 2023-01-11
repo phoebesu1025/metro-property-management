@@ -13,10 +13,10 @@ const CreateSubscribe = async (req, res) => {
             email
         });
         console.log(subscribe);
-        res.send({ status: "ok" })
+        res.send()
     } catch (e) {
-        res.send({ status: "error" });
-        console.log(e);
+        const newError = e;
+        res.status(409).send(`${newError}`);
     }
 }
 
