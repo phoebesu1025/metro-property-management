@@ -5,11 +5,14 @@ const DoubleDropdownPropertySearch = ({
   dropdowns,
   placeholderText,
   length,
+  updateLowPrice,
+  updateHighPrice,
+  dropdownLowPrice,
+  dropdownHighPrice,
 }) => {
   const [showDropdownLeft, setShowDropdownLeft] = useState(false);
-  const [inputValueLeft, setInputValueLeft] = useState("");
+
   const [showDropdownRight, setShowDropdownRight] = useState(false);
-  const [inputValueRight, setInputValueRight] = useState("");
 
   function outsideClickHandler() {
     setShowDropdownRight(false);
@@ -51,7 +54,7 @@ const DoubleDropdownPropertySearch = ({
 
   // Left
   function getInputLeft(e) {
-    setInputValueLeft(e.currentTarget.innerText);
+    updateLowPrice(e.currentTarget.innerText);
     setShowDropdownLeft(!showDropdownLeft);
   }
 
@@ -61,7 +64,7 @@ const DoubleDropdownPropertySearch = ({
 
   // Right
   function getInputRight(e) {
-    setInputValueRight(e.currentTarget.innerText);
+    updateHighPrice(e.currentTarget.innerText);
     setShowDropdownRight(!showDropdownRight);
   }
 
@@ -81,7 +84,7 @@ const DoubleDropdownPropertySearch = ({
         <input
           className={`  rounded-sm  w-full border-0 font-bold text-black `}
           disabled={"disabled"}
-          value={inputValueLeft}
+          value={dropdownLowPrice}
           placeholder={placeholderText}
           type={"text"}
         />
@@ -123,7 +126,7 @@ const DoubleDropdownPropertySearch = ({
         <input
           className={` rounded-sm w-full border-0 font-bold text-black `}
           disabled={"disabled"}
-          value={inputValueRight}
+          value={dropdownHighPrice}
           placeholder={placeholderText}
           type={"text"}
         />
