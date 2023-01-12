@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import getRegionSuburbLatLng from "../FunctionPropertySearch/getRegionSuburbLatLng";
 
 const DropdownPropertySearch = ({
   filterName,
@@ -7,6 +8,9 @@ const DropdownPropertySearch = ({
   length,
   updateDropdown,
   dropdownValue,
+  setProperty,
+  setMapZoom,
+  setMapCenter,
 }) => {
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -44,8 +48,21 @@ const DropdownPropertySearch = ({
   }
 
   function getInput(e) {
-    updateDropdown(e.currentTarget.innerText);
+    const inputValue = e.currentTarget.innerText;
+    updateDropdown(inputValue);
     setShowDropdown(false);
+    if (filterName === "Region") {
+      console.log(inputValue);
+      setMapZoom(10);
+      getRegionSuburbLatLng(inputValue, setMapCenter);
+    } else if (filterName === "Suburbs") {
+      setMapZoom(13);
+      getRegionSuburbLatLng(inputValue, setMapCenter);
+    } else {
+      console.log("ssddd");
+    }
+
+    setProperty("");
   }
 
   function handleShowDropdown() {

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import getAllLatLng from "../FunctionPropertySearch/getAllLatLng";
 import CheckboxInput from "./CheckboxInput";
 import DoubleDropdownPropertySearch from "./DoubleDropdownPropertySearch";
 import DropdownPropertySearch from "./DropdownPropertySearch";
@@ -7,7 +8,12 @@ import RentSaleButtons from "./RentSaleButtons/RentSaleButtons";
 import SearchButton from "./RentSaleButtons/SearchButton";
 import TextInput from "./TextInput";
 
-const SearchFilterPs = ({ setCustomError, setProperties }) => {
+const SearchFilterPs = ({
+  setCustomError,
+  setProperties,
+  setMapCenter,
+  setMapZoom,
+}) => {
   const [region, setRegion] = useState("All Regions");
   const [suburb, setSuburb] = useState("All Suburbs");
   const [lowPrice, setLowPrice] = useState("Any");
@@ -76,7 +82,7 @@ const SearchFilterPs = ({ setCustomError, setProperties }) => {
 
     axios(config)
       .then((response) => {
-        setProperties(response.data);
+        getAllLatLng(setProperties, response.data);
         setCustomError("");
       })
       .catch((error) => {
@@ -128,6 +134,9 @@ const SearchFilterPs = ({ setCustomError, setProperties }) => {
             dropdowns={["All Regions", "Auckland", "Hamilton", "Wellington"]}
             updateDropdown={setRegion}
             dropdownValue={region}
+            setProperty={setProperties}
+            setMapZoom={setMapZoom}
+            setMapCenter={setMapCenter}
           />
 
           <DropdownPropertySearch
@@ -145,6 +154,9 @@ const SearchFilterPs = ({ setCustomError, setProperties }) => {
             ]}
             updateDropdown={setSuburb}
             dropdownValue={suburb}
+            setProperty={setProperties}
+            setMapZoom={setMapZoom}
+            setMapCenter={setMapCenter}
           />
 
           <DoubleDropdownPropertySearch
@@ -158,6 +170,7 @@ const SearchFilterPs = ({ setCustomError, setProperties }) => {
             updateHighPrice={setHighPrice}
             dropdownLowPrice={lowPrice}
             dropdownHighPrice={highPrice}
+            setProperty={setProperties}
           />
 
           <DropdownPropertySearch
@@ -169,6 +182,7 @@ const SearchFilterPs = ({ setCustomError, setProperties }) => {
             dropdowns={["Any", "1", "2", "3", "4"]}
             updateDropdown={setBedroom}
             dropdownValue={bedroom}
+            setProperty={setProperties}
           />
 
           <DropdownPropertySearch
@@ -180,6 +194,7 @@ const SearchFilterPs = ({ setCustomError, setProperties }) => {
             dropdowns={["Any", "1", "2", "3"]}
             updateDropdown={setBathroom}
             dropdownValue={bathroom}
+            setProperty={setProperties}
           />
 
           {/* Flex 2nd */}
@@ -193,6 +208,7 @@ const SearchFilterPs = ({ setCustomError, setProperties }) => {
             dropdowns={["Auckland", "Papakura", "Manukau"]}
             updateDropdown={setPropertyType}
             dropdownValue={propertyType}
+            setProperty={setProperties}
           />
 
           <DropdownPropertySearch
@@ -204,6 +220,7 @@ const SearchFilterPs = ({ setCustomError, setProperties }) => {
             dropdowns={["Any", "1", "2", "3"]}
             updateDropdown={setCarPark}
             dropdownValue={carPark}
+            setProperty={setProperties}
           />
 
           <DropdownPropertySearch
@@ -215,6 +232,7 @@ const SearchFilterPs = ({ setCustomError, setProperties }) => {
             dropdowns={["Any", "1", "2", "3"]}
             updateDropdown={setTenants}
             dropdownValue={tenants}
+            setProperty={setProperties}
           />
 
           <CheckboxInput
@@ -227,6 +245,7 @@ const SearchFilterPs = ({ setCustomError, setProperties }) => {
             length={
               "3xl:basis-[30%]  lg:basis-[45%] sm:basis-[45%] basis-[100%]"
             }
+            setProperty={setProperties}
           />
 
           <TextInput
