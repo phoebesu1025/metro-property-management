@@ -9,6 +9,7 @@ const DoubleDropdownPropertySearch = ({
   updateHighPrice,
   dropdownLowPrice,
   dropdownHighPrice,
+  setProperty,
 }) => {
   const [showDropdownLeft, setShowDropdownLeft] = useState(false);
 
@@ -56,6 +57,7 @@ const DoubleDropdownPropertySearch = ({
   function getInputLeft(e) {
     updateLowPrice(e.currentTarget.innerText);
     setShowDropdownLeft(!showDropdownLeft);
+    setProperty("");
   }
 
   function handleShowDropdownLeft() {
@@ -66,6 +68,7 @@ const DoubleDropdownPropertySearch = ({
   function getInputRight(e) {
     updateHighPrice(e.currentTarget.innerText);
     setShowDropdownRight(!showDropdownRight);
+    setProperty("");
   }
 
   function handleShowDropdownRight() {

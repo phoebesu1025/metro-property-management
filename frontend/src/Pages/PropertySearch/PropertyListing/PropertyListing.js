@@ -1,4 +1,5 @@
 import Property from "../../../Components/CommonComponents/PropertyCarousel/ItemProperty/Property";
+
 //import PropertyArray from "../../../Components/CommonComponents/PropertyCarousel/PropertyArray";
 
 const PropertyListing = ({ properties, customError }) => {
@@ -11,7 +12,6 @@ const PropertyListing = ({ properties, customError }) => {
         properties.map((property, index) => (
           <Property item={property} key={index} />
         ))}
-
       {customError && <p className="text-red1 font-bold"> {customError} </p>}
     </div>
   );
