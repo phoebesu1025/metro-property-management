@@ -6,16 +6,15 @@ const Dropdown = ({ dropdownDetailsArray }) => {
   //finally link to dropdown = DropdownArray ?
 
   return (
-    <div className="hidden group-hover:block fixed bg-red2 left-0 top-[3.8rem] w-full py-14 px-24 z-30 cursor-auto ">
+    <div className="hidden group-hover:block fixed bg-red3 left-0 top-[3.8rem] w-full py-14 px-24 z-30 cursor-auto ">
       <div className=" flex justify-between  text-white text-paragraph gap-x-4 leading-10 ">
         {/* Why do we need conditional rendering? */}
         {/* not sure how it works? when I try to see if i remove conditional rendering, pages will become blank page */}
         {dropdownDetailsArray.array.map((dropdownDetails, index) =>
           dropdownDetails.heading === "Keep track of your records" ? (
             <div
-              className={`basis-1/4 ${
-                dropdownDetails.name === "Property Management" && "basis-1/5"
-              }`}
+              className={`basis-1/4 ${dropdownDetails.name === "Property Management" && "basis-1/5"
+                }`}
               key={index}
             >
               <img
@@ -35,9 +34,8 @@ const Dropdown = ({ dropdownDetailsArray }) => {
           ) : (
             // list apart from heading: "Keep track of your records"
             <div
-              className={`basis-1/4 ${
-                dropdownDetails.name === "Property Management" && "basis-1/5"
-              }`}
+              className={`basis-1/4 ${dropdownDetails.name === "Property Management" && "basis-1/5"
+                }`}
               key={index}
             >
               <img

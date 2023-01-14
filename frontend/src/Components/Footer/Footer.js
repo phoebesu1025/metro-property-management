@@ -18,7 +18,7 @@ const Footer = () => {
       </div>
 
       <div className="
-      order-8 ">
+      order-8 2xl:mt-[-1rem]">
         <Copyright />
       </div>
 
