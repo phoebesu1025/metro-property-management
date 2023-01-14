@@ -1,8 +1,3 @@
-import { useState, useEffect } from "react";
-import DropdownInputFilter from "./DropdownInputFilter";
-//import ButtonGroup from "../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/ButtonGroup";
-import BookMeeting from "./../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/BookMeeting";
-//import SendMessage from "./../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/SendMessage";
 import PropertyManagersPopUp1 from "./PopUp/PropertyManagersPopUp1";
 import PropertyManagersPopUp2 from "./PopUp/PropertyManagersPopUp2";
 import PropertyManagersPopUp3 from "./PopUp/PropertyManagersPopUp3";
@@ -10,6 +5,9 @@ import PropertyManagersPopUp4 from "./PopUp/PropertyManagersPopUp4";
 import PropertyManagersPopUp5 from "./PopUp/PropertyManagersPopUp5";
 import PropertyManagersPopUp6 from "./PopUp/PropertyManagersPopUp6";
 import PropertyManagersPopUp7 from "./PopUp/PropertyManagersPopUp7";
+import { useState, useEffect } from "react";
+import DropdownInputFilter from "./DropdownInputFilter";
+import BookMeeting from "./../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/BookMeeting";
 
 const PropertyManagerSearch = () => {
   const [showData, setShowData] = useState("")
@@ -26,19 +24,13 @@ const PropertyManagerSearch = () => {
 
   let URL = "http://localhost:5000/propertyManagers?";
 
-  // const handlePopUp1 = () => { setOpenPopUp1(true) }
-
-  // const handlePopUp1 = () => { setOpenPopUp1(true) }
-
   let requestOptions = {
     method: 'POST',
     redirect: 'follow'
   };
 
   useEffect(() => {
-
     if (inputCategories) {
-
       if (inputCategories !== "All") {
         if (URL.at(-1) === "?") {
           URL = URL + `category=${inputCategories}`
@@ -66,26 +58,20 @@ const PropertyManagerSearch = () => {
       })
       .catch(error => console.log('error', error));
   }, [inputCategories, inputLocation]);
-  // useEffect(() => {
-  //   console.log(inputCategories, inputLocation);
-  //   fetch(`http://localhost:5000/propertyManagers?location=${inputLocation}`)
-  //     .then((response) => response.json())
-  //     .then((result) => {
-  //       console.log(result);
-  //       setShowData(result);
-  //     })
-  //     .catch((error) => console.log("error", error));
-  // }, [inputCategories, inputLocation]);
-  // console.log(searchTerm);
+
   return (
     <>
-      {openPopUp1 && <PropertyManagersPopUp1 closePopUp={setOpenPopUp1} />}
-      {openPopUp2 && <PropertyManagersPopUp2 closePopUp={setOpenPopUp2} />}
-      {openPopUp3 && <PropertyManagersPopUp3 closePopUp={setOpenPopUp3} />}
-      {openPopUp4 && <PropertyManagersPopUp4 closePopUp={setOpenPopUp4} />}
-      {openPopUp5 && <PropertyManagersPopUp5 closePopUp={setOpenPopUp5} />}
-      {openPopUp6 && <PropertyManagersPopUp6 closePopUp={setOpenPopUp6} />}
-      {openPopUp7 && <PropertyManagersPopUp7 closePopUp={setOpenPopUp7} />}
+
+      <div>
+        {openPopUp1 && <PropertyManagersPopUp1 closePopUp={setOpenPopUp1} />}
+        {openPopUp2 && <PropertyManagersPopUp2 closePopUp={setOpenPopUp2} />}
+        {openPopUp3 && <PropertyManagersPopUp3 closePopUp={setOpenPopUp3} />}
+        {openPopUp4 && <PropertyManagersPopUp4 closePopUp={setOpenPopUp4} />}
+        {openPopUp5 && <PropertyManagersPopUp5 closePopUp={setOpenPopUp5} />}
+        {openPopUp6 && <PropertyManagersPopUp6 closePopUp={setOpenPopUp6} />}
+        {openPopUp7 && <PropertyManagersPopUp7 closePopUp={setOpenPopUp7} />}
+      </div>
+
       <div
         className={`relative 2xl:px-24 sm:px-12 px-6
       w-full xl:top-[-5rem] 85 sm:top-[-5rem]  xs:top-[-5rem] 2xs:top-[-5rem] top-[-5rem] drop-shadow-2xl
@@ -207,8 +193,6 @@ const PropertyManagerSearch = () => {
                               return setOpenPopUp7("true")
                             }
                           }}>
-
-
                           Send Message
                         </button>
                         <BookMeeting />
@@ -216,7 +200,6 @@ const PropertyManagerSearch = () => {
                     </div>
                   );
                 })}
-              {/*Might can divide into more components? */}
             </div>
           </div>
         </div>

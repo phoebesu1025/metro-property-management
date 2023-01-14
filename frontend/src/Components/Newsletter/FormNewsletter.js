@@ -53,9 +53,9 @@ const FormNewsletter = () => {
         Your Email Address
       </p>
       <div className="flex gap-10
+      flex-col
       
-      
-      xs:flex-row xs:justify-between">
+      md:flex-row md:justify-between">
         <div className='flex flex-col'>
           <input required
             type="email"
@@ -70,7 +70,7 @@ const FormNewsletter = () => {
           {customError && <p className="text-red1 font-semibold">{customError}</p>}
         </div>
 
-        <button className=" bg-red2 text-white rounded-md w-[12.5rem] h-[2.95rem] px-10 py-3 " onSubmit={handleSubmit}>
+        <button className=" bg-red2 text-white rounded-md w-[12.5rem] h-[2.95rem] px-10 py-3 shadow-lg" onSubmit={handleSubmit}>
           Subscribe
         </button>
       </div>

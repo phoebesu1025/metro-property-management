@@ -38,6 +38,8 @@ module.exports = {
     colors: {
       red1: "#E4353C",
       red2: "#DA2B32",
+      red3: "#CB1B22",
+
       white: "#FFFFFF",
       black: "#000000",
       black1: "#1A1A1A",

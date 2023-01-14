@@ -49,7 +49,7 @@ const CompanyDetails = () => {
       <div className="order-last
     
        xs:mt-[-5rem]
-        2xl:order-none">
+        2xl:order-none 2xl:pt-10">
 
         <Social />
       </div>
