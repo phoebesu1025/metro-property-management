@@ -7,6 +7,8 @@ import Pets from './Form1/Pets'
 import Utilities from './Form1/Utilities'
 import NextBtn from './Common/NextBtn'
 import { Link } from 'react-router-dom'
+import PropertyComponents from './PropertyComponents/PropertyComponents'
+import PropertyListing from '../../../Pages/PropertySearch/PropertyListing/PropertyListing'
 const YourDetails = () => {
     return (
         <div>
@@ -17,6 +19,8 @@ const YourDetails = () => {
             <Pets />
             <Utilities />
             <div className='mx-[10rem]'><Link to="/tenancy-application-co-applicants"> <NextBtn /></Link></div>
+            <PropertyComponents />
+            <PropertyListing />
 
 
 

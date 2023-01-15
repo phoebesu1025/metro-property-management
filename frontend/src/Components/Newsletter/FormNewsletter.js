@@ -49,7 +49,7 @@ const FormNewsletter = () => {
     mt-12
     lg:my-auto
     lg:"onSubmit={handleSubmit} >
-      <p className="text-paragraph w-full text-footerSubGrey2 mb-2 ">
+      <p className="text-paragraph w-full text-footerSubGrey2 mb-2 font-semibold ">
         Your Email Address
       </p>
       <div className="flex gap-10
@@ -67,7 +67,7 @@ const FormNewsletter = () => {
             onChange={handleChange}
             value={userInput}
           />
-          {customError && <p className="text-red1 font-semibold">{customError}</p>}
+          {customError && <p className="text-red1 text-[0.85rem] font-semibold">{customError}</p>}
         </div>
 
         <button className=" bg-red2 text-white rounded-md w-[12.5rem] h-[2.95rem] px-10 py-3 shadow-lg" onSubmit={handleSubmit}>
