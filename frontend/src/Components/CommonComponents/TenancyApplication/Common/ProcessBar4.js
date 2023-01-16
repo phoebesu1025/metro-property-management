@@ -1,11 +1,11 @@
 import React from 'react'
 
-const ProcessBar4 = () => {
+const ProcessBar4 = ({ passOne, passTwo, passThree }) => {
     return (
         <div className='flex justify-center my-7'>
             {/* first step */}
             <div className='flex mr-5'>
-                <div><img src="./images/tenancyApplication/tick.png" alt="tick" /></div>
+                <div><img src="./images/tenancyApplication/tick.png" alt="tick" onClick={passOne} /></div>
 
                 <div className='text-[0.7rem] font-semibold my-auto px-4'>Your Details</div>
 
@@ -15,7 +15,7 @@ const ProcessBar4 = () => {
             </div>
             {/*second step*/}
             <div className='flex mr-5'>
-                <div><img src="./images/tenancyApplication/tick.png" alt="tick" /></div>
+                <div><img src="./images/tenancyApplication/tick.png" alt="tick" onClick={passTwo} /></div>
 
                 <div className='text-[0.7rem] font-semibold my-auto px-4'>Co-Applicants</div>
 
@@ -25,7 +25,7 @@ const ProcessBar4 = () => {
             </div>
             {/*third step */}
             <div className='flex mr-5'>
-                <div><img src="./images/tenancyApplication/tick.png" alt="tick" /></div>
+                <div><img src="./images/tenancyApplication/tick.png" alt="tick" onClick={passThree} /></div>
 
                 <div className='text-[0.7rem] font-semibold my-auto px-4 '>References</div>
 

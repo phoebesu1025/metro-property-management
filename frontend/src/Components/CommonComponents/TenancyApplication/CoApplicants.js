@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import TenancyApplicationBanner from './Common/TenancyApplicationBanner'
+
 import ProcessBar2 from '../../../Components/CommonComponents/TenancyApplication/Common/ProcessBar2'
 import CoApplicantsSection from './Form2/CoApplicants'
 import CoApplicants1 from './Form2/CoApplicants1'
@@ -9,6 +11,7 @@ import OtherNonTenant from './Form2/OtherNonTenant'
 const CoApplicants = () => {
     return (
         <div>
+            <TenancyApplicationBanner />
             <ProcessBar2 />
             <CoApplicantsSection />
             <CoApplicants1 />

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import TenancyApplicationBanner from './Common/TenancyApplicationBanner'
 
 import ProcessBar3 from './Common/ProcessBar3'
 import CurrentLandlordRef from './Form3/CurrentLandlordRef'
@@ -11,6 +12,7 @@ import NextBtn from './Common/NextBtn'
 const References = () => {
     return (
         <div>
+            <TenancyApplicationBanner />
             <ProcessBar3 />
             <CurrentLandlordRef />
             <PreviousLandlordRef />

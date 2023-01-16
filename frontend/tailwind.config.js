@@ -68,9 +68,8 @@ module.exports = {
       buttonBorderGrey1: "#494646",
       popUpTxt1: "#787878",
       popUpStar: "#CC1543",
-      popUpInput: "#949495"
-
-
+      popUpInput: "#949495",
+      completeBlue: "#156FF8"
     },
     fontSize: {
       heading1: ["3.5rem"],

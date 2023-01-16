@@ -8,7 +8,7 @@ const PropertyComponents = () => {
     const Properties = PropertyArray[0];
     console.log(Properties)
     return (
-        <div className=" w-[15rem] h-[22rem] bg-white">
+        <div className=" w-[16rem] h-[22rem] bg-white rounded-lg absolute top-[18%] right-[5%]">
 
 
             <PropertyTextArrange item={Properties} />
