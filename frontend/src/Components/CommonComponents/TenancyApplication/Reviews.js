@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import TenancyApplicationBanner from './Common/TenancyApplicationBanner'
+
 import ProcessBar4 from './Common/ProcessBar4'
 import Heading from './Form4/Heading'
 import ReviewYourDetails from './Form4/ReviewYourDetails'
@@ -13,6 +15,7 @@ import SubmitBtn from './Common/SubmitBtn'
 const Reviews = () => {
     return (
         <>
+            <TenancyApplicationBanner />
             <ProcessBar4 />
             <Heading />
 

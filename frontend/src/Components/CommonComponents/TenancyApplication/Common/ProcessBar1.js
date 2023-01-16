@@ -1,11 +1,16 @@
-import React from 'react'
+import { React, useState } from 'react'
 
-const ProcessBar = () => {
+const ProcessBar1 = ({ passTwo, passThree, passFour }) => {
+
+
+
+
+
     return (
         <div className='flex justify-center my-7'>
             {/* first step */}
             <div className='flex mr-5'>
-                <div className='bg-bookMeBtnBg w-6 h-6 rounded-full text-white text-center bg-opacity-full'>1</div>
+                <div className='bg-bookMeBtnBg w-6 h-6 rounded-full text-white text-center bg-opacity-full' >1</div>
 
                 <div className='text-[0.7rem] font-semibold my-auto px-4'>Your Details</div>
 
@@ -15,7 +20,7 @@ const ProcessBar = () => {
             </div>
 
             <div className='flex mr-5'>
-                <div className='bg-bookMeBtnBg w-6 h-6 rounded-full text-white text-center bg-opacity-30'>2</div>
+                <div className='bg-bookMeBtnBg w-6 h-6 rounded-full text-white text-center bg-opacity-30' onClick={passTwo}>2</div>
 
                 <div className='text-[0.7rem] font-semibold my-auto px-4 opacity-30'>Co-Applicants</div>
 
@@ -25,7 +30,7 @@ const ProcessBar = () => {
             </div>
 
             <div className='flex mr-5'>
-                <div className='bg-bookMeBtnBg w-6 h-6 rounded-full text-white text-center bg-opacity-30'>3</div>
+                <div className='bg-bookMeBtnBg w-6 h-6 rounded-full text-white text-center bg-opacity-30' onClick={passThree}>3</div>
 
                 <div className='text-[0.7rem] font-semibold my-auto px-4 opacity-30'>References</div>
 
@@ -35,7 +40,7 @@ const ProcessBar = () => {
             </div>
 
             <div className='flex'>
-                <div className='bg-bookMeBtnBg w-6 h-6 rounded-full text-white text-center bg-opacity-30'>4</div>
+                <div className='bg-bookMeBtnBg w-6 h-6 rounded-full text-white text-center bg-opacity-30' onClick={passFour}>4</div>
 
                 <div className='text-[0.7rem] font-semibold my-auto px-4 opacity-30'>Review & Submit</div>
 
@@ -45,4 +50,4 @@ const ProcessBar = () => {
     )
 }
 
-export default ProcessBar
+export default ProcessBar1
