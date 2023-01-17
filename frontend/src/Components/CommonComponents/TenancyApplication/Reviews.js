@@ -35,8 +35,6 @@ const Reviews = () => {
 
 
 
-
-
             <div className='flex justify-between mx-[10rem]'>
             </div>
 

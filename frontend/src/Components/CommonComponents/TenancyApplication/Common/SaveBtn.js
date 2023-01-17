@@ -5,7 +5,7 @@ const SaveBtn = () => {
         <div className=' 
         lg: mb-10 mr-4'>
             <button className='flex justify-between align-center px-[1.14rem] rounded-md border-buttonGrey border-[0.05rem] text-buttonGrey  h-[2.448rem] 
-                active:opacity-50'>
+                active:opacity-50' onClick={() => { window.scroll(0, 0) }}>
 
                 <p className='my-auto text-[0.938rem] font-semibold'>Save for Later </p>
 

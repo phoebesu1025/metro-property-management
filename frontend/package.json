@@ -11,6 +11,7 @@
     "axios": "^1.2.2",
     "css-loader": "^6.7.3",
     "fast-equals": "^4.0.3",
+    "filestack-react-18": "^4.0.3",
     "flowbite": "^1.5.5",
     "flowbite-react": "^0.3.7",
     "postcss-loader": "^7.0.2",

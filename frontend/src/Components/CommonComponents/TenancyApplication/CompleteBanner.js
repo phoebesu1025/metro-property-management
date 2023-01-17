@@ -2,7 +2,7 @@ import React from 'react'
 
 const CompleteBanner = () => {
     return (
-        <div className='text-white bg-footerBlackBg text-center h-[20.24rem] flex flex-col justify-center gap-y-[3rem]'>
+        <div className='text-white bg-completeBg text-center h-[19rem] mx-[-0.2rem] flex flex-col justify-center gap-y-[3rem] '>
             <p className='text-[1.875rem] px-[17rem]'>With an investment property, you could have others paying off your mortgage and covering part of your current rental costs</p>
 
             <div className='flex justify-center gap-x-3'>
