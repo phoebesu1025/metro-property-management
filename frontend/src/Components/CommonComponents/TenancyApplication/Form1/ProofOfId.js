@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProofOfId = () => {
+const ProofOfId = ({ popUpBtnId }) => {
     return (
         <div className='lg:px-[10rem] mb-[3rem]'>
             <h1 className='text-bookMeBtnBg text-[1rem] font-semibold mb-2'>Proof of Identity</h1>
@@ -10,7 +10,7 @@ const ProofOfId = () => {
 
             <div className='mt-'>
                 <button className='flex justify-between align-center px-[1.25rem] rounded-3xl border-buttonBorderGrey1 border-[0.052rem] w-[8.64rem] h-[2.448rem] 
-                active:opacity-50'>
+                active:opacity-50' onClick={popUpBtnId}>
                     <p className='my-auto text-[0.729rem] font-semibold'>Add ID </p>
                     <img src="./images/tenancyApplication/plus.png" alt="plus" className='my-auto' />
                 </button>
