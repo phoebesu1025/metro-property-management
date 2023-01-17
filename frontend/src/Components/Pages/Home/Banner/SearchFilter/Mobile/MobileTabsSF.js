@@ -23,7 +23,7 @@ const MobileTabsSF = ({ data, activeTab, changeToActive }) => {
         >
           <p className="flex justify-between">
             {list.label}
-            <span className=""> + </span>
+            <span className=""> {activeTab === list.label ? "-" : "+"} </span>
           </p>
 
           <div
@@ -38,7 +38,7 @@ const MobileTabsSF = ({ data, activeTab, changeToActive }) => {
                     className="flex flex-col w-full gap-y-6 py-6 justify-between"
                     key={index}
                   >
-                    <div className="flex justify-between gap-x-8">
+                    <div className="flex sm:flex-row flex-col justify-between gap-x-8 gap-y-4 ">
                       <input
                         className="basis-2/3 border-2 p-4 rounded-md text-heading3 "
                         type={"text"}
@@ -47,7 +47,7 @@ const MobileTabsSF = ({ data, activeTab, changeToActive }) => {
                       <button
                         className={`basis-1/3 bg-red1
                   text-white font-bold text-heading3
-                  rounded-md px-2
+                  rounded-md px-2 py-4
                   `}
                       >
                         {list.field.button}
@@ -66,7 +66,7 @@ const MobileTabsSF = ({ data, activeTab, changeToActive }) => {
                                 type="radio"
                                 value={inputField}
                                 name={"category"}
-                                className="accent-red1 w-4 h-4"
+                                className="accent-red1 text-red1 w-4 h-4"
                               />
                               <span className="ml-2 text-s">{inputField}</span>
                             </label>

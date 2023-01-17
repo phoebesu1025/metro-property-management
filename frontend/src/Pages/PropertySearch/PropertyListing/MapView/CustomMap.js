@@ -26,6 +26,8 @@ import {
   useRef,
   useState,
 } from "react";
+import ReactDOMServer from "react-dom/server";
+import Property from "../../../../Components/CommonComponents/PropertyCarousel/ItemProperty/Property";
 
 const render = (status) => {
   return <h1>{status}</h1>;
@@ -173,16 +175,20 @@ const Marker = (options) => {
 
   useEffect(() => {
     const infoWindow = new window.google.maps.InfoWindow();
+
+    const mapProperties = (
+      <Fragment>
+        <div className="h-full w-80 z-50 ">
+          <Property item={options.property} />
+        </div>
+      </Fragment>
+    );
+
     if (marker) {
       marker.setOptions(options);
       marker.addListener("click", () => {
         infoWindow.setPosition(options.property.geoCode);
-        infoWindow.setContent(`
-        <div class="h-24 w-24 flex justify-center items-center relative" >
-        <p>${options.property.fullAddress}</p>
-        
-        </div>
-        `);
+        infoWindow.setContent(ReactDOMServer.renderToString(mapProperties));
         infoWindow.open(options.map);
         window.google.maps.event.addListener(options.map, "click", function () {
           infoWindow.close();

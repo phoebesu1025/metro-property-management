@@ -2,7 +2,7 @@ const RightArrow = ({ handleRightArrow }) => {
   return (
     <button
       onClick={handleRightArrow}
-      className="arrow-right absolute right-0 top-0 bottom-0 my-auto"
+      className="sm:block hidden arrow-right absolute right-0 top-0 bottom-0 my-auto"
     >
       <img
         src="./images/CommonComponents/Carousel/Slider/white-right-arrow.png"
