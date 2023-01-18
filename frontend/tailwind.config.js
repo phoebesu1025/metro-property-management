@@ -27,15 +27,16 @@ module.exports = {
         128: "27rem",
       },
       backgroundImage: {
-        'myProfileBg': "linear-gradient(93.06deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 64.34%), url('../public/images/myProfile/pic.png')",
+        myProfileBg:
+          "linear-gradient(93.06deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 64.34%), url('../public/images/myProfile/pic.png')",
 
-        'tenancyApplication': "linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 180.34%), url('../public/images/tenancyApplication/bg.png')",
+        tenancyApplication:
+          "linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 180.34%), url('../public/images/tenancyApplication/bg.png')",
 
-        'marbleBg': "url('../public/images/tenancyApplication/marbleBg.png')",
+        marbleBg: "url('../public/images/tenancyApplication/marbleBg.png')",
 
-        'completeBg': "url('../public/images/tenancyApplication/BannerBG.png')"
-
-      }
+        completeBg: "url('../public/images/tenancyApplication/BannerBG.png')",
+      },
     },
     colors: {
       red1: "#E4353C",
@@ -72,7 +73,9 @@ module.exports = {
       popUpStar: "#CC1543",
       popUpInput: "#949495",
       completeBlue: "#156FF8",
+
       green1: "#4BB543"
+
     },
     fontSize: {
       heading1: ["3.5rem"],

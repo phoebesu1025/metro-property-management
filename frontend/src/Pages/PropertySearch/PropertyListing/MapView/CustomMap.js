@@ -26,6 +26,8 @@ import {
   useRef,
   useState,
 } from "react";
+//import CarouselContainer from "../../../../Components/CommonComponents/PropertyCarousel/CarouselContainer";
+import MapPropertyCarousel from "./MapPropertyCarousel";
 
 const render = (status) => {
   return <h1>{status}</h1>;
@@ -65,12 +67,15 @@ const CustomMap = ({
 
   return (
     properties && (
-      <div className="flex px-24 shadow-xl w-full mt-12 h-[40rem]">
+      <div className="flex px-24 relative shadow-xl w-full mt-12 h-[60rem]">
         <Wrapper
           apiKey={"AIzaSyDi2wtQnBpxtno-WcOOEZk-kQQ4l8RxcRA"}
           render={render}
         >
           <Map
+            setMapCenter={setMapCenter}
+            setMapZoom={setMapZoom}
+            properties={properties}
             center={mapCenter}
             onClick={onClick}
             onIdle={onIdle}
@@ -107,7 +112,16 @@ const CustomMap = ({
   );
 };
 // {selectedMarker && <InfoWindow>dfdsfs</InfoWindow>}
-const Map = ({ onClick, onIdle, children, style, ...options }) => {
+const Map = ({
+  onClick,
+  onIdle,
+  children,
+  style,
+  setMapZoom,
+  setMapCenter,
+  properties,
+  ...options
+}) => {
   const ref = useRef(null);
   const [map, setMap] = useState();
 
@@ -148,9 +162,18 @@ const Map = ({ onClick, onIdle, children, style, ...options }) => {
         if (isValidElement(child)) {
           // set the map prop on the child component
           // @ts-ignore
+
           return cloneElement(child, { map });
         }
       })}
+      <div className="absolute left-0 bottom-0 px-24 w-full">
+        <MapPropertyCarousel
+          setMapCenter={setMapCenter}
+          setMapZoom={setMapZoom}
+          PropertyArray={properties}
+        />
+      </div>
+      ;
     </Fragment>
   );
 };
@@ -173,16 +196,19 @@ const Marker = (options) => {
 
   useEffect(() => {
     const infoWindow = new window.google.maps.InfoWindow();
+
+    //const mapProperties = <div dangerouslySetInnerHTML={{ __html: mapDuv }} />;
+
     if (marker) {
       marker.setOptions(options);
       marker.addListener("click", () => {
         infoWindow.setPosition(options.property.geoCode);
         infoWindow.setContent(`
-        <div class="h-24 w-24 flex justify-center items-center relative" >
-        <p>${options.property.fullAddress}</p>
-        
+        <div class="h-full w-80  relative flex ">
+          <img src='' alt="property" />
+          <p>${options.property.fullAddress}</p>
         </div>
-        `);
+      `);
         infoWindow.open(options.map);
         window.google.maps.event.addListener(options.map, "click", function () {
           infoWindow.close();
