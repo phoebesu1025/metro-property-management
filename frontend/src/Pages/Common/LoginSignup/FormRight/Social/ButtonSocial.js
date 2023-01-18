@@ -10,7 +10,7 @@ const ButtonSocial = ({ name }) => {
     >
       <img
         className={` h-5 w-5`}
-        src={`./images/pages/login-signup/${name}.png`}
+        src={`../images/pages/login-signup/${name}.png`}
         alt={name}
       />
       <p

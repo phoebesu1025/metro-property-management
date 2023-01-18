@@ -36,7 +36,7 @@ const TextInputField = ({ type, getInput, name, required }) => {
           <button onClick={handleShowPassword}>
             <img
               className="absolute right-4 bottom-0 top-0 my-auto"
-              src="./images/pages/login-signup/eye-line.png"
+              src="../images/pages/login-signup/eye-line.png"
               alt="password"
             />
           </button>

@@ -36,7 +36,7 @@ const LoginImage = () => {
 
       <img
         className="2xl:w-[70%] xl:w-[90%]  mx-auto 2xl:mt-36 xl:mt-32"
-        src="./images/pages/login-signup/login.png"
+        src="../images/pages/login-signup/login.png"
         alt="login"
       />
 
@@ -46,7 +46,7 @@ const LoginImage = () => {
       rounded-lg shadow-lg absolute right-0 2xl:bottom-[10%] xl:bottom-[15%]`}
       >
         <div className="maintenance-setting">
-          <img src="./images/pages/login-signup/setting-tool.png" alt="tool" />
+          <img src="../images/pages/login-signup/setting-tool.png" alt="tool" />
         </div>
         <div className="maintenance-schedule">
           <p>Upcoming plumbing maintenance request on </p>
