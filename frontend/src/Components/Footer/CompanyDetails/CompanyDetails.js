@@ -20,7 +20,7 @@ const CompanyDetails = () => {
 
         <div className="info">
           <DataCompany
-            imgSrc="./images/flocationIcon.png"
+            imgSrc="../images/flocationIcon.png"
             imgAlt={"marker logo"}
             details={
               <Fragment>
@@ -33,12 +33,12 @@ const CompanyDetails = () => {
             }
           />
           <DataCompany
-            imgSrc="./images/fEmail.png"
+            imgSrc="../images/fEmail.png"
             imgAlt={"mail-box logo"}
             details={"info@metronz.co.nz"}
           />
           <DataCompany
-            imgSrc="./images/fPhoneIcon.png"
+            imgSrc="../images/fPhoneIcon.png"
             imgAlt={"phone logo"}
             details={"  +64 9 391 4642 | +64 21 642 119"}
           />

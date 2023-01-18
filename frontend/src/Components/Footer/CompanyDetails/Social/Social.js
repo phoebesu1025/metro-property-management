@@ -5,22 +5,22 @@ const Social = () => {
     {
       link: "https://www.facebook.com/MetroNZ",
       imgAlt: "facebook Logo",
-      imgSrc: "./images/facebookIcon.png",
+      imgSrc: "../images/facebookIcon.png",
     },
     {
       link: "https://www.linkedin.com/company/metro-nz-property-management-ltd/",
       imgAlt: "LinkedIn Logo",
-      imgSrc: "./images/linkedinIcon.png",
+      imgSrc: "../images/linkedinIcon.png",
     },
     {
       link: "https://twitter.com/metronz_",
       imgAlt: "Twitter logo",
-      imgSrc: "./images/twitterIcon.png",
+      imgSrc: "../images/twitterIcon.png",
     },
     {
       link: "https://www.instagram.com/metronzproperty/",
       imgAlt: "Instagram logo",
-      imgSrc: "./images/insIcon.png",
+      imgSrc: "../images/insIcon.png",
     },
   ];
 
