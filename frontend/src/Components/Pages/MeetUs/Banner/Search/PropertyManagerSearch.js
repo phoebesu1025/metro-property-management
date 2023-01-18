@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import PropertyManagersPopUp1 from "./PopUp/PropertyManagersPopUp1";
 import PropertyManagersPopUp2 from "./PopUp/PropertyManagersPopUp2";
 import PropertyManagersPopUp3 from "./PopUp/PropertyManagersPopUp3";
@@ -5,7 +6,6 @@ import PropertyManagersPopUp4 from "./PopUp/PropertyManagersPopUp4";
 import PropertyManagersPopUp5 from "./PopUp/PropertyManagersPopUp5";
 import PropertyManagersPopUp6 from "./PopUp/PropertyManagersPopUp6";
 import PropertyManagersPopUp7 from "./PopUp/PropertyManagersPopUp7";
-import { useState, useEffect } from "react";
 import DropdownInputFilter from "./DropdownInputFilter";
 import BookMeeting from "./../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/BookMeeting";
 
@@ -59,9 +59,10 @@ const PropertyManagerSearch = () => {
       .catch(error => console.log('error', error));
   }, [inputCategories, inputLocation]);
 
+
+
   return (
     <>
-
       <div>
         {openPopUp1 && <PropertyManagersPopUp1 closePopUp={setOpenPopUp1} />}
         {openPopUp2 && <PropertyManagersPopUp2 closePopUp={setOpenPopUp2} />}
@@ -77,6 +78,7 @@ const PropertyManagerSearch = () => {
       w-full xl:top-[-5rem] 85 sm:top-[-5rem]  xs:top-[-5rem] 2xs:top-[-5rem] top-[-5rem] drop-shadow-2xl
       `}
       >
+
         <div
           className={`flex sm:flex-row flex-wrap gap-2 flex-col justify-between py-8 px-12
         rounded-xl bg-white`}
@@ -124,17 +126,12 @@ const PropertyManagerSearch = () => {
         </div>
       </div>
       {/* ///////////////////////////////////////////////////////////////////// */}
-      <div
-        className=" py-[rem] 2xl:px-24 sm:px-12 px-6
-        "
-      >
-        <div className="  ">
+      <div className="py-[rem] 2xl:px-24 sm:px-12 px-6">
+        <div>
+          <div className="mx-[3rem] text-buttonGrey text-[0.75rem] font-semibold mb-10 ">{showData.length} results found</div>
           <div className="flex justify-center">
-            <div
-              id="slider"
-              className=" grid grid-cols-1 gap-y-5
-            xs:grid-cols-2 gap-x-11 lg:grid-cols-3 2xl:grid-cols-4 "
-            >
+            <div className=" grid grid-cols-1 gap-y-10
+              xs:grid-cols-2 gap-x-[6rem] lg:grid-cols-3 2xl:grid-cols-3">
               {Array.from(showData)
                 .filter((val) => {
                   if (
@@ -145,37 +142,32 @@ const PropertyManagerSearch = () => {
                 })
                 .map((ManagerArrayList) => {
                   return (
-                    <div
-                      className="w-[17.56rem] h-[15rem]  bg-white rounded-md shadow-lg px-7"
-                      key={ManagerArrayList._id}
-                    >
-                      <div className="top-section flex justify-between py-6">
-                        <div className="my-auto">
-                          <img
-                            src={ManagerArrayList.imgSrc}
-                            alt={ManagerArrayList.imgAlt}
-                          />
+                    <div className="w-[19.75em] h-[18.375rem]  bg-white rounded-md shadow-lg px-10">
+                      <div className="top-section flex justify-between py-8">
+                        <div className="my-auto hover:animate-pulse cursor-pointer">
+                          <img src={ManagerArrayList.imgSrc} alt={ManagerArrayList.imgAlt} />
                         </div>
 
-                        <div className="flex flex-col text-[0.6rem] font-semibold text-end">
-                          <div>{`${ManagerArrayList.successfulClient} Successful Clients`}</div>
+                        <div className="flex flex-col text-[0.6rem] font-semibold text-end text-buttonGrey">
+                          <div className="font-bold text-black">{`${ManagerArrayList.successfulClient} Successful Clients`}</div>
                           <div>{ManagerArrayList.email}</div>
                           <div>{ManagerArrayList.phone}</div>
                         </div>
                       </div>
 
                       <div>
-                        <h1 className="font-bold text-[0.9rem] -mt-[0.3rem] ">
+                        <h1 className="font-bold text-[0.9rem] mb-3  ">
                           {ManagerArrayList.name}
                         </h1>
-                        <p className=" w-[13.5rem] mx-auto text-[0.6rem] leading-4 mb-5">
+                        <p className=" w-[13.5rem]  text-[0.6rem] leading-4 mb-7 text-buttonGrey">
                           {ManagerArrayList.detail} <br />
-                          {`Available to meet on ${ManagerArrayList.availableDate}`}
+                          <span className="font-bold text-black">{`Available to meet on ${ManagerArrayList.availableDate}`}</span>
                         </p>
                       </div>
 
-                      <div className='flex justify-between w-[13.5rem]'>
-                        <button className='text-footerSubGrey2 bg-none w-[6.5rem] px-[0.3rem] text-[0.57rem] rounded-md font-semibold border-footerSubGrey2 border-solid border-x-2 border-y-2'
+                      <div className='flex justify-between w-full'>
+                        <a href="tel:00000"><button className='text-footerSubGrey2 bg-none w-[3.938rem] h-[2.188rem] px-[0.3rem] text-[0.57rem] rounded-md font-bold border-footerSubGrey2 border-opacity-80 border-[0.1rem] hover:opacity-50' >Call</button></a >
+                        <button className='text-footerSubGrey2 bg-none w-[3.938rem] px-[0.3rem] text-[0.57rem] rounded-md font-bold border-footerSubGrey2 border-opacity-80 border-[0.1rem] hover:opacity-50'
                           onClick={() => {
                             if (ManagerArrayList.id == "1") {
                               return setOpenPopUp1("true")
@@ -193,7 +185,7 @@ const PropertyManagerSearch = () => {
                               return setOpenPopUp7("true")
                             }
                           }}>
-                          Send Message
+                          Message
                         </button>
                         <BookMeeting />
                       </div>

@@ -17,7 +17,7 @@ const PropertyManagersPopUp6 = ({ closePopUp }) => {
     }, [])
 
     return (
-        <div className=' whole container/position  z-50 absolute top-[50rem] left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+        <div className=' whole container/position  z-50 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
             <div className='box container/ background  bg-white w-[35.5rem] h-[40rem] shadow-2xl'>
 
                 <img src="./images/propertyManagers/redLine.png" alt="redline" className='w-[35.5rem]' />
