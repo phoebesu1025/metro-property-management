@@ -31,6 +31,7 @@ const Slider = ({ imgSrc }) => {
   }
 
   return (
+
     <div className="slider-images relative ">
       {imgSrc.map((img, index) => (
         <img
@@ -42,6 +43,7 @@ const Slider = ({ imgSrc }) => {
           alt="Slider-1"
         />
       ))}
+
 
       <LeftArrow handleLeftArrow={handleLeftArrow} />
       <RightArrow handleRightArrow={handleRightArrow} />

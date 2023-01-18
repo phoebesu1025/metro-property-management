@@ -73,6 +73,9 @@ module.exports = {
       popUpStar: "#CC1543",
       popUpInput: "#949495",
       completeBlue: "#156FF8",
+
+      green1: "#4BB543"
+
     },
     fontSize: {
       heading1: ["3.5rem"],

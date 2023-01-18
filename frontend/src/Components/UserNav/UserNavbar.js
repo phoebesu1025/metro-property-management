@@ -29,7 +29,7 @@ const UserNavbar = () => {
     },
   };
   return (
-    <div className={`${loggedUser ? "block" : "hidden"} w-full`}>
+    <div className={`${loggedUser ? "block" : "hidden"} w-full lg:text-[0.7rem]`}>
       <Carousel
         className={` justify-start items-center
     bg-[#333333] text-white 
