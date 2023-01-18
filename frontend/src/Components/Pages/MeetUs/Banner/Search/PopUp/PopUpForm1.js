@@ -53,6 +53,7 @@ const PopUpForm1 = () => {
                 confirmButtonColor: '#d33'
             }).then(function () {
                 document.location.reload()
+                window.scrollTo(0, 0)
             });
         }
 

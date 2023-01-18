@@ -4,10 +4,12 @@ import { useState } from 'react';
 const FormNewsletter = () => {
   const [userInput, setUserInput] = useState('');
   const [customError, setCustomError] = useState('');
+  const [customSuccess, setCustomSuccess] = useState('');
 
   const handleChange = (e) => {
     setUserInput(e.target.value);
   }
+  console.log(userInput)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -29,10 +31,9 @@ const FormNewsletter = () => {
       .then(result => {
         console.log(result, "subscribed")
         if (result === "") {
-          alert('Subscribed successfully! 🎉🎉🎉');
-
+          setCustomSuccess("Subscribe Successfully");
           setUserInput('');
-          setCustomError('')
+          setCustomError('');
         } else {
           return setCustomError(result)
         }
@@ -59,15 +60,16 @@ const FormNewsletter = () => {
         <div className='flex flex-col'>
           <input required
             type="email"
-            className="border-footerInput rounded-md border-solid border  
+            className={`border-footerInput rounded-md border-solid border  
           w-full h-[2.95rem] px-4 py-3
 
-          xs:w-[21rem] 
-            "
+          xs:w-[21rem]  ${customError !== '' ? 'border-red1 animate-[pulse.4s_ease-out]' : ''}
+            `}
             onChange={handleChange}
             value={userInput}
           />
-          {customError && <p className="text-red1 text-[0.85rem] font-semibold">{customError}</p>}
+          {customError && <p className="text-red1 text-[0.85rem] font-semibold animate-[pulse_0.5s_ease-in-out">{customError}</p>}
+          {customSuccess && <p className={`text-green1   text-[0.85rem] font-semibold animate-[pulse_0.5s]  ${customError !== '' ? 'hidden' : ''}`}>{customSuccess}</p>}
         </div>
 
         <button className=" bg-red2 text-white rounded-md w-[12.5rem] h-[2.95rem] px-10 py-3 shadow-lg" onSubmit={handleSubmit}>
