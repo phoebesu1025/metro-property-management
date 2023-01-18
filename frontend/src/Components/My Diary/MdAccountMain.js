@@ -25,8 +25,19 @@ const MdAccountMain = () => {
                 </div>
             </div>
             <div >
-                <div className='bg-white px-[6rem]  pt-[3rem] mt-[8rem]'><PropertyCarousel /></div>
-                <div className='px-[6rem]  pt-[0.5rem] mt-[8rem]'><PropertyCarousel /></div>
+                <div className='bg-white px-[6rem]  pt-[3rem] mt-[8rem]'>
+                    <h1 className='font-bold text-[1.563rem] mb-5'>Similar properties for Rental</h1>
+                    <p className='text-end text-red1 underline font-bold mb-10'>View All Rentals</p>
+                    <PropertyCarousel />
+                </div>
+                <div className='px-[6rem]  pt-[0.5rem] mt-[4rem]'>
+                    <div className='flex justify-between items-center mb-10'>
+                        <h1 className='font-bold text-[1.563rem]  '>Buy a Home While Renting | Featured properties for investment
+                        </h1><p className=' text-red1 underline font-bold text-[1rem] '>View All Investments</p>
+                    </div>
+
+                    <PropertyCarousel />
+                </div>
             </div>
 
         </>
