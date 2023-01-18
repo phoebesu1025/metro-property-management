@@ -33,7 +33,7 @@ const Slider = () => {
     <div className="slider-images relative">
       <img
         className="w-full"
-        src={`./images/CommonComponents/Carousel/Slider/slide-${activeSlide}.png`}
+        src={`../images/CommonComponents/Carousel/Slider/slide-${activeSlide}.png`}
         alt="Slider-1"
       />
 

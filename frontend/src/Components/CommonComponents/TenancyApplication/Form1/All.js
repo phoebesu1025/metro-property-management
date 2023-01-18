@@ -23,7 +23,6 @@ const All = () => {
         setShowPopUpPet()
     }
 
-
     return (
         <div>
             <Preferences />
