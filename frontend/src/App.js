@@ -23,12 +23,19 @@ import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
 import WelcomeBoard1 from "./Pages/WelcomBoard/WelcomeBoard1";
 import UserNavbar from "./Components/UserNav/UserNavbar";
+import Md1Account from "./Pages/MyDairy/Md1AccountPage";
+import Md2Favorite from "./Pages/MyDairy/Md2FavoritePage"
+import Md2Applications from "./Pages/MyDairy/Md3ApplicationsPage"
+
 
 // Css
 import "./App.css";
 
+
 const App = () => {
   const loggedUser = useState(null);
+
+
 
   return (
     <BrowserRouter>
@@ -53,27 +60,40 @@ const App = () => {
 
           <Route path="/property-search" element={<PropertySearch />} />
 
-          <Route path="/new-user" element={<NewUser />} />
-          <Route path="/existing-user" element={<ExistingUser />} />
-          <Route path="/welcome-board-1" element={<WelcomeBoard1 />} />
-          <Route path="/welcome-board-2" element={<WelcomeBoard2 />} />
+
+
+
 
           <Route exact path="login" element={<Login />} />
           <Route path="register" element={<Signup />} />
+          {/* My Dairy Site */}
+          <Route path="/welcome-board-1" element={<WelcomeBoard1 />} />
+          <Route path="/welcome-board-2" element={<WelcomeBoard2 />} />
+          <Route path="/my-dairy/new-user" element={<NewUser />} />
+          <Route path="/my-dairy/existing-user" element={<ExistingUser />} />
+          <Route path="/my-dairy" element={<NewUser />} />
+          <Route path="/my-dairy/my-account" element={<Md1Account />} />
+          <Route path="/my-dairy/my-favorite" element={<Md2Favorite />} />
+          <Route path="/my-dairy/my-application" element={<Md2Applications />} />
 
           {/* Tenancy Application Site */}
-
           <Route path="/tenancy-application" element={<TAYourDetail />} />
           <Route
             path="/tenancy-application-complete"
             element={<TAComplete />}
           />
           {/* Tenancy Application Site */}
+
+
+
+
+
+
         </Routes>
         <Newsletter />
         <Footer />
       </LoggedUserContext.Provider>
-    </BrowserRouter>
+    </BrowserRouter >
   );
 };
 

@@ -4,7 +4,7 @@ const IconHeart = () => {
   return (
     <button className="absolute z-10  right-[10%] top-[8%]">
       <img
-        src="./images/CommonComponents/Carousel/Icon_Heart.png"
+        src="../images/CommonComponents/Carousel/Icon_Heart.png"
         alt="Heart"
       />
     </button>

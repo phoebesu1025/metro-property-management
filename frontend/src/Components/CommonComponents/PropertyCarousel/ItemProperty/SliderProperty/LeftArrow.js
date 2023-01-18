@@ -5,7 +5,7 @@ const LeftArrow = ({ handleLeftArrow }) => {
       className="arrow-left absolute left-0 top-0 bottom-0 my-auto"
     >
       <img
-        src="./images/CommonComponents/Carousel/Slider/white-left-arrow.png"
+        src="../images/CommonComponents/Carousel/Slider/white-left-arrow.png"
         alt="arrow left"
       />
     </button>

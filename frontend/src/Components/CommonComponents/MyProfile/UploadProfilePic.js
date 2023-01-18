@@ -9,12 +9,12 @@ const UploadProfilePic = () => {
                     Max file size: 1MB</p>
 
                 <button className='flex bg-red1 rounded-md text-white text-[0.85rem]
-                font-semibold py-[0.55rem] px-[1rem] pr-[1.5rem]'> <img src="./images/myProfile/upload.png" alt="upload" className='my-auto mr-4' /> Browse</button>
+                font-semibold py-[0.55rem] px-[1rem] pr-[1.5rem]'> <img src="../images/myProfile/upload.png" alt="upload" className='my-auto mr-4' /> Browse</button>
             </div>
 
             <div className='flex flex-col justify-between'>
 
-                <img src="./images/myProfile/profileEmpty.png" alt="profile" />
+                <img src="../images/myProfile/profileEmpty.png" alt="profile" />
                 <p className='text-[0.78rem] text-footerSubGrey text-center'>No image added</p>
 
 

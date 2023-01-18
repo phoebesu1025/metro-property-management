@@ -5,7 +5,7 @@ const ItemDescription = ({ imgSrc, itemName, itemDescription }) => {
     <div className={`flex items-center ${itemName} `}>
       <img
         className="h-8 w-8"
-        src={`./images/CommonComponents/Carousel/${imgSrc}.png`}
+        src={`../images/CommonComponents/Carousel/${imgSrc}.png`}
         alt={itemName}
       />
       <p className="ml-2"> {itemDescription} </p>
