@@ -1,5 +1,5 @@
 const User = require("../db/User");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 // const BonnieUser = require("../db/BonnieUser");
 
 const Register = async (req, res) => {
