@@ -13,4 +13,6 @@ const PropertyManagersController = async (req, res) => {
 };
 
 
+
+
 module.exports = { PropertyManagersController }
