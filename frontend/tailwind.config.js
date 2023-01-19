@@ -7,11 +7,6 @@ module.exports = {
   ],
   theme: {
     screens: {
-      // for edging I used
-      // px-[1.7rem]
-      // sm:px-[3rem]
-      // lg:mx-[4rem]/ "lg:px-[7rem] (somehow, it doesn't work after I set xs size)""
-      //will change to 6rem
       "2xs": "320px", //Mobile
       xs: "500px",
       sm: "620px",
@@ -34,7 +29,6 @@ module.exports = {
         'marbleBg': "url('../public/images/tenancyApplication/marbleBg.png')",
 
         'completeBg': "url('../public/images/tenancyApplication/BannerBG.png')"
-
       }
     },
     colors: {
