@@ -15,8 +15,9 @@ const RentalProcess = ({ singleProcess }) => {
          xl:top-0 xl:-mt-[0.580rem] xl:left-auto left-0 mt-0 `}
       ></span>
 
-      <div className="p-4 rounded-full bg-successfulTenancyClr">
+      <div className="p-4  rounded-full bg-successfulTenancyClr bg-[#F7F5E9]">
         <img
+          className="group-hover:scale-125"
           src={`./images/pages/rental-process/${singleProcess.imgSrc}`}
           alt={singleProcess.imgAlt}
         />

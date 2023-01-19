@@ -21,7 +21,7 @@ const MainBanner = ({ data }) => {
       />
       {/* Desktop banner Image */}
       <img
-        className={` xl:block hidden w-full`}
+        className={` xl:block hidden w-full `}
         src={`./images/CommonComponents/Banner/${data.imgSrc.desktop}`}
         alt={data.imgAlt}
       />

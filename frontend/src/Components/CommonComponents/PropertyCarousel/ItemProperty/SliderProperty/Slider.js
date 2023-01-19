@@ -3,10 +3,11 @@ import Dot from "./Dot";
 import LeftArrow from "./LeftArrow";
 import RightArrow from "./RightArrow";
 
-const Slider = () => {
+const Slider = ({ imgSrc }) => {
   const [activeSlide, setActiveSlide] = useState(1);
 
   function handleLeftArrow() {
+    console.log("sdfdss");
     if (activeSlide === 1) {
       setActiveSlide(activeSlide);
     } else {
@@ -30,12 +31,19 @@ const Slider = () => {
   }
 
   return (
-    <div className="slider-images relative">
-      <img
-        className="w-full"
-        src={`../images/CommonComponents/Carousel/Slider/slide-${activeSlide}.png`}
-        alt="Slider-1"
-      />
+
+    <div className="slider-images relative ">
+      {imgSrc.map((img, index) => (
+        <img
+          key={index}
+          className={`w-full h-56 ${
+            activeSlide === ++index ? "block" : "hidden"
+          } `}
+          src={`./images/properties/${img}`}
+          alt="Slider-1"
+        />
+      ))}
+
 
       <LeftArrow handleLeftArrow={handleLeftArrow} />
       <RightArrow handleRightArrow={handleRightArrow} />
