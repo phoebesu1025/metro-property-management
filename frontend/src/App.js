@@ -74,7 +74,7 @@ const App = () => {
           <Route path="/my-dairy" element={<NewUser />} />
           <Route path="/my-dairy/my-account" element={<Md1Account />} />
           <Route path="/my-dairy/my-favorite" element={<Md2Favorite />} />
-          <Route path="/my-dairy/my-application" element={<Md2Applications />} />
+          <Route path="/my-dairy/my-applications" element={<Md2Applications />} />
 
           {/* Tenancy Application Site */}
           <Route path="/tenancy-application" element={<TAYourDetail />} />

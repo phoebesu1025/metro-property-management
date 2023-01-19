@@ -36,10 +36,9 @@ const Slider = ({ imgSrc }) => {
       {imgSrc.map((img, index) => (
         <img
           key={index}
-          className={`w-full h-56 ${
-            activeSlide === ++index ? "block" : "hidden"
-          } `}
-          src={`./images/properties/${img}`}
+          className={`w-full h-56 ${activeSlide === ++index ? "block" : "hidden"
+            } `}
+          src={`../images/properties/${img}`}
           alt="Slider-1"
         />
       ))}
