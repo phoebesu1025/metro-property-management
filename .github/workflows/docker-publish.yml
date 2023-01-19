@@ -30,7 +30,7 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       - name: Docker Setup Buildx
-        uses: docker/setup-buildx-action@v2.2.1
+        uses: armBuilder
 
       - name: Build and push frontend
         uses: docker/build-push-action@v3
