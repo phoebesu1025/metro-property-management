@@ -63,7 +63,7 @@ const FormNewsletter = () => {
             className={`border-footerInput rounded-md border-solid border  
           w-full h-[2.95rem] px-4 py-3
 
-          xs:w-[21rem]  ${customError !== '' ? 'border-red1 animate-[pulse.4s_ease-out]' : ''}
+          xs:w-[21rem]  ${customError !== '' ? 'border-red1 text-red1 animate-[pulse.4s_ease-out]' : ''}
             `}
             onChange={handleChange}
             value={userInput}

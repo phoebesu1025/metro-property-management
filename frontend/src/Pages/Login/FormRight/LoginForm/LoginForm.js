@@ -38,7 +38,8 @@ const LoginForm = () => {
       .then((response) => {
         setLoggedUser(response.data);
         localStorage.setItem("localLoginUser", response.data.email);
-        navigate("/");
+        navigate("/my-dairy/existing-user");
+        window.scroll(0, 0)
       })
       .catch((error) => {
         setCustomError(error.response.data);
