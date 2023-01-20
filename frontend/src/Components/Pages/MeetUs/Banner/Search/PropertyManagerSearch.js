@@ -8,12 +8,11 @@ import PropertyManagersPopUp6 from "./PopUp/PropertyManagersPopUp6";
 import PropertyManagersPopUp7 from "./PopUp/PropertyManagersPopUp7";
 import DropdownInputFilter from "./DropdownInputFilter";
 import BookMeeting from "./../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/BookMeeting";
+import InputFilter from "./InputFilter";
+import SearchBtn from "./SearchBtn";
+import CallBtn from "./../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/CallBtn"
 
 const PropertyManagerSearch = () => {
-  const [showData, setShowData] = useState("")
-  const [searchTerm, setSearchTerm] = useState("")
-  const [inputCategories, setInputCategories] = useState("");
-  const [inputLocation, setInputLocation] = useState("");
   const [openPopUp1, setOpenPopUp1] = useState(false);
   const [openPopUp2, setOpenPopUp2] = useState(false);
   const [openPopUp3, setOpenPopUp3] = useState(false);
@@ -21,6 +20,11 @@ const PropertyManagerSearch = () => {
   const [openPopUp5, setOpenPopUp5] = useState(false);
   const [openPopUp6, setOpenPopUp6] = useState(false);
   const [openPopUp7, setOpenPopUp7] = useState(false);
+  const [showData, setShowData] = useState("")
+  const [searchTerm, setSearchTerm] = useState("")
+  const [inputCategories, setInputCategories] = useState("");
+  const [inputLocation, setInputLocation] = useState("");
+
 
   let URL = "http://localhost:5000/propertyManagers?";
 
@@ -73,27 +77,11 @@ const PropertyManagerSearch = () => {
         {openPopUp7 && <PropertyManagersPopUp7 closePopUp={setOpenPopUp7} />}
       </div>
 
-      <div
-        className={`relative 2xl:px-24 sm:px-12 px-6
-      w-full xl:top-[-5rem] 85 sm:top-[-5rem]  xs:top-[-5rem] 2xs:top-[-5rem] top-[-5rem] drop-shadow-2xl
-      `}
-      >
+      <div className={`relative 2xl:px-24 sm:px-12 px-6 w-full xl:top-[-5rem] 85 sm:top-[-5rem]  xs:top-[-5rem] 2xs:top-[-5rem] top-[-5rem] drop-shadow-2xl`}>
+        <div className={`flex sm:flex-row flex-wrap gap-2 flex-col justify-between py-8 px-12 rounded-xl bg-white`}>
 
-        <div
-          className={`flex sm:flex-row flex-wrap gap-2 flex-col justify-between py-8 px-12
-        rounded-xl bg-white`}
-        >
-          {/*   Search by name */}
-          <div className="name-search flex flex-col gap-y-2 2xl:basis-[25%] sm:basis-[45%] basis-[100%]">
-            <label>Search by Property manager Name</label>
-            <input
-              placeholder="Enter the name"
-              type={"text"}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-          {/* //////////// */}
-
+          {/*Search by name */}
+          <InputFilter onChange={(e) => setSearchTerm(e.target.value)} />
           <DropdownInputFilter
             filterName={"Filter by category"}
             dropdowns={[
@@ -113,19 +101,11 @@ const PropertyManagerSearch = () => {
             dropdownValue={inputLocation}
           />
 
-          {/* button */}
-
-          <div className="flex justify-end items-end 2xl:basis-[10%] sm:basis-[45%] basis-[100%]">
-            <button
-              className="property-manger-search-btn flex justify-center gap-2 bg-red1 text-white  px-8 py-2 rounded-md "
-              onClick={() => showData}
-            >
-              <img src="./images/propertyManagers/search.png" alt="search" /> <p>Search</p>
-            </button>
-          </div>
+          <SearchBtn onClick={() => showData} />
         </div>
       </div>
       {/* ///////////////////////////////////////////////////////////////////// */}
+
       <div className="py-[rem] 2xl:px-24 sm:px-12 px-6">
         <div>
           <div className="mx-[3rem] text-buttonGrey text-[0.75rem] font-semibold mb-10 ">{showData.length} results found</div>
@@ -166,7 +146,8 @@ const PropertyManagerSearch = () => {
                       </div>
 
                       <div className='flex justify-between w-full'>
-                        <a href="tel:00000"><button className='text-footerSubGrey2 bg-none w-[3.938rem] h-[2.188rem] px-[0.3rem] text-[0.57rem] rounded-md font-bold border-footerSubGrey2 border-opacity-80 border-[0.1rem] hover:opacity-50' >Call</button></a >
+                        <CallBtn />
+
                         <button className='text-footerSubGrey2 bg-none w-[3.938rem] px-[0.3rem] text-[0.57rem] rounded-md font-bold border-footerSubGrey2 border-opacity-80 border-[0.1rem] hover:opacity-50'
                           onClick={() => {
                             if (ManagerArrayList.id == "1") {
@@ -187,6 +168,7 @@ const PropertyManagerSearch = () => {
                           }}>
                           Message
                         </button>
+
                         <BookMeeting />
                       </div>
                     </div>

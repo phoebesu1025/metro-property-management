@@ -7,13 +7,11 @@ const { PropertyManagerFilterController } = require('../Controllers/PropertyMana
 
 // Get all Property Managers' Info
 PropertyManagersRouter.get("/PropertyManagers", PropertyManagersController);
+
+//Post by req.query to filter manager's location/category
 PropertyManagersRouter.post("/PropertyManagers", PropertyManagerFilterController);
+
+//Get individual manager by req.param with id
 PropertyManagersRouter.get("/PropertyManagers/:id", PropertyManagersIdController);
-
-
-
-
-
-
 
 module.exports = PropertyManagersRouter;

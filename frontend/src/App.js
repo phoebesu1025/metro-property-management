@@ -49,20 +49,9 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/rental-process" element={<RentalProcess />} />
           <Route path="/tenant-services" element={<TenantServices />} />
-          <Route
-            path="/buy-a-home-while-renting"
-            element={<BuyHomeWhileRenting />}
-          />
-          <Route
-            path="/meet-our-professionals"
-            element={<MeetOurProfessionals />}
-          />
-
+          <Route path="/buy-a-home-while-renting" element={<BuyHomeWhileRenting />} />
+          <Route path="/meet-our-professionals" element={<MeetOurProfessionals />} />
           <Route path="/property-search" element={<PropertySearch />} />
-
-
-
-
 
           <Route exact path="login" element={<Login />} />
           <Route path="register" element={<Signup />} />
@@ -78,16 +67,7 @@ const App = () => {
 
           {/* Tenancy Application Site */}
           <Route path="/tenancy-application" element={<TAYourDetail />} />
-          <Route
-            path="/tenancy-application-complete"
-            element={<TAComplete />}
-          />
-          {/* Tenancy Application Site */}
-
-
-
-
-
+          <Route path="/tenancy-application-complete" element={<TAComplete />} />
 
         </Routes>
         <Newsletter />

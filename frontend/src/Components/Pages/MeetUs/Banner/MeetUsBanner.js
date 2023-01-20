@@ -17,9 +17,7 @@ const MeetUsBanner = () => {
           Lock Down | We are online too`,
         }}
       />
-
       <PropertyManagerSearch />
-
     </div>
   );
 };

@@ -4,16 +4,13 @@ import RedBannerText from './RedBannerText'
 
 const RedBanner = () => {
     return (
-        <div className=' bg-red2 text-white
-        2xs:flex flex-col  h-[14rem] px-[1.7rem]
-         sm:px-[3rem] 
-    
-        
-        md:h-[8rem] md:flex-row md:justify-between md:mx-[6rem]'>
+        <div className=' bg-red2 text-white flex-col h-[14rem] px-[1.7rem]
+            2xs:flex 
+            sm:px-[3rem] 
+            md:h-[8rem] md:flex-row md:justify-between md:mx-[6rem]'>
             <RedBannerText />
             <RedBannerButton />
         </div>
     )
 }
-
 export default RedBanner
