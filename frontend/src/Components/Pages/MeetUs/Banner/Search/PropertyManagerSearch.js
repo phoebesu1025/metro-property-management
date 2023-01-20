@@ -11,6 +11,7 @@ import BookMeeting from "./../../../../CommonComponents/PropertyManagers/Manager
 import InputFilter from "./InputFilter";
 import SearchBtn from "./SearchBtn";
 import CallBtn from "./../../../../CommonComponents/PropertyManagers/ManagerCardSection/Buttons/CallBtn"
+import ManagerComponents from "./PopUp/ManagersComponents/ManagerComponents";
 
 const PropertyManagerSearch = () => {
   const [openPopUp1, setOpenPopUp1] = useState(false);
@@ -123,28 +124,12 @@ const PropertyManagerSearch = () => {
                 .map((ManagerArrayList) => {
                   return (
                     <div className="w-[19.75em] h-[18.375rem]  bg-white rounded-md shadow-lg px-10">
-                      <div className="top-section flex justify-between py-8">
-                        <div className="my-auto hover:animate-pulse cursor-pointer">
-                          <img src={ManagerArrayList.imgSrc} alt={ManagerArrayList.imgAlt} />
-                        </div>
-
-                        <div className="flex flex-col text-[0.6rem] font-semibold text-end text-buttonGrey">
-                          <div className="font-bold text-black">{`${ManagerArrayList.successfulClient} Successful Clients`}</div>
-                          <div>{ManagerArrayList.email}</div>
-                          <div>{ManagerArrayList.phone}</div>
-                        </div>
+                      <div className="top-section flex justify-between pt-8">
+                        <ManagerComponents item={ManagerArrayList} />
                       </div>
 
-                      <div>
-                        <h1 className="font-bold text-[0.9rem] mb-3  ">
-                          {ManagerArrayList.name}
-                        </h1>
-                        <p className=" w-[13.5rem]  text-[0.6rem] leading-4 mb-7 text-buttonGrey">
-                          {ManagerArrayList.detail} <br />
-                          <span className="font-bold text-black">{`Available to meet on ${ManagerArrayList.availableDate}`}</span>
-                        </p>
-                      </div>
 
+                      {/************** * button below ************************************************************************/}
                       <div className='flex justify-between w-full'>
                         <CallBtn />
 

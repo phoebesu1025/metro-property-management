@@ -14,7 +14,7 @@ const NeedsItems = () => {
          '>
             {NeedsArrayList.map((NeedsArray, index) => {
                 return (
-                    <div className='w-[15rem] h-[19rem] bg-white rounded-md shadow-lg text-center py-4' key={index}>
+                    <div className='w-[15rem] h-[19rem] bg-white rounded-md shadow-lg text-center py-4 hover:opacity-70 cursor-pointer' key={index}>
                         <div className='my-auto py-5 h-[6rem] '>
                             <img src={NeedsArray.imgSrc} alt={NeedsArray.imgAlt} className="mx-auto" />
                         </div>
