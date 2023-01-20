@@ -18,7 +18,7 @@ const PopUpId = ({ passClose }) => {
     };
 
     return (
-        <form className='absolute  left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-[1.5rem] w-[38.306rem] h-[31.438] bg-white rounded-lg shadow-md px-7 py-8 mx-4 ' >
+        <form className='fixed top-1/2  left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-[1.5rem] w-[38.306rem] h-[31.438] bg-white rounded-lg shadow-md px-7 py-8 mx-4 ' >
             <div>
                 <div className='flex justify-between'><h1 className='text-[1rem] font-semibold inline-block'>Upload Identification
                 </h1><img src="./images/tenancyApplication/close.png" alt="close" className='inline-block cursor-pointer active:opacity-50' onClick={passClose} /></div>
