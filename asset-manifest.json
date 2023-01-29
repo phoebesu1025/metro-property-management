@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/metro-property-management/static/css/main.6262bbea.css",
+    "main.js": "/metro-property-management/static/js/main.333c23fe.js",
+    "static/media/pic.png": "/metro-property-management/static/media/pic.058f6d5c540ddae4762c.png",
+    "static/media/bg.png": "/metro-property-management/static/media/bg.6e4a25d753330abb3f06.png",
+    "static/media/marbleBg.png": "/metro-property-management/static/media/marbleBg.9982ee9a5bef03b86308.png",
+    "static/media/revicons.eot": "/metro-property-management/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/metro-property-management/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/metro-property-management/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/metro-property-management/index.html",
+    "main.6262bbea.css.map": "/metro-property-management/static/css/main.6262bbea.css.map",
+    "main.333c23fe.js.map": "/metro-property-management/static/js/main.333c23fe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6262bbea.css",
+    "static/js/main.333c23fe.js"
+  ]
+}
