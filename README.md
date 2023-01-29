@@ -18,3 +18,14 @@ Base on the Figma prototype redesigned by my designer partner, we completed most
 <li>Google Map API</li>
 <li>Sign-Up/ Log-in </li>
 </ul>
+
+![image5](https://user-images.githubusercontent.com/111402381/214754531-6ba67cd0-cc8e-4fd3-a57c-a8b6e5058df7.png)
+![image4](https://user-images.githubusercontent.com/111402381/214754088-7cccd00e-4965-46f3-ac3e-bbc8874d5849.png)
+![image3](https://user-images.githubusercontent.com/111402381/214754108-b4e4c509-e651-4c4a-bdd2-f41898588614.jpg)
+![image2](https://user-images.githubusercontent.com/111402381/214754122-4db3d1b1-8880-43bf-868a-d318e7bbb518.png)
+![image](https://user-images.githubusercontent.com/111402381/214756035-05c3abef-28fc-46f0-ab4b-c0c2c4f7d8bb.jpg)
+
+https://user-images.githubusercontent.com/111402381/214755495-28c3ed92-706f-40f9-91fb-a7b42775bfe9.mp4
+
+836c6-30b1-4fd7-9adb-fb6fcf12a79f.jpg)
+
