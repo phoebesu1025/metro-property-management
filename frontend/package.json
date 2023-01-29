@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "homepage": "https://phoebesu1025.github.io/metro-property-management",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@googlemaps/react-wrapper": "^1.1.35",
     "@googlemaps/typescript-guards": "^2.0.3",
